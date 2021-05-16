@@ -1,0 +1,112 @@
+<include file="Pc:header" />
+    <div class="contain_games" id="pc_indexpage" data-utmparam="?sr={$vo.source}" data-utmplay="/game/play/">
+
+        <div style="text-align: center;margin-top: 10px;">        
+            <script>
+                google_ad_slot = adConfig['pc-gamev6-970x90-index'][adChannel];
+                google_ad_width = 970;
+                google_ad_height = 90;
+                try{
+                    document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-2104961258307381"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                }catch(e){
+                    console.log(e);
+                }
+            </script>
+        </div>
+        <div class="games_list">
+            <div class="games_list-small-item">
+                <volist name="gameList" id="vo" offset='0' length='10'>
+                    <a href='/game/play/{$vo.seo_name}.html?sr={$vo.source}'
+                        class="games_list-item" target="_blank">
+                        <img src="/Public/static/images/gamev61.png" data-qid="{$vo.id}" data-src="{$vo.img}">
+                        <div class="game_name">{$vo.name|addslashes=###}</div>
+                        <eq name="vo.hot" value="1">
+                            <img class="hotnewtag" src="/Public/static/images/hot_icon.png" alt="">
+                        </eq>
+                        <eq name="vo.new" value="1">
+                            <img class="hotnewtag" src="/Public/static/images/new_icon1.png" alt="">
+                        </eq>
+                    </a>
+                </volist>
+            </div>
+            <volist name="gameList" id="vo" offset='10' length='1'>
+                <div class="games_list-big-item" style="text-align: center;">
+                    <div style="margin-top: 26px;">
+                    <script>
+                            google_ad_slot = adConfig['pc-gamev6-336x280-index'][adChannel];
+                            google_ad_width = 336;
+                            google_ad_height = 280;
+                            try{
+                                document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-2104961258307381"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            }catch(e){
+                                console.log(e);
+                            }
+                        </script>
+                    </div>
+                </div>
+            </volist>
+        </div>
+        <div class="games_list">
+            <volist name="gameList" id="vo" offset='10' length='1'>
+                <a href='/game/play/{$vo.seo_name}.html?sr={$vo.source}'
+                    class="games_list-big-item" target="_blank">
+                    <img src="/Public/static/images/gamev61.png" data-qid="{$vo.id}" data-src="{$vo.img}">
+                    <div class="game_name">{$vo.name|addslashes=###}</div>
+                    <eq name="vo.hot" value="1">
+                        <img class="hotnewtag" src="/Public/static/images/hot_icon.png" alt="">
+                    </eq>
+                    <eq name="vo.new" value="1">
+                        <img class="hotnewtag" src="/Public/static/images/new_icon1.png" alt="">
+                    </eq>   
+                </a>
+            </volist>
+            <div class="games_list-small-item">
+                <volist name="gameList" id="vo" offset='11' length='10'>
+                    <a href='/game/play/{$vo.seo_name}.html?sr={$vo.source}'
+                        class="games_list-item" target="_blank">
+                        <img src="/Public/static/images/gamev61.png" data-qid="{$vo.id}" data-src="{$vo.img}">
+                        <div class="game_name">{$vo.name|addslashes=###}</div>
+                        <eq name="vo.hot" value="1">
+                            <img class="hotnewtag" src="/Public/static/images/hot_icon.png" alt="">
+                        </eq>
+                        <eq name="vo.new" value="1">
+                            <img class="hotnewtag" src="/Public/static/images/new_icon1.png" alt="">
+                        </eq>   
+                    </a>
+                </volist>
+            </div>
+        </div>
+        <div class="games_list">
+            <volist name="gameList" id="vo" offset='21' length='1'>
+                <a href='/game/play/{$vo.seo_name}.html?sr={$vo.source}'
+                    class="games_list-big-item" target="_blank">
+                    <img src="/Public/static/images/gamev61.png" data-qid="{$vo.id}" data-src="{$vo.img}">
+                    <div class="game_name">{$vo.name|addslashes=###}</div>
+                    <eq name="vo.hot" value="1">
+                        <img class="hotnewtag" src="/Public/static/images/hot_icon.png" alt="">
+                    </eq>
+                    <eq name="vo.new" value="1">
+                        <img class="hotnewtag" src="/Public/static/images/new_icon1.png" alt="">
+                    </eq>   
+                </a>
+            </volist>
+            <div class="games_list-small-item">
+                <volist name="gameList" id="vo" offset='22' length='10'>
+                    <a href='/game/play/{$vo.seo_name}.html?sr={$vo.source}'
+                        class="games_list-item" target="_blank">
+                        <img src="/Public/static/images/gamev61.png" data-qid="{$vo.id}" data-src="{$vo.img}">
+                        <div class="game_name">{$vo.name|addslashes=###}</div>
+                        <eq name="vo.hot" value="1">
+                            <img class="hotnewtag" src="/Public/static/images/hot_icon.png" alt="">
+                        </eq>
+                        <eq name="vo.new" value="1">
+                            <img class="hotnewtag" src="/Public/static/images/new_icon1.png" alt="">
+                        </eq>   
+                    </a>
+                </volist>
+            </div>
+        </div>
+    </div>
+   <include file="Pc:footer" />

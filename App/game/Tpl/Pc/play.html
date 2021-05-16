@@ -1,0 +1,160 @@
+<include file="Pc:header" />
+    <div class="detail-contain-warp">
+        <div class="games-ads-top">
+            <script>
+                google_ad_slot = adConfig['pc-gamev6-728x90-play'][adChannel];
+                google_ad_width = 728;
+                google_ad_height = 90;
+                try{
+                    document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-8739233621395816"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                }catch(e){
+                    console.log(e);
+                }
+            </script>
+        </div>
+        <div class="detail-contain">
+            <div class="games-ads">
+                <script>
+                    google_ad_slot = adConfig['pc-gamev6-160x600-play1'][adChannel];
+                    google_ad_width = 160;
+                    google_ad_height = 600;
+                    try{
+                        document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-8739233621395816"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }catch(e){
+                        console.log(e);
+                    }
+                </script>
+            </div>
+            <div class="detail-content play-content">
+                <div class="play-content-top">
+                    <div class="play-game-name">
+                        <h3>{$gameDetail.name}</h3>
+                        <div class="play-game-function"></div>
+                    </div>
+                    <div class="play-game-tag">
+                        <a href="/cn/game/tag/{$gameDetail.sort}-games.html" class="">{$gameDetail.sort}</a>
+                    </div>
+                    <div class="play-iframe">
+                        <div id="gameBoxFlash" origin-width="{$gameDetail.width}" origin-height="{$gameDetail['height']}"
+                            style="width:{$gameDetail.width}px;height:{$gameDetail.height}px;">
+                            <eq name='gameDetail.3d_type' value="unity3d">
+                                <object classid="clsid:444785F1-DE89-4295-863A-D46C3A781394" codebase="http://webplayer.unity3d.com/download_webplayer/UnityWebPlayer.cab#version=2,0,0,0"
+                                    id="UnityObject" width="{$gameDetail.width}" height="{$gameDetail.height}">
+                                    <param name="src" value="{$gameDetail.swf}">
+                                    <param name="allowNetworking" value="internal">
+                                    <param name="allowScriptAccess" value="never">
+                                    <embed type="application/vnd.unity" pluginspage="http://www.unity3d.com/unity-web-player-2.x"
+                                        id="UnityEmbed" width="100%" height="100%" src="{$gameDetail.swf}">
+                                </object>
+                                <else />
+                                <notin name="gameDetail.seo_name" value="temple-run,sniper-team-2">
+
+                                    <if condition="$gameDetail.origin eq '198.11.203.228'">
+
+                                        <!--Mario game-->
+                                        <iframe frameBorder="0" scrolling="no" src="/Public/game-refresh.html?url={$gameDetail.swf|urlencode}"
+                                            width="100%" height="100%" rel="noreferrer"></iframe>
+                                        <elseif condition="$gameDetail.3d_type eq 'html5'" />
+
+                                        <!--Html5 game-->
+                                        <iframe frameBorder="0" scrolling="no" src="{$gameDetail.swf}" width="100%"
+                                            height="100%" rel="noreferrer"></iframe>
+                                        <else />
+
+                                        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="swflash.cab#version=9,0,16,0"
+                                            tppabs="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,16,0"
+                                            id="game" height="100%" width="100%">
+                                            <param name="movie" value="{$gameDetail.swf}">
+                                            <param name="quality" value="high">
+                                            <param name="allowNetworking" value="internal">
+                                            <param name="allowScriptAccess" value="never">
+                                            <param value="base" name=".">
+                                            <embed src="{$gameDetail.swf}" height="100%" width="100%" quality="high"
+                                                name="FlashContent" allowscriptaccess="never" allownetworking="internal"
+                                                type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"
+                                                base=".">
+                                        </object>
+                                    </if>
+                                    <else />
+                                    <object width="100%" height="100%" wmode="direct" base="." data="{$gameDetail.swf}"
+                                        type="application/x-shockwave-flash">
+                                        <param value="direct" name="wmode">
+                                        <param value="base" name=".">
+                                    </object>
+                                </notin>
+                            </eq>
+                        </div>
+                        <!-- <iframe frameborder="0" scrolling="no" src=""
+                            width="500px" height="500px" rel="noreferrer"></iframe> -->
+                    </div>
+                </div>
+                <div class="detail-shares">
+                    <div data-app="facebook" data-qid="{$gameDetail.id}" data-pic="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$gameDetail.sort|default='images'}/{$gameDetail.img}"
+                        class="detail-shares-item">
+                        <img src="/Public/static/images/facebook.png" alt="">
+                        Facebook
+                    </div>
+                    <div data-app="twitter" data-qid="{$gameDetail.id}" data-pic="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$gameDetail.sort|default='images'}/{$gameDetail.img}"
+                        class="detail-shares-item">
+                        <img src="/Public/static/images/twitter.png" alt="">
+                        Tweet
+                    </div>
+                    <div data-app="google" data-qid="{$gameDetail.id}" data-pic="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$gameDetail.sort|default='images'}/{$gameDetail.img}"
+                        class="detail-shares-item">
+                        <img src="/Public/static/images/gooegle.png" alt="">
+                        Google+
+                    </div>
+                    <div data-app="link" data-qid="{$gameDetail.id}" data-pic="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$gameDetail.sort|default='images'}/{$gameDetail.img}"
+                        class="applink detail-shares-item">
+                        <img src="/Public/static/images/link.png" alt="">
+                        Copy Link
+                    </div>
+                </div>
+                <div class="howToPlay">
+                    <div class="howToPlay-img">
+                        <h3>How To Play</h3>
+                        <img src="/Public/static/images/caozuo.png" alt="">
+                    </div>
+                    <div class="hwoToPlay-desc">
+                        <h3>游戏介绍</h3>
+                        <p>{$gameDetail.desc}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="games-ads">
+                <script>
+                    google_ad_slot = adConfig['pc-gamev6-160x600-play2'][adChannel];
+                    google_ad_width = 160;
+                    google_ad_height = 600;
+                    try{
+                        document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-8739233621395816"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }catch(e){
+                        console.log(e);
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="youmaylike-warp">
+        <h1>YOU MAY LIKE</h1>
+        <div class="youmaylike">
+            <div class="games-ads"></div>
+            <div class="youmaylike_list">
+                <volist name="gameList" id="vo" offset="0" length="10">
+                    <a href="/{$lang}/game/info/{$vo.seo_name}.html{$utm_source.param}" class="games_list-item" title="{$vo.name}">
+                        <if condition="strstr($vo['img'],'//www')">
+                                <img src="/Public/static/images/gamev6_bg.png" data-src="{$vo.img}">
+                            <else />
+                                <img src="/Public/static/images/gamev6_bg.png" data-src='http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default="images"}/<eq name="vo.feature" value="1">feature_</eq>{$vo.img|addslashes=###}'
+                                alt="">
+                            </if>
+                    </a>
+                </volist>
+            </div>
+            <div class="games-ads"></div>
+        </div>
+    </div>
+   <include file="Pc:footer" />

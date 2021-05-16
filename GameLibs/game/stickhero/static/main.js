@@ -1,0 +1,1 @@
+cc.game.onStart=function(){cc.view.adjustViewPort(true);cc.view.setDesignResolutionSize(640,1136,cc.ResolutionPolicy.FIXED_WIDTH);cc.view.resizeWithBrowserSize(true);cc.LoaderScene.preload(g_resources,function(){cc.director.runScene(new MenuViewScene());},this);};cc.game.run();

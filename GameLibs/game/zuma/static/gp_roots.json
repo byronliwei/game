@@ -1,0 +1,172 @@
+{"frames": [
+
+{
+	"filename": "roots_1.png",
+	"frame": {"x":385,"y":68,"w":57,"h":57},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":5,"w":57,"h":57},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_10.png",
+	"frame": {"x":636,"y":2,"w":60,"h":62},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":3,"w":60,"h":62},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_11.png",
+	"frame": {"x":574,"y":2,"w":60,"h":63},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":2,"w":60,"h":63},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_12.png",
+	"frame": {"x":448,"y":2,"w":61,"h":63},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":2,"w":61,"h":63},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_13.png",
+	"frame": {"x":511,"y":2,"w":61,"h":63},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":2,"w":61,"h":63},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_14.png",
+	"frame": {"x":385,"y":2,"w":61,"h":64},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":1,"w":61,"h":64},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_15.png",
+	"frame": {"x":322,"y":2,"w":61,"h":65},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":1,"w":61,"h":65},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_16.png",
+	"frame": {"x":2,"y":2,"w":62,"h":65},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":1,"w":62,"h":65},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_17.png",
+	"frame": {"x":66,"y":2,"w":62,"h":65},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":1,"w":62,"h":65},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_18.png",
+	"frame": {"x":130,"y":2,"w":62,"h":65},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":1,"w":62,"h":65},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_19.png",
+	"frame": {"x":194,"y":2,"w":62,"h":65},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":1,"w":62,"h":65},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_2.png",
+	"frame": {"x":444,"y":68,"w":57,"h":57},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":5,"w":57,"h":57},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_20.png",
+	"frame": {"x":258,"y":2,"w":62,"h":65},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":1,"w":62,"h":65},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_3.png",
+	"frame": {"x":503,"y":67,"w":57,"h":57},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":5,"w":57,"h":57},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_4.png",
+	"frame": {"x":562,"y":67,"w":57,"h":57},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":5,"w":57,"h":57},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_5.png",
+	"frame": {"x":696,"y":66,"w":57,"h":59},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":4,"w":57,"h":59},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_6.png",
+	"frame": {"x":636,"y":66,"w":58,"h":59},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":4,"w":58,"h":59},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_7.png",
+	"frame": {"x":820,"y":2,"w":59,"h":61},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":3,"w":59,"h":61},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_8.png",
+	"frame": {"x":698,"y":2,"w":59,"h":62},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":3,"w":59,"h":62},
+	"sourceSize": {"w":66,"h":66}
+},
+{
+	"filename": "roots_9.png",
+	"frame": {"x":759,"y":2,"w":59,"h":62},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":3,"w":59,"h":62},
+	"sourceSize": {"w":66,"h":66}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "gp_roots.png",
+	"format": "RGBA8888",
+	"size": {"w":881,"h":127},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:5dc4312e7a38515933b1a7debd129b1e:18d22d7bd530889d49eac75ffb90bd63:9a3466fedbe09ed41daba55cff4fd961$"
+}
+}

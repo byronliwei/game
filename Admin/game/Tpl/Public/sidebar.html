@@ -1,0 +1,37 @@
+
+  <!--Sidebar Start-->
+  <div class="span2">
+  	<div class="well sidebar-nav">
+      <ul class="nav nav-list">
+       <li class="nav-header" style="text-transform:none;">菜单管理</li>
+       <li <if condition="($Think.const.MODULE_NAME eq 'Index') && ($Think.const.ACTION_NAME eq 'releaseList'||$Think.const.ACTION_NAME eq 'releaseDist')&&$Think.get.type neq 'countryGame'">class="active"</if> ><a href="__GROUP__/Index/releaseList">Version List</a></li>
+       <li <if condition="($Think.const.MODULE_NAME eq 'Index') && ($Think.const.ACTION_NAME eq 'gameList')">class="active"</if> ><a href="__GROUP__/Index/gameList">Games List</a></li>
+       <li <if condition="($Think.const.MODULE_NAME eq 'Index') && ($Think.const.ACTION_NAME eq 'gameUpload')">class="active"</if> ><a href="__GROUP__/Index/gameUpload">Games Upload</a></li>
+       <li <if condition="($Think.const.MODULE_NAME eq 'Index') && ($Think.const.ACTION_NAME eq 'gameAdd')">class="active"</if> ><a href="__GROUP__/Index/gameAdd">Game Add</a></li>
+       <li <if condition="($Think.const.MODULE_NAME eq 'Index') && ($Think.const.ACTION_NAME eq 'webGame')">class="active"</if> ><a href="__GROUP__/Index/webGame">Webgame</a></li>
+
+       <li <if condition="($Think.const.MODULE_NAME eq 'Index') && ($Think.const.ACTION_NAME eq 'countryGame'||$Think.get.type eq 'countryGame')">class="active"</if> ><a href="__GROUP__/Index/countryGame">Country Game</a></li>
+
+       <li <if condition="($Think.const.MODULE_NAME eq 'Index') && ($Think.const.ACTION_NAME eq 'ExtGameSet')">class="active"</if> ><a target="_blank" href="__GROUP__/Index/ExtGameSet">ExtGameSet</a></li>
+
+       <li <if condition="($Think.const.MODULE_NAME eq 'Index') && ($Think.const.ACTION_NAME eq 'ExtDataSet')">class="active"</if> ><a href="__GROUP__/Index/ExtDataSet">Ext Data Set</a></li>
+
+       <li><a href="/index.php/game/Index/sideDataApi" target="_blank">SideLeftBar Fresh</a></li>
+
+       <li <if condition="($Think.const.MODULE_NAME eq 'Index') && ($Think.const.ACTION_NAME eq 'tagList')">class="active"</if> ><a href="__GROUP__/Index/tagList">Tag List</a></li>
+
+       <li class="divider"/>
+       <li <if condition="($Think.const.MODULE_NAME eq 'Index') && ($Think.const.ACTION_NAME eq 'searchdemo')">class="active"</if> ><a href="__GROUP__/Search/search">Search Demo</a></li>
+       <li <if condition="($Think.const.MODULE_NAME eq 'Index') && ($Think.const.ACTION_NAME eq 'createindex')">class="active"</if> ><a href="__GROUP__/Search/createindex">Create Index</a></li>
+
+       <li class="divider"/>
+       <li <if condition="($Think.const.MODULE_NAME eq 'Index') && ($Think.const.ACTION_NAME eq 'userList')">class="active"</if> ><a href="__GROUP__/Index/userList">User List</a></li>
+       <li><a href="/timi.php" target="_blank">Timi File Manage</a></li>
+       <li class="divider"/>
+       <li><a href="/Suggestion/survey">CNZZ Analysis</a></li>
+       <li><a href="/Suggestion/index">Google Analysis</a></li>
+     </ul>
+     </div>
+  </div>
+  <!--Sidebar End-->
+

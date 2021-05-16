@@ -1,0 +1,24 @@
+<include file="./Admin/core/Tpl/Public/header.html" />
+<include file="Public:sidebar" />
+<style type="text/css">
+.pic_list{display:block;padding:1px;text-align:center}
+.pic_list:hover{border:solid 1px #31B9FD;padding:0px}
+input{margin-bottom:0px!important;}
+</style>
+  <!--Body Start-->
+  <div class="span10">
+
+    <div align="center" class="container" id="content" style="width:100%;">
+        <div style="text-align:left;margin-bottom:15px;"><b>游戏包解析</b></div>
+        <form action="__APP__/Index/gameUpload" method="post" enctype="multipart/form-data" class="clearfix" id="search_form">
+        <span style="float:left">
+            <input type="hidden" name="type" value="package">
+            <input type="file" class="input-fix" name="file" value=""> &nbsp;&nbsp;&nbsp;
+            <button class="btn btn-success" onclick="if(!$('input[name=file]').val()){alert('请选择要上传的Excel文件！');return;}$('#search_form').submit()" type="button"><i class="icon-search"></i> 上传解析Excel</button> &nbsp;&nbsp;&nbsp;
+        </span>
+        </form>
+    </div>
+
+  </div>
+  <!--Body End-->
+<include file="Public:footer" />

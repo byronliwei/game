@@ -1,0 +1,44 @@
+{"frames": {
+
+"Explosion01.png":
+{
+	"frame": {"x":546,"y":2,"w":136,"h":147},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":43,"y":51,"w":136,"h":147},
+	"sourceSize": {"w":214,"h":227}
+},
+"Explosion02.png":
+{
+	"frame": {"x":402,"y":2,"w":142,"h":147},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":39,"y":41,"w":142,"h":147},
+	"sourceSize": {"w":214,"h":227}
+},
+"Explosion03.png":
+{
+	"frame": {"x":218,"y":2,"w":182,"h":195},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":18,"y":18,"w":182,"h":195},
+	"sourceSize": {"w":214,"h":227}
+},
+"Explosion04.png":
+{
+	"frame": {"x":2,"y":2,"w":214,"h":227},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":214,"h":227},
+	"sourceSize": {"w":214,"h":227}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "eExplosion.png",
+	"format": "RGBA8888",
+	"size": {"w":684,"h":231},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:a4fe562d9fda7b1ccece3e4dcc06bbb6$"
+}
+}

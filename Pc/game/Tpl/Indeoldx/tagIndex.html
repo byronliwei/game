@@ -1,0 +1,86 @@
+<include file="Index:header" />
+<script type="text/javascript">
+    site_config={ 'lang':'{$lang}','cata':'TagIndexPage','type':'{$Think.get.type}' }
+</script>
+<link href="/Public/static/css/tags.css?t={$timestamp}" rel="stylesheet" type="text/css" />
+<link href="/Public/static/css/main.css?t={$timestamp}" rel="stylesheet" /> 
+<style type="text/css">
+.topcata-title{margin-top:50px;margin-bottom: -20px;}
+.tag-item,.tag-item a{display: inline-block;*zoom:1;*display: inline-block;}
+.tag-item a{margin:5px;margin-bottom:8px;padding:0px 15px;background: #073445;height:50px;line-height: 50px;text-decoration: none;border-radius: 6px;font-size: 16px;text-transform: capitalize; color:#9AD1E6;
+-webkit-box-shadow: 0px 12px 7px -9px rgba(34,34,34,1);
+-moz-box-shadow: 0px 12px 7px -9px rgba(34,34,34,1);
+box-shadow:0px 12px 7px -9px rgba(34,34,34,1);
+}
+
+.tag-item a:hover{background: #07475F}
+</style>
+
+
+<include file="Index:nav" />
+<script src="/Public/static/js/jquery.min.js"></script>
+<script src="/Public/static/js/lazyload.js?t=908"></script>
+<div id="main_content" style="visibility: hidden;">
+
+        <div class="topcata-title"><h1>{$lan.nav.tag_list}</h1></div>  
+
+        <div id="thumbsList">
+            <assign name="nav" value="$lan.nav"/>
+            <volist name="tagList" id="vo">
+                <div data-id="{$vo.id}" class="tag-item">
+                    <a href="/{$lang}/game/tag/{$vo.seo_name}.html" target="_blank">{$nav[$vo['name']]|default=$vo['name']}</a>
+                </div>
+            </volist>
+
+            <div class="clear"></div>
+        </div>
+        <div class="clear">
+    </div>
+</div>
+<div class="clear"></div>
+
+
+<include file="Index:footer_bar" />
+
+<include file="Index:footer_insert" />
+
+<script type="text/javascript">
+    function adjustwindow() {
+        var wwidth = $('body').width();
+        var wheight = $(window).height();
+        if (wwidth <= 1024) {
+            $('.morebtn').remove();
+        }
+        var canpt = (wwidth) / 150;
+        var cpt = parseInt(canpt);
+        $('.thumbs_container').width(cpt * 150);
+        $('#thumbsList').width(cpt * 140);
+        var ctpt = parseInt(wheight / 75) - 1;
+        $('.taglist').height(ctpt * 75);
+        $('#header,#main_content').css('visibility', 'visible');
+    }
+    window.onresize = function() {
+        adjustwindow();
+    }
+    adjustwindow();
+    $("img.lazy").show().lazyload({
+        effect: "fadeIn",
+        failure_limit: 10000
+    });
+    var moretagshown = false;
+    function showhidemore() {
+        if (moretagshown == false) {
+            $('.more_tags').fadeIn();
+            var moreleft = $('.morebtn').offset().left;
+            $('.more_tags').css('left', (moreleft - 300) + 'px');
+            moretagshown = true;
+        } else {
+            $('.more_tags').fadeOut();
+            moretagshown = false;
+        }
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<include file="./Admin/core/Tpl/Public/header_notop.html" />
+<style type="text/css">
+.pic_list{display:block;padding:1px;text-align:center}
+.pic_list:hover{border:solid 1px #31B9FD;padding:0px}
+.game_pic{max-width:250px!important;}
+</style>
+  <!--Body Start-->
+  <div class="span12">
+
+	<div align="center" class="container" id="content" style="width:100%;">
+
+		<form id="search_form" class="clearfix" method="post" action="__GROUP__/Index/releaseDicAdd/relid/{$Think.get.relid}">
+		<span style="float:left">
+			<input type="hidden" value="{$Think.get.relid}" name="relid">
+			<input type="text" value="" name="key" class="input-fix" placeholder="游戏标题"> &nbsp;&nbsp;&nbsp;
+			<button type="button" onclick="if(!$('input[name=key]').val()){alert('请输入游戏标题！');return;}$('#search_form').submit()" class="btn btn-success"><i class="icon-search"></i> 搜索</button> &nbsp;&nbsp;&nbsp;
+
+
+			游戏分类:
+			<b>{$Think.get.type}</b>
+			<select style="width:100px;" id="sort-change" name="sort-change" class="input-fix">
+				<option value="">选择类别</option>
+				<option value="">ALL</option>
+				<option value="hot">hot</option>
+				<option value="html5">html5</option>
+				<option value="spiderman">spiderman</option>
+				<option value="ben10">ben10</option>
+				<option value="barbie">barbie</option>
+				<option value="mario">mario</option>
+				<option value="car">car</option>
+				<option value="christmas">christmas</option>
+				<option value="racing">racing</option>
+				<option value="action">action</option>
+				<option value="basketball">basketball</option>
+				<option value="tank">tank</option>
+				<option value="puzzle">puzzle</option>
+				<option value="physics">physics</option>
+				<option value="parking">parking</option>
+				<option value="ninja">ninja</option>
+				<option value="multiplayer">multiplayer</option>
+				<option value="maze">maze</option>
+				<option value="matching">matching</option>
+				<option value="logic">logic</option>
+				<option value="life">life</option>
+				<option value="funny">funny</option>
+				<option value="skill">skill</option>
+				<option value="dress-up">dress-up</option>
+				<option value="cooking">cooking</option>
+				<option value="classic">classic</option>
+				<option value="card">card</option>
+				<option value="board">board</option>
+				<option value="billiards">billiards</option>
+				<option value="bike">bike</option>
+			</select>
+			&nbsp;&nbsp;&nbsp;
+			游戏目录:
+			<b>
+			<?php 
+				foreach ($cataList as $key => $value){
+					if($value['id']==$_GET['relid']){
+						echo $value['release_alias'];
+					}
+				}
+			?>
+			</b>
+			<select style="width:100px;" id="cata-change" name="cata-change" class="input-fix">
+				<option value="">选择游戏目录</option>
+				<option value="">ALL</option>
+				<volist name="cataList" id="vo">
+				<option value="{$vo.id}">{$vo.release_alias}</option>
+				</volist>
+			</select>
+
+		</span>
+		</form>
+
+		<form id="film_form" name="film_form" class="clearfix" method="post" action="__GROUP__/App/releaseAddDia">
+		<input type="hidden" name="relid" value="{$Think.get.relid}">
+		<table id="film-list" class="table table-bordered">
+			<thead>
+				<tr style="background:#f1f1f1">
+					<th colspan="4"><input type="checkbox" class="selectAll" checkname="dataId[]">&nbsp;&nbsp;游戏列表</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+				<volist name="gameList" id="vo" key="k">
+
+				<td style="word-break:break-all;width:25%" dataid="{$vo.id}">
+					<input type="checkbox" value="{$vo.id}" name="dataId[]" value="{$vo.id}">
+					&nbsp;<font <neq name="vo.t" value="">style="text-decoration:line-through;color:red"</neq> >{$vo.name|default='No name'}</font><br>
+					<b>{$vo.sort}</b><br>{$vo.origin}</b><br>
+					<a href="/game/play/{$vo.seo_name}.html" target="_blank"><img class="game_pic" src="javascript:;" data-src="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default='images'}/{$vo.img}"></a>&nbsp;
+
+				</td>
+				<if condition="($k)%4 eq 0">
+				</tr>
+				<tr>
+				</if>
+				</volist>
+				<php>$len=4-(count($diaList)%4);for($i=0;$i<$len;$i++){echo '<td></td>';}</php>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+		<div style="text-align:left;"><button  class="btn btn-success" type="button" onclick="setBackData();"><i class=" icon-chevron-right"></i> 加入版本</button></div>
+		<div class="pagination">
+			{$pagination} &nbsp;
+			<input type="text" name="num" id="num" class="input-fix span1"/>
+			<button class="btn btn-success" onclick="jumpNum()" type="button"><i class="icon"></i>跳转</button>
+		</div>
+	</div>
+
+  </div>
+  <!--Body End-->
+
+<script type="text/javascript">
+
+	function getItemData(obj){
+		var item=obj.closest('td');
+		var data={
+			'url':'http://www.thehotgames.com'+item.find('a').attr('href')+'?info=1&utm=ext',
+			'img':item.find('img').attr('src'),
+			'title':item.find('font').text()
+		}
+		return data;
+	}
+
+	function setBackData(){
+		if(!$('input[name=\'dataId[]\']:checked').size()){alert('请选择至少一个游戏！');return;}
+
+	var origin = artDialog.open.origin;
+	var extData= art.dialog.data('extData');
+	var extIndex=art.dialog.data('extIndex');
+	var handleData=extData[extIndex-1];
+
+	$('input[name=\'dataId[]\']:checked').each(function(elm,i){
+		var _this=$(this);
+		var data=getItemData(_this);
+		handleData['data'].unshift(data);
+		console.log(data);
+	})
+
+	console.log(handleData);
+	console.log(extData);
+	origin.extDataAddReset();
+	//var input = origin.document.getElementById('demoInput04-3');
+
+	art.dialog.close();
+
+		
+	}
+
+	$(function(){
+
+		setTimeout(function(){
+			$('.game_pic').each(function(){
+				var _this=$(this);
+				_this.attr('src',_this.attr('data-src'));
+			})
+		},500);
+
+		$(".selectAll").click(function(){
+				var ck=false;
+				if($(this).is(":checked")){
+					ck=true;
+				}
+				$("input[name='dataId[]']").attr("checked",ck);
+		})
+
+		$("#sort-change").change(function(){
+			window.location.href="/admin.php/Index/ExtDataAdd?type="+$(this).val();
+		})
+		$("#cata-change").change(function(){
+			window.location.href="/admin.php/Index/ExtDataAdd?rid="+$(this).val();
+		})
+
+
+	})
+</script>
+<include file="Public:footer" />

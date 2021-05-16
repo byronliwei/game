@@ -1,0 +1,26 @@
+{
+	"---- Các bộ phận chung ----":"",
+	"home":"Home",
+	"recently_played":"Được chơi gần đây",
+	"foot_intro":"TheHotGames.Com là nền tảng ưa thích của bạn bốc lửa tài nguyên trò chơi flash , chúng tôi chỉ có thêm các trò chơi phổ biến nhất trên Internet, do đó bạn sẽ không bao giờ cảm thấy mệt mỏi của loại trò chơi của chúng tôi bao gồm cả trò chơi bắn súng , trò chơi đua xe , trò chơi chiến lược , câu đố trò chơi, vv Bạn không cần phải trả tiền hoặc thậm chí tải về bất cứ điều gì . chỉ cần nhấp vào và chơi trò chơi Flash yêu thích của bạn miễn phí . thưởng thức nó!",
+	"privacy_policy":"Chính sách bảo mật",
+	"contact":"Liên hệ",
+	"play_more_games":"Thêm Trò chơi",
+
+	"---- Trang chủ Nội dung ----":"",
+	"index": {
+		"title":"trò chơi phổ biến nhất trên thế giới - TheHotGames.Com",
+		"meta": {
+			"description":"Chơi phổ biến trò chơi trực tuyến miễn phí trong TheHotGames.com , bao gồm cả trò chơi chữ, trò chơi đua xe , trò chơi thẻ , trò chơi câu đố và trò chơi nhiều hơn ",
+			"keywords":"Hot , trò chơi, Volkswagen , thể thao , trò chơi yêu thích của bạn , trò chơi, miễn phí, trực tuyến , flash, chơi , arcade, puzzle, chiến lược , quốc phòng, bắn súng , nền tảng , hành động , phiêu lưu, nhập vai , thể thao , đua xe, tháp , trò chơi Mario , Barbie trò chơi."
+		}
+	},
+
+	"play": {
+		"title":"chơi các trò chơi phổ biến [ # N] - TheHotGames.Com",
+		"meta": {
+			"description":"Chơi trò chơi phổ biến [ # N] trong TheHotGames.com , bao gồm cả trò chơi chữ, trò chơi đua xe , trò chơi thẻ , trò chơi câu đố và trò chơi nhiều hơn ",
+			"keywords":"Hot , trò chơi, [ # N] , miễn phí, phổ biến , trò chơi yêu thích của bạn , miễn phí, trực tuyến , flash, chơi , trung tâm mua sắm , câu đố, chiến lược , quốc phòng, trò chơi bắn , nền tảng hành động , phiêu lưu, nhập vai , thể thao , đua xe, tháp , Mario trò chơi, trò chơi Barbie"
+		}
+	}
+}

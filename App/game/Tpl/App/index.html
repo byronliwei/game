@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <base target="_self">
+  <title>本周票房</title>
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/app/qzone/resource/reset.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/app/qzone/resource/app_index.css">
+  <script type="text/javascript">
+    var config={
+        id:"",
+        week:"{$rel}",
+        rel:"5",
+        openid:"",
+        openkey:"",
+        pf:"",
+        pfkey:"",
+        ajaxurl:"{$Think.config.AJAX_URL}"
+    };
+</script>
+</head>
+
+<body>
+  <div id="mainToolbar" class="topbar">
+    <div class="topbarcontainer">
+      <div id="logoInfo">
+        <div class="logo"></div>
+      </div>
+      <h1 class="number">已经有<em id="usersNum"></em>人观看过<em id="movieNum"></em>部票房电影</h1>
+      <a href="javascript:;" class="invite">>>邀请好友</a>
+    </div>
+  </div>
+  <div class="notice_Box" monkey="today_commend">
+    <h2>今日抢先版</h2>
+    <div class="qxbBox" id="qxbBox">
+    </div>
+  </div>
+  <div class="container clearfix">    
+    <ul id="box_office_list" class="box-office-list" style="margin-top:0px;list-style-type:none; text-align:left;">
+      <volist name="base" id="vo" key="k">
+      <li class="box-office-{$k-1}">
+        <div class="box-office-detail">
+          <div class="box-office-poster" monkey="dy{$k-1}">
+            <div class="box-office-rank box-office-red">
+              <span class="box-office-rank-num">{$k}</span>
+            </div>
+            <a>
+              <div>
+                <img alt="{$vo.title}" src="/Uploads/poster/poster_{$vo.id_db}_s.jpg"></div>
+            </a>
+            <a class="box-office-playmask box-office-playmask-control" style="display: none;" href="/index.php/App/qzone?app={$app}&rel={$rel}&mid={$vo.movie_id}"></a>
+            <div class="box-office-summary-group box-office-playmask-control" style="display: none;">
+              <p class="box-office-summary moviename">
+                <a href="/index.php/App/qzone?app={$app}&rel={$rel}&mid={$vo.movie_id}">{$vo.title}</a>
+              </p>
+              <a style="text-decoration:none;" href="/index.php/App/qzone?app={$app}&rel={$rel}&mid={$vo.movie_id}">
+                <p class="box-office-summary">类型：{$vo.genres}</p>
+              </a>
+              <a style="text-decoration:none;" href="/index.php/App/qzone?app={$app}&rel={$rel}&mid={$vo.movie_id}">
+                <p class="box-office-summary">主演： {$vo.casts}</p>
+              </a>
+              <a style="text-decoration:none;" href="/index.php/App/qzone?app={$app}&rel={$rel}&mid={$vo.movie_id}">
+                <p class="box-office-summary pfang">本周票房：<span class="count">￥{$vo.box_office}W</span></p>
+              </a>
+            </div>
+            <div class="box-office-viewdetail box-office-playmask-control" style="display: none;">
+              <a ad_type="kantu" href="/index.php/App/qzone?app={$app}&rel={$rel}&mid={$vo.movie_id}#tab=dp" class="btn seepic" title="看图" alt="看图">看图</a>
+              <a ad_type="kanpian" href="/index.php/App/qzone?app={$app}&rel={$rel}&mid={$vo.movie_id}#tab=dv" class="btn watch" title="看片" alt="看片">看片</a>
+              <a ad_type="yinping" href="/index.php/App/qzone?app={$app}&rel={$rel}&mid={$vo.movie_id}#tab=dc" class="btn review" title="影评" alt="影评">影评</a>
+              <a ad_type="jianjie" href="/index.php/App/qzone?app={$app}&rel={$rel}&mid={$vo.movie_id}#tab=dd" class="btn introduction" title="简介" alt="简介">简介</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      </volist>
+    </ul>
+  </div>
+  <div class="services">
+    <p>
+      此应用由夏林威开发，若使用中遇到问题，请联系客服QQ：229147492
+      <br>图片和视频内容来源网络，如果侵犯了您的版权，请联系我们，本站将在3个工作日内删除</p>
+  </div>
+  <script type="text/javascript" charset="utf-8" src="http://fusion.qq.com/fusion_loader?appid=1101080756&platform=qzone"></script>
+  <script src="__PUBLIC__/app/qzone/resource/jquery.js"></script>
+  <script src="__PUBLIC__/app/qzone/resource/public.js"></script>
+  <script src="__PUBLIC__/app/qzone/resource/index.js"></script>
+
+</body>
+</html>

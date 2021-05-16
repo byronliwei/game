@@ -1,0 +1,64 @@
+<include file="./Admin/core/Tpl/Public/header.html" />
+<include file="Public:sidebar" />
+  
+  <!--Body Start-->
+  <div class="span10">
+			
+	<div align="center" class="container" id="content" style="width:100%;">
+		
+		<h4 style="text-align:left;clear:both;font-family: '微软雅黑';font-size: 18px;padding-bottom:10px">用户统计：<span class="label label-info" style="font-size:14px;">总注册量：<?php echo count($userList);?></h4>							
+		<table id="film-list" class="table table-bordered">
+			<thead>
+				<tr>
+					<th>用户Id</th>
+					<th>用户名</th>
+					<th>名字</th>
+					<th>邮箱</th>
+
+					<th>IP位置</th>
+					<th>Detail (双击展开)</th>
+					<th>入库时间</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="userList" id="vo">
+				<tr dataid="{$vo.id}">
+					<td style="word-break:break-all; width:120px;">{$vo.uid}</td>
+					<td style="word-break:break-all; width:80px;">{$vo.uname}</td>
+					<td style="word-break:break-all; width:80px;">{$vo.name}&nbsp;</td>
+					<td style="word-break:break-all; width:150px;">{$vo.email}</td>
+					<td style="word-break:break-all; width:200px;">{$vo.location}<br>{$vo.ip}</td>
+					<td style="word-break:break-all; width:200px;"><?php $detail=json_decode($userList[$i]['detail'],true);if($detail){dump($detail);}?></td>
+					<td style="word-break:break-all; width:100px;">{$vo.time|date="Y-m-d H:i",###}</td>
+				</tr>
+				</volist>
+			</tbody>
+		</table>
+		<div style="text-align:left;"><a  class="btn btn-danger batch-del"><i class="icon  icon-minus"></i>批量删除</a></div>
+		<div class="pagination"> {$pagination} </div>
+	</div> 
+
+  </div>
+  <!--Body End-->
+ 
+<style type="text/css">
+td pre{
+	height:100px;overflow:hidden;
+	
+}
+</style>
+
+<script type="text/javascript">
+	$('pre').dblclick(function(){
+		var _this=$(this),
+			height=_this.height();
+	
+		if(height>100){
+			_this.css('height','100px');
+		}else{
+			_this.css('height','auto');
+		}
+	})
+</script>
+ 
+<include file="./Admin/core/Tpl/Public/footer.html" />

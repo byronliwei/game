@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+<title>cute fruits</title>
+<meta name="keywords" content="cute fruits,cute fruits html5 game" />
+<meta name="description" content="cute fruits,cute fruits html5 game" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1, IE=edge">
+<meta name="format-detection" content="telephone=no">
+<meta name="HandheldFriendly" content="true" />
+<meta name="robots" content="noindex,nofollow" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-mobile-web-app-title" content="Phaser App">
+<meta name='viewport' content='width = device-width, initial-scale=1, maximum-scale=1.01' />
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="57x57" href="icons/app_icon_57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="icons/app_icon_60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="icons/app_icon_72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="icons/app_icon_76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="icons/app_icon_114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="icons/app_icon_120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="icons/app_icon_144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="icons/app_icon_152x152.png">
+<link rel="apple-touch-icon" sizes="256x256" href="icons/app_icon_256x256.png">
+<link rel="apple-touch-icon" sizes="512x512" href="icons/app_icon_512x512.png">
+<link rel="stylesheet" href="static/stylesheet.css" type="text/css" charset="utf-8" />
+<script type='text/javascript' src='static/game.min.js'></script>
+<script type='text/javascript' src='static/C2D.js'></script>
+<script type="text/javascript" src="static/game.js"></script>
+<style>
+#spilgames-splash-screen{
+width: 100%;
+height: 100%;
+background: url('static/Splash_Image_A10.png') top center no-repeat; /* Change "A10" to "GGG" or "Zibbo" based on the brand your game matches */
+position: absolute;
+z-index: 10000; /* Make sure its on top of the game */
+background-size: 90%;
+background-color:#3890ae; /* Change to #FFF for GGG or Zibbo branded games */
+}
+.spilgames-splash-screen-gone{
+display:none !important;
+}
+</style>
+<script type='text/javascript'>
+//========================================
+var $metaviewport = document.querySelector("meta[name=viewport]"), ua = navigator.userAgent,metaViewPortSetting;
+if ($metaviewport) {
+if (!!ua.match(/iPhone|iPod|Tizen/i))
+metaViewPortSetting = 'width=device-width, user-scalable=0, minimum-scale=1.0, initial-scale=0.5, maximum-scale=0.5, minimal-ui';
+else if (!!ua.match(/iPad/i))
+metaViewPortSetting = 'width=device-width, user-scalable=0, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0, minimal-ui';
+else if (!!ua.match(/Android/i))
+metaViewPortSetting = 'width=device-width, initial-scale=1, maximum-scale=1.01';
+$metaviewport.setAttribute('content', metaViewPortSetting);
+}
+//========================================
+var game = null;
+var SpilData = {
+id: '576742227280293583' // You receive this value from Spil Games
+};
+GameAPI.loadAPI (function (apiInstance) {
+// The API is ready for use.
+//if (window.console && window.console.log) {
+//console.log('GameAPI version ' + apiInstance.version + ' loaded!');
+//}
+apiInstance.Branding.displaySplashScreen(function(){
+// Retrieves the logo from Spil
+sponsorLogo = apiInstance.Branding.getLogo();
+// adds a more games button to the screen
+urlMoreGames = apiInstance.Branding.getLink('more_games');
+//START THE GAME
+//Create Phaser Object
+if(Phaser.Device.isAndroidStockBrowser()){
+   game = new Phaser.Game(480, 720, Phaser.CANVAS, '');
+} else {
+   game = new Phaser.Game(480, 720, Phaser.AUTO, '');
+}
+//Antialias
+game.antialias = true;
+//Init State
+game.state.add('Boot', Main.boot);
+game.state.add('Preloader', Main.preloader);
+game.state.add('Title', Main.title);
+game.state.add('StageSelect', Main.stageselect);
+game.state.add('Game', Main.game);
+//Start
+game.state.start('Boot');
+});
+}, SpilData);
+</script>
+</head>
+<body>
+<div id="spilgames-splash-screen" class="spilgames-splash-screen-gone"></div>
+<div id="game"></div>
+<div id="orientation"></div>
+<script type="text/javascript" src="../../static/js/game.as.js"></script>
+<link href="../../static/css/game.common.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../static/js/zep.min.js"></script>
+<script type="text/javascript" src="../../static/js/game.common.js"></script>
+<script type="text/javascript" src="../../static/js/game.analytics.js"></script>
+</body>
+</html>

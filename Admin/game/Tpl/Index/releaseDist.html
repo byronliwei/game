@@ -1,0 +1,170 @@
+<include file="./Admin/core/Tpl/Public/header.html" />
+<include file="Public:sidebar" />
+<style type="text/css">
+.pic_list{display:block;padding:1px;text-align:center}
+.pic_list:hover{border:solid 1px #31B9FD;padding:0px}
+.game_pic{max-width:180px;float:left;margin-right:5px;}
+</style>
+  <!--Body Start-->
+  <div class="span10">
+
+	<div align="center" class="container" id="content" style="width:100%;">
+
+		<span style="float:left;margin-bottom:15px;">
+			<button onclick="art.dialog.open('__GROUP__/Index/releaseDicAdd/relid/{$Think.get.relid}', {id:'pop_add',title: '选择游戏入版本',width:'100%', height:550,lock: true,resize:true});" class="btn btn-success"><i class="icon  icon-plus"></i> Add Games</button>
+		</span>
+		<h4 style="text-align:left;clear:both;font-family: '微软雅黑';font-size: 18px;">Games in to the version：</h4>
+		<form id="order_form" class="clearfix" method="post" action="__GROUP__/App/releasePicOrder">
+		<table id="film-list" class="table table-bordered">
+			<thead>
+				<tr>
+					<th><input type="checkbox" class="selectAll" checkname="dataId[]">&nbsp;&nbsp;Data ID</th>
+					<th>Order  <small>(Order)</small></th>
+					<th>Name</th>
+					<th>Desc</th>
+					<th><input type="checkbox" class="selectAll" checkname="hotcheck[]"> Hot / <input type="checkbox" class="selectAll" checkname="newcheck[]"> New / <input type="checkbox" class="selectAll" checkname="featurecheck[]"> Feature</th>
+					<th>Db Time</th>
+					<th>Handle</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="topList" id="vo">
+				<tr dataid="{$vo.t}">
+					<td style="word-break:break-all; width:60px;"><input type="hidden" value="{$vo.id}" name="orderId[]"><input type="checkbox" value="{$vo.id}" name="dataId[]">&nbsp;&nbsp;{$vo.t}</td>
+					<td style="word-break:break-all; width:60px;"><input type="text" value="{$vo.order}" class="span10" name="order[]"></td>
+					<td style="word-break:break-all; width:100px;"><a href="/game/play/{$vo.seo_name}.html" target="_blank" title="{$vo.name}">{$vo.name}</a><br><b>SORT</b>:{$vo.sort}<br><b>Origin</b>:{$vo.origin}
+
+					</td>
+					<present name="vo.r">
+					<td id="td_{$vo.t}" style="word-break:break-all;background-color:#f2dede;">
+					<else />
+					<td style="word-break:break-all;">
+					</present>
+						<p class="cls">
+							width:{$vo.th_width}
+							height:{$vo.th_height}
+							<a href="javascript:void(0);" onclick="replaceImage({$vo.t})">替换图片</a>
+						</p>
+						<if condition="$vo.sort eq ''">
+						<img id="img_{$vo.t}" class="game_pic" src="http://image.gamez6.com/games/images/{$vo.img}">
+						<else />
+						<img id="img_{$vo.t}" class="game_pic" src="http://image.gamez6.com/games/{$vo.sort}/{$vo.img}">
+						</if>
+						{$vo.desc|mb_substr=0,80,'utf8'}
+					</td>
+					<td style="word-break:break-all; width:120px;">
+						<input type="hidden" name="hot[]" value="{$vo.hot}">
+						<input class="typecheck" name="hotcheck[]"  <eq name="vo.hot" value="1">checked="checked"</eq> type="checkbox">&nbsp;&nbsp;HOT
+						<input type="hidden" name="new[]" value="{$vo.new}">
+						<input class="typecheck" name="newcheck[]" <eq name="vo.new" value="1">checked="checked"</eq> type="checkbox">&nbsp;&nbsp;NEW&nbsp;&nbsp;
+
+						<input type="hidden" name="feature[]" value="{$vo.feature}">
+						<input class="typecheck" name="featurecheck[]" <eq name="vo.feature" value="1">checked="checked"</eq> type="checkbox">&nbsp;&nbsp;Fearture&nbsp;&nbsp;
+					</td>
+					<td style="word-break:break-all; width:100px;">{$vo.time|date="Y-m-d H:i",###}</td>
+					<td style="word-break:break-all; width:180px;">
+						<a onclick="gameEdit(this);" href="javascript:void(0);">Edit</a>
+						<button type="button" class="btn btn-info" onclick="editTag({$vo.t})">Tag</button>
+						<a class="btn"  onclick="if(confirm('确定删除？')){ location.href='__GROUP__/App/releaseDiaDel/delid/{$vo.id}'; }" href="javascript:;">Del</a>
+					</td>
+				</tr>
+				</volist>
+			</tbody>
+		</table>
+		<div style="text-align:left;">
+			<a  class="btn btn-danger batch-del" onclick="if(confirm('Are you sure to del these?')){batchDel(this);}"><i class="icon  icon-minus"></i>Batch Del</a>
+			<button type="submit" class="btn btn-primary">Save Changes</button>
+		</div>
+		</form>
+
+		<div class="pagination">每页{$pageLen} 共{$pagination} &nbsp;</div>
+	</div>
+
+  </div>
+  <!--Body End-->
+<script type="text/javascript">
+	function batchDel(obj){
+		var _this=$(obj),
+		batchCheck=_this.hasClass("batch-del");
+
+		if(batchCheck){
+			var str=[],
+			_list=$("input[name='dataId[]']:checked");
+			_parent=_list.closest("tr");
+			$.each(_list,function(){
+				str.push($(this).val());
+			})
+			var dataId=str.join(",");
+
+		}else{
+			var _parent=_this.closest("tr"),
+				dataId=_parent.attr("dataId");
+		}
+
+		$.post("__GROUP__/App/releaseDiaDel",{"dataId":dataId,'type':'batch'},function(msg){
+			if(msg.status=="1"){
+				alert('删除成功！');
+				window.location.reload();
+				//_parent.fadeOut();
+			}else{
+				alert("删除失败，请稍后重试！");
+			}
+		})
+	}
+
+	function editTag(id){
+		art.dialog.open('__GROUP__/Index/tagEdit/id/'+id, {id:'pop_tag',title: 'Tag编辑',width:800, height:500,lock: true,resize:true});
+		return;
+
+	}
+
+	function replaceImage(id) {
+		art.dialog.open(
+			'__GROUP__/Index/replaceImage/id/'+id,
+			{
+				id:'pop_replaceimage',
+				title: '替换图片',
+				width:840,
+				height:580,
+				lock: true,
+				resize:true,
+				close: function() {
+					var img = $('#img_' + id);
+					var src = img.attr('src');
+					img.load(function(){
+						var $this = $(this);
+						if ($this.width() == 150 && $this.height() == 150) {
+							$('#td_' + id).removeAttr('style');
+						}
+					});
+					img.attr('src', src + '?' + Math.random());
+				}
+			}
+		);
+		return;
+	}
+
+	$(function(){
+		$("input[name='dataId[]']").attr('checked',false);
+
+		$(".selectAll").click(function(){
+				var ck=false;
+				var checkname=$(this).attr('checkname');
+				if($(this).is(":checked")){
+					ck=true;
+				}
+				$("input[name='"+checkname+"']").attr("checked",ck);
+		})
+
+		$('.typecheck').click(function(){
+			var _this=$(this),
+				check=_this.attr("checked");
+			if(check=="checked"){
+				_this.prev('input').val(1);
+			}else{
+				_this.prev('input').val(0);
+			}
+		})
+	})
+</script>
+<include file="Public:footer" />

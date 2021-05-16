@@ -1,0 +1,52 @@
+{"frames": [
+
+{
+	"filename": "blue_round_hilight.png",
+	"frame": {"x":129,"y":80,"w":60,"h":30},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":60,"h":30},
+	"sourceSize": {"w":60,"h":30}
+},
+{
+	"filename": "orb-slinger-glow.png",
+	"frame": {"x":92,"y":130,"w":86,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":86,"h":76},
+	"sourceSize": {"w":90,"h":76}
+},
+{
+	"filename": "orb-slinger-pad.png",
+	"frame": {"x":2,"y":2,"w":125,"h":126},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":125,"h":126},
+	"sourceSize": {"w":125,"h":128}
+},
+{
+	"filename": "orb-slinger-shadow.png",
+	"frame": {"x":2,"y":130,"w":88,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":88,"h":76},
+	"sourceSize": {"w":90,"h":76}
+},
+{
+	"filename": "orb-slinger.png",
+	"frame": {"x":129,"y":2,"w":86,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":86,"h":76},
+	"sourceSize": {"w":90,"h":76}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "gp_slinger.png",
+	"format": "RGBA8888",
+	"size": {"w":217,"h":208},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:b9ad67a2d8b991af24a80cedcaf73dd8:669cb409c2b6c7834c23f304fa56051a:666eb981b430f6e2395c4ba3aa0f5122$"
+}
+}

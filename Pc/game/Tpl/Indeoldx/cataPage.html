@@ -1,0 +1,27 @@
+<?php
+$page=$_GET['page'];
+$lan=$_GET['lang'];
+if(!$lan){
+	$lan=$_SESSION['lang'];
+}
+$str="";
+$str.='<a target="_blank" href="http://bigfarm.thehotgames.com?f=main" class="gmpage'.$page.'"><img class="lazy" src="'.$domain.'/Public/static/images/empty.gif" data-original="'.$domain.'/Public/webgame/bigfarm_300x300.gif" alt="GoodGame BigFarm"><span title="GoodGame BigFarm">GoodGame BigFarm</span></a>';
+//$str.='<a target="_blank" href="http://empire.thehotgames.com?f=main" class="gmpage'.$page.'"><img class="lazy" src="'.$domain.'/Public/static/images/empty.gif" data-original="'.$domain.'/Public/images/empire.jpg" alt="GoodGame Empire"><span title="GoodGame Empire">GoodGame Empire</span></a>';
+$str.='<a target="_blank" href="http://www.thehotgames.com/webgames/poker/index.html?f=webgame" class="gmpage'.$page.'"><img class="lazy" src="'.$domain.'/Public/static/images/empty.gif" data-original="'.$domain.'/Public/images/poker.jpg" alt="GoodGame Empire"><span title="GoodGame Poker">GoodGame Poker</span></a>';
+
+
+
+
+
+
+for($i=0,$len=count($list);$i<$len;$i++){
+    $data=$list[$i];
+    if(!$data['seo_name']){continue;}
+    $str.='<a target="_blank" href="'.$domain.'/'.$lan.'/game/play/'.$data['seo_name'].'.html" class="gmpage'.$page.'"><img class="lazy" src="'.$domain.'/Public/static/images/empty.gif" data-original="http://image'.rand(1,4).'.thehotgames.com/games/'.($data['sort']?$data['sort']:'images').'/'.$data['img'].'" alt="'.$data['name'].'"><span  title="'.$data['name'].'">'.$data['name'].'</span></a>';
+}
+$arr=array();
+$arr['html']=$str;
+
+header('Content-Type: application/json');
+echo json_encode($arr);
+?>

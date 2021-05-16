@@ -1,0 +1,44 @@
+<include file="./Admin/core/Tpl/Public/header.html" />
+<include file="Public:sidebar" />
+<style type="text/css">
+.pic_list{display:block;padding:1px;}
+.pic_list:hover{border:solid 1px #31B9FD;padding:0px}
+.game_pic{width:80px;float:left;margin-right:5px;}
+</style>  
+  <!--Body Start-->
+  <div class="span10">
+		
+	<div align="center" class="container" id="content" style="width:100%;">
+		
+		<span style="float:left;text-align:left;">
+			<h4>游戏解析详情：</h4>
+		</span>
+		
+		<table id="film-list" class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Name/游戏名称</th>
+					<th>Desc/游戏描述</th>
+					<th>Property/游戏属性</th>
+					<th>Origin/游戏来源</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="gameList" id="vo">
+				<tr dataid="{$vo.id}">
+					<td style="word-break:break-all; width:150px;"><a href="/game/play/{$vo.seo_name}.html" target="_blank" title="{$vo.name}">{$vo.name}</a><br><b>SORT</b>:{$vo.sort}<br><b>seo_name</b>:{$vo.seo_name}</td>
+					<td style="word-break:break-all; width:400px;"><img class="game_pic" src="http://image.gamev6.com/games/{$vo.sort}/{$vo.img}"/>{$vo.desc|mb_substr=0,100,'utf8'}</td>
+					<td><b>image</b>:{$vo.img}<br><b>swf</b>:{$vo.swf}<br><b>width</b>:{$vo.width}<br><b>height</b>:{$vo.height}</td>
+					<td style="word-break:break-all; width:150px;">{$vo.origin}</td>
+				</tr>
+				</volist>
+			</tbody>
+		</table>
+		<div style="text-align:left;"><a  class="btn btn-primary" href="?type=save">提交保存</a></div>
+
+	</div> 
+
+  </div>
+  <!--Body End-->
+  
+<include file="./Admin/core/Tpl/Public/footer.html" />

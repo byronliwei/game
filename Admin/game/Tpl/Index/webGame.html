@@ -1,0 +1,145 @@
+<include file="./Admin/core/Tpl/Public/header.html" />
+<include file="Public:sidebar" />
+<style type="text/css">
+.pic_list{display:block;padding:1px;}
+.pic_list:hover{border:solid 1px #31B9FD;padding:0px}
+.game_pic{width:80px;float:left;margin-right:5px;}
+</style>
+  <!--Body Start-->
+  <div class="span10">
+
+	<div align="center" class="container" id="content" style="width:100%;">
+
+		<span style="float:left;text-align:left;margin-bottom:10px;">
+			<button type="button" onclick="webGameAdd();" class="btn btn-success"><i class="icon-plus"></i> Add</button>
+		</span>
+
+		<table id="film-list" class="table table-bordered">
+			<thead>
+				<tr>
+					<th><input type="checkbox" class="selectAll">&nbsp;&nbsp;ID</th>
+					<th>Name</th>
+					<th>Desc</th>
+					<th>Property</th>
+					<th>Origin/Time</th>
+					<th>Handle</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="gameList" id="vo">
+				<tr dataid="{$vo.id}">
+					<td style="word-break:break-all; width:80px;"><input type="checkbox" value="{$vo.id}" name="dataId">&nbsp;&nbsp;{$vo.id}</td>
+					<td style="word-break:break-all; width:150px;"><a href="/webgame/{$vo.seo_name}.html" target="_blank" title="{$vo.name}">{$vo.name}</a><br><b>SORT</b>:{$vo.sort}<br>
+					<b>TYPE</b>:{$vo.3d_type}
+					<eq name="vo.3d_type" value="direct"><br><b class="label label-info">&nbsp;直链跳转&nbsp;</b></eq>
+					<br>
+					<b>Postion</b>:{$vo.pos}</td>
+					<present name="vo.r">
+					<td id="td_{$vo.id}" style="background-color:#f2dede;">
+					<else />
+					<td id="td_{$vo.id}">
+					</present>
+						<p class="cls">
+							width:{$vo.th_width}
+							height:{$vo.th_height}
+							<a href="javascript:void(0);" onclick="replaceImage({$vo.id})">替换图片</a>
+						</p>
+						<if condition="$vo.sort eq ''">
+						<img id="img_{$vo.id}" class="game_pic" src="/Uploads/games/images/{$vo.img}">
+						<else />
+						<img id="img_{$vo.id}" class="game_pic" src="/Uploads/games/{$vo.sort}/{$vo.img}">
+						</if>
+						{$vo.desc|mb_substr=0,100,'utf8'}
+					</td>
+					<td style="word-break:break-all; width:200px;">
+						<b>image</b>:{$vo.img}<br>
+						<b>swf</b>:<br>
+						<foreach name="vo.swf" item="sub" >
+						{$key}=><a href="{$sub}" target="_blank">{$sub}</a><br>
+						</foreach>
+						<b>width</b>:{$vo.width|default="100%"}<br><b>min-height</b>:{$vo.height}
+
+					</td>
+					<td>{$vo.origin}<br>{$vo.time|date="Y-m-d H:i",###}</td>
+					<td style="word-break:break-all; width:100px;">
+						<a onclick="editWebgame({$vo.id});" href="javascript:void(0);">Edit</a>
+						<a href="javascript:;" onclick="if(confirm('删除后不可恢复，确认删除？')){ location.href='__APP__/Index/gameDel?id={$vo.id}'; }">Del</a>
+					</td>
+				</tr>
+				</volist>
+			</tbody>
+		</table>
+		<div style="text-align:left;"><a  class="btn btn-danger batch-del"><i class="icon  icon-minus"></i>Batch Del</a></div>
+		<div class="pagination">
+			{$pagination} &nbsp;
+			<input type="text" name="num" id="num" class="input-fix span1"/>
+			<button class="btn btn-success" onclick="jumpNum()" type="button"><i class="icon"></i>Go</button>
+		</div>
+	</div>
+
+  </div>
+  <!--Body End-->
+  <script type="text/javascript">
+  	function webGameAdd(id) {
+		art.dialog.open(
+			'__GROUP__/Index/webGameAdd',
+			{
+				id:'webGameAdd',
+				title: 'Webgame添加',
+				width:840,
+				height:580,
+				lock: true,
+				resize:true,
+				close: function() {
+					var win = art.dialog.open.origin;win.location.reload();
+				}
+			}
+		);
+		return;
+	}
+	function editWebgame(id){
+		art.dialog.open(
+			'__GROUP__/Index/webGameEdit?id='+id,
+			{
+				id:'webGameAdd',
+				title: 'Webgame编辑',
+				width:840,
+				height:580,
+				lock: true,
+				resize:true,
+				close: function() {
+					var win = art.dialog.open.origin;win.location.reload();
+				}
+			}
+		);
+		return;
+	}
+
+  	function replaceImage(id) {
+		art.dialog.open(
+			'__GROUP__/Index/replaceImage/id/'+id,
+			{
+				id:'pop_replaceimage',
+				title: '替换图片',
+				width:840,
+				height:580,
+				lock: true,
+				resize:true,
+				close: function() {
+					var img = $('#img_' + id);
+					var src = img.attr('src');
+					img.load(function(){
+						var $this = $(this);
+						if ($this.width() == 150 && $this.height() == 150) {
+							$('#td_' + id).removeAttr('style');
+						}
+					});
+					img.attr('src', src + '?' + Math.random());
+				}
+			}
+		);
+		return;
+	}
+
+  </script>
+<include file="./Admin/core/Tpl/Public/footer.html" />

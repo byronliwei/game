@@ -1,0 +1,108 @@
+{"frames": [
+
+{
+	"filename": "button-medium-idle.png",
+	"frame": {"x":2,"y":375,"w":153,"h":51},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":153,"h":51},
+	"sourceSize": {"w":153,"h":51}
+},
+{
+	"filename": "button-medium-idle_press.png",
+	"frame": {"x":157,"y":375,"w":151,"h":47},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":3,"w":151,"h":47},
+	"sourceSize": {"w":153,"h":51}
+},
+{
+	"filename": "button-small-idle.png",
+	"frame": {"x":2,"y":428,"w":53,"h":51},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":53,"h":51},
+	"sourceSize": {"w":53,"h":51}
+},
+{
+	"filename": "button_fx_off.png",
+	"frame": {"x":57,"y":428,"w":53,"h":51},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":53,"h":51},
+	"sourceSize": {"w":53,"h":51}
+},
+{
+	"filename": "button_fx_off_press.png",
+	"frame": {"x":261,"y":104,"w":51,"h":48},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":3,"w":51,"h":48},
+	"sourceSize": {"w":53,"h":51}
+},
+{
+	"filename": "button_fx_on.png",
+	"frame": {"x":112,"y":428,"w":53,"h":51},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":53,"h":51},
+	"sourceSize": {"w":53,"h":51}
+},
+{
+	"filename": "button_fx_on_press.png",
+	"frame": {"x":261,"y":2,"w":51,"h":49},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":2,"w":51,"h":49},
+	"sourceSize": {"w":53,"h":51}
+},
+{
+	"filename": "button_music_off.png",
+	"frame": {"x":167,"y":424,"w":53,"h":51},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":53,"h":51},
+	"sourceSize": {"w":53,"h":51}
+},
+{
+	"filename": "button_music_off_press.png",
+	"frame": {"x":261,"y":154,"w":51,"h":48},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":3,"w":51,"h":48},
+	"sourceSize": {"w":53,"h":51}
+},
+{
+	"filename": "button_music_on.png",
+	"frame": {"x":222,"y":424,"w":53,"h":51},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":53,"h":51},
+	"sourceSize": {"w":53,"h":51}
+},
+{
+	"filename": "button_music_on_press.png",
+	"frame": {"x":261,"y":53,"w":51,"h":49},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":2,"w":51,"h":49},
+	"sourceSize": {"w":53,"h":51}
+},
+{
+	"filename": "panel_options_bg.png",
+	"frame": {"x":2,"y":2,"w":257,"h":371},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":257,"h":371},
+	"sourceSize": {"w":258,"h":371}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "UI_options.png",
+	"format": "RGBA8888",
+	"size": {"w":314,"h":485},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:20a1d18481db122a71dd22c880276808:40c42b8f53dbd26a30eb6bc7360b12a1:fadf4d8ef754d8cca412184b1a290e27$"
+}
+}

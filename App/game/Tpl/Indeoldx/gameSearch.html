@@ -1,0 +1,164 @@
+<include file="Index:header" />
+<script type="text/javascript">
+    site_config={ 'lang':'{$lang}','cata':'SearchPage','type':'{$Think.get.type}' }
+</script>
+<link href="/Public/static/css/tags.css?t={$timestamp}" rel="stylesheet" type="text/css" />
+<link href="/Public/static/css/main.css?t={$timestamp}" rel="stylesheet" /> 
+<style type="text/css">
+.search-title{font-size:40px;text-align:center;font-weight:normal;margin-top:70px;color:#fff;font-family:'LeagueGothic', 'LeagueGothic2', 'Pathway Gothic One';margin-bottom: 10px;}
+#search-box{width:60%;margin:0px auto;}
+.cse input.gsc-search-button, input.gsc-search-button{
+border-color: #3079ed;
+background-color: #4d90fe!important;
+background-image: -webkit-gradient(linear,left top,left bottom,from(#4d90fe),to(#4787ed))!important;
+background-image: -webkit-linear-gradient(top,#4d90fe,#4787ed)!important;
+background-image: -moz-linear-gradient(top,#4d90fe,#4787ed)!important;
+background-image: -ms-linear-gradient(top,#4d90fe,#4787ed)!important;
+background-image: -o-linear-gradient(top,#4d90fe,#4787ed)!important;
+background-image: linear-gradient(top,#4d90fe,#4787ed)!important;
+}
+.item {
+    width: 137px;
+    height: 137px;
+    margin: 10px;
+    float: left;
+    border: 1px solid #CCC;
+    background-color: #EEE;
+    overflow: hidden;
+    position: relative;
+    font-family: ''
+}
+.item .title{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFF;
+    font-size: 14px;
+    display: none;
+    margin:0;
+    text-indent: 5px;
+}
+.item:hover .title{
+    display: block;
+}
+.item img{width:100%;height:100%;}
+.hot,.hot li{
+    list-style: none;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+}
+.hot li{
+    float: left;
+    margin-right: 20px;
+    height: 30px;
+    line-height: 30px;
+}
+.hot li:first-child{margin-right: 8px;margin-left: 20px;}
+.hot-box{text-align: center;margin-top: 15px;color:#fff;}
+.hot-box a{margin:0px 10px;font-size: 16px;}
+.hot-box a:hover{color:#9AD1E6;}
+#search-noresult{
+text-align: center;
+color: #fff;
+background: #0D6383;
+width: 800px;
+padding: 10px;
+border-radius: 10px;
+border: solid 3px #679EB3;
+margin: 0px auto;
+margin-top: 15px;
+}
+</style>
+
+
+<include file="Index:nav" />
+<script src="/Public/static/js/jquery.min.js"></script>
+<script src="/Public/static/js/lazyload.js?t=908"></script>
+<div id="main_content" style="visibility: hidden;">
+
+		<h2 class="search-title">Find More Games</h2>
+		<div id="search-box">
+            <form action="/game/search.html" method="get" class="searchPageSearch searchBox">
+                <input stytype="text" name="k" class="input-fix" placeholder="Find Game" value="{$Think.get.k}"/>
+                <button type="submit" class="btn" value="Search"/>&nbsp;</button>
+            </form>
+            <div class="hot-box">
+                <b>HOT:</b>
+                <volist name="hotwords" id="word">
+                <a href="<neq name="lang" value="">/{$lang}</neq>/game/search.html?k={$word}">{$word}</a>
+                </volist>
+            </div>
+		</div>		
+        <eq name="count" value="0">
+            <div id="search-noresult">
+                <h4>Result: {$count}</h4>
+                <p>You may like these below</p>
+            </div>
+
+        </eq>
+        <div id="thumbsList">
+            <volist name="result" id="item">
+                <div data-id="{$item.id}" class="item">
+                    <a href="<neq name="lang" value="">/{$lang}</neq>/game/play/{$item.seo_name}.html" target="_blank">
+                        <img src="/Uploads/games/{$item.sort|default='images'}/{$item.img}" alt="{$item.name}" />
+                    </a>
+                    <p class="title">{$item.name}</p>
+                </div>
+            </volist>
+
+            <div class="clear"></div>
+        </div>
+        <div class="clear">
+    </div>
+</div>
+<div class="clear"></div>
+
+<include file="Index:footer_bar" />
+
+<include file="Index:footer_insert" />
+
+<script type="text/javascript">
+    function adjustwindow() {
+        var wwidth = $('body').width();
+        var wheight = $(window).height();
+        if (wwidth <= 1024) {
+            $('.morebtn').remove();
+        }
+        var canpt = (wwidth) / 150;
+        var cpt = parseInt(canpt);
+        $('.thumbs_container').width(cpt * 150);
+        $('#thumbsList').width(cpt * 140);
+        var ctpt = parseInt(wheight / 75) - 1;
+        $('.taglist').height(ctpt * 75);
+        $('#header,#main_content').css('visibility', 'visible');
+    }
+    window.onresize = function() {
+        adjustwindow();
+    }
+    adjustwindow();
+    $("img.lazy").show().lazyload({
+        effect: "fadeIn",
+        failure_limit: 10000
+    });
+    var moretagshown = false;
+    function showhidemore() {
+        if (moretagshown == false) {
+            $('.more_tags').fadeIn();
+            var moreleft = $('.morebtn').offset().left;
+            $('.more_tags').css('left', (moreleft - 300) + 'px');
+            moretagshown = true;
+        } else {
+            $('.more_tags').fadeOut();
+            moretagshown = false;
+        }
+    }
+</script>
+
+</body>
+</html>

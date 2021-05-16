@@ -1,0 +1,6 @@
+{"file":"res2.png","frames":{
+"hero_png":{"x":1,"y":261,"w":190,"h":96,"offX":1,"offY":1,"sourceW":192,"sourceH":98},
+"NomalIcon_png":{"x":85,"y":359,"w":81,"h":107,"offX":1,"offY":0,"sourceW":82,"sourceH":108},
+"BOSSIcon_png":{"x":1,"y":359,"w":82,"h":108,"offX":0,"offY":0,"sourceW":82,"sourceH":108},
+"skill2warn_png":{"x":1,"y":1,"w":192,"h":128,"offX":0,"offY":0,"sourceW":192,"sourceH":128},
+"skill1warn_png":{"x":1,"y":131,"w":192,"h":128,"offX":0,"offY":0,"sourceW":192,"sourceH":128}}}

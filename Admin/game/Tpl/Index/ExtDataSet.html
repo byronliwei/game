@@ -1,0 +1,430 @@
+<include file="./Admin/core/Tpl/Public/header.html" />
+<include file="Public:sidebar" />
+<script type="text/javascript" src="/Public/js/sortable.js"></script>
+<style type="text/css">
+.panel-all .btn-success:first-child,.panel-all .icon-del{display: none!important;}
+
+
+#all{width:700px;height:550px;margin:0px auto;background: #F0F0F0;border-radius: 3px;overflow: hidden;
+box-shadow: 0px 0px 2px #333;font-family: PFDinTextCompProMedium, "Helvetica Neue ",Helvetica,Arial,sans-serif}
+#extnav li{    list-style: none;
+    display: inline-block;
+    background: #ccc;
+    margin: 2px;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 2px;}
+#extnav li:hover,#extnav li.active{background: #5B9BE3;cursor: pointer;color:#fff;}
+
+.extgameitem{display: inline-block;background:#ccc;padding:5px;}
+#extgamelist{border:solid 1px #ccc;}
+
+
+/*Header Style*/
+#header{height:35px;line-height: 35px;background: #292929;border-bottom:solid 1px #1A0B32;position: relative;box-shadow:0px 2px 10px rgba(142, 142, 142, 0.65);}
+#catNav{margin-left:40px;display: inline-block;}
+#catNav .active{background: #5B9BE3!important;
+    color: #fff;
+    margin-top: 6px;}
+#catNav li{display: inline-block;color:#fff;background: #666;padding:0px 15px;cursor: pointer;font-size: 18px;
+border-top-left-radius: 4px;border-top-right-radius: 4px;height: 30px;margin-top:5px;margin-right: 6px;line-height: 30px;}
+#catNav li:hover{background: #999}
+#cat-more{display: inline-block;width: 40px;height:35px;background: url(../images/icon-more.png) center no-repeat;vertical-align: top;position: relative;transition:all 0.15s;}
+#cat-more:hover{cursor: pointer;}
+#cat-more:hover div{display: block;}
+#cat-more div{
+  display: none;
+  position: absolute;
+  left: -6px;
+  top: 0px;
+  z-index: 999;
+  animation:navin 0.1s;}
+
+@keyframes navin{
+  from {top:-4px;}
+  to {top:0px;}
+}
+
+#cat-more ul,#skin-switch>div>div{
+  position: relative;
+  margin-top: 41px;
+  background-color: #FFF;
+  list-style: none;
+  border-radius: 4px;
+  box-shadow:0px 0px 10px rgba(51, 51, 51, 0.51);
+  padding:8px 0px;
+}
+
+#cat-more ul li,
+#skin-switch>div span{
+    padding: 0px 15px;white-space: nowrap;font-size:18px;border-bottom: dashed 1px #ECECEC;
+}
+#cat-more ul li a{text-decoration: none;color:#000;}
+#cat-more ul li:last-child,
+#skin-switch>div span:last-child{border-bottom: 0px;}
+#cat-more ul:before,
+#skin-switch>div>div:before{
+  position: absolute;
+  content:' ';
+  width: 12px;
+  height: 12px;background: #fff;
+  top: -6px;
+  left: 20px;
+  transform: rotate(45deg);
+}
+#cat-more ul li:hover,
+#skin-switch>div span:hover{background: #f1f1f1;cursor: pointer;}
+
+#skin-switch{display: inline-block;position: absolute;top: 0px;right: 10px;width: 40px;height:35px;background: url(../images/icon-skin.png) center no-repeat;background-size:20px;transition:all 0.15s;cursor: pointer;}
+#skin-switch>div{
+  display: none;
+  position: absolute;
+  right: 6px;
+  top: 0px;
+  z-index: 999;
+  animation:navin 0.1s;}
+#cat-more ul li,#skin-switch>div span{display: block;}
+#skin-switch>div>div:before{
+  top: -6px;
+  left:auto;
+  right:8px;
+}
+#skin-switch:hover>div{display: block;}
+
+
+/*Container Style*/
+#container{position:relative;height:565px;min-height: 500px;padding-left: 40px;}
+
+
+#gameBox{height: 480px;padding:10px 0px;padding-left:20px;overflow: auto;}
+.loading{background:;}
+.game-empty{background: url(../images/icon-empty.png) center no-repeat;}
+#gameBox li{position:relative;display:inline-block;list-style: none;width: 21%;margin:1.2% 1.5%;background: #fff;border-radius:2px;overflow: hidden;border-bottom: 3px solid #484141;box-shadow: 0 1px 2px rgba(0,0,0,.1);text-align: center;animation:itemin 0.35s forwards;}
+@keyframes itemin{
+  from {transform:scale(.5)}
+  to {transform:scale(1)}
+}
+#gameBox li:hover{border-bottom: 3px solid #d90b31;box-shadow: 0 1px 3px rgba(0,0,0,.3);}
+#gameBox li a{display: block;text-decoration: none;}
+.game-icon{height:125px;overflow: hidden;transition: all 0.1s;background:;}
+.game-icon img{width:100%;height:132px;}
+#gameBox li a span{display:block;color:#484141;font-size: 14px;font-weight:bold;height: 30px;line-height: 30px;transition: all 0.1s;white-space: nowrap;text-overflow:ellipsis;overflow: hidden;}
+.game-header{display:none;position: absolute;top:5px;right:4px;}
+#gameBox li:hover .game-header{display: block;animation:headin 0.1s;}
+@keyframes headin{
+  from {top:-28px;}
+  to {top:5px;}
+}
+#gameBox li:hover .game-icon{height:120px;}
+#gameBox li:hover a span{height: 35px;line-height: 35px;}
+.game-header span{display: inline-block;width: 28px;background-color: ;height: 28px;cursor:pointer;border-radius: 2px;background-color:rgba(72, 65, 65, 0.4);background-position:center;background-repeat: no-repeat;background-size: 20px;}
+.icon-fb{background-image:url(../images/icon-facebook.png);}
+.icon-twitter{background-image:url(../images/icon-twitter.png);}
+.icon-vk{background-image:url(../images/icon-vk.png);}
+.icon-like{background-image:url(../images/heart.svg);}
+.icon-fb:hover{background-color: #3b5998}
+.icon-twitter:hover{background-color: #00aced}
+.icon-vk:hover{background-color: #4C75A3}
+.icon-like:hover{background-color: rgba(31, 31, 31, 0.7)}
+.icon-like.active{background-color: #cc2127}
+
+.icon-del{display:none;width: 28px;height: 28px;line-height: 28px;background: rgba(255, 255, 255, 0.55);position: absolute;border-radius: 4px;right: 4px;bottom: 40px;    font-size: 29px;color: #4379FF;}
+.icon-del:hover{background-color: rgba(255, 255, 255, 0.85);cursor: pointer;}
+#gameBox li:hover .icon-del{display: block;animation:delin 0.1s;}
+@keyframes delin{
+  from {bottom:35px;}
+  to {bottom:40px;}
+}
+
+.icon-hot,.icon-new{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+	background: rgba(255, 255, 255, 0.8);
+    display: block;
+    width: 35px;
+    padding: 4px;
+    border-radius: 2px;
+}
+.icon-new{
+	left:55px;
+}
+.icon-hot:hover,.icon-hot.active{background: #FF5412;color: #fff;box-shadow: 1px 1px 3px #333;}
+.icon-new:hover,.icon-new.active{background: #00BB00;color: #fff;box-shadow: 1px 1px 3px #333;}
+
+/*Skin Style For blue*/
+.skin-blue{color: #314F8E;}
+.skin-blue #header{background: #3a5795}
+.skin-blue #sideNav{background: #405D9A}
+.skin-blue #sideNav li {
+    border-top: solid 1px #6576A9;
+    border-bottom: solid 1px #1A4A52;
+}
+.skin-blue #catNav li{background: #627CB5;}
+.skin-blue #catNav li:hover{background: #7B97D4;}
+.skin-blue #cat-more ul li a{color: #314F8E;}
+.skin-blue ::-webkit-scrollbar-thumb{background-color:#314F8E;}
+
+/*Skin Style For Pink*/
+.skin-pink #header{background: #CA3C8C;border-bottom: solid 1px #960054;}
+.skin-pink #sideNav{background: #BF257C}
+.skin-pink #sideNav li {
+    border-top: solid 1px #E875B6;
+    border-bottom: solid 1px #960054;
+}
+.skin-pink{color: #A5286E;}
+.skin-pink #catNav li{background: #D864A5;}
+.skin-pink #catNav li:hover{background: #EA74B7;}
+.skin-pink #cat-more ul li a{color: #A5286E;}
+.skin-pink ::-webkit-scrollbar-thumb{background-color:#A5286E;}
+
+.tmpl{display:none;}
+
+</style>
+
+  <!--Body Start-->
+  <div class="span10 panel-all">
+			
+	<button style="position:absolute;" onclick="art.dialog.data('extData', extData);art.dialog.open('/admin.php/Index/ExtDataAdd', {id:'pop_add',title: '选择游戏入版本',width:'100%', height:550,lock: true,resize:true});" class="btn btn-success"><i class="icon  icon-plus"></i> Add Games</button>
+
+	<button data="保存预览数据" style="position:absolute;top:100px;" onclick="savePreviewData(this);" class="btn btn-success">Save Preview Data</button>
+
+	<button data="发布新版本" style="position:absolute;top:135px;" onclick="publishNewVersion(this);" class="btn btn-success">Publish New Version</button>
+
+	<div align="center" id="all">
+		<ul id="catNav">
+			<li class="active">All</li>
+			<li>Best Games</li>
+			<li>Car Games</li>
+			<li>Mario Games</li>
+			<li>Girl Games</li>
+		</ul>
+		<div id="gameBox">
+			<div class="extgameitem">
+				<img src=""/>
+				<span>Data Loading...</span>
+			</div>
+		</div>
+	</div>
+	</div> 
+
+  </div>
+  <!--Body End-->
+
+<script type="text/tmpl" class="tmpl tmpl-game-item">
+	<li draggable="true">
+		<a target="_blank" href="{{url}}">
+			<div class="icon-hot {{hot}}">Hot</div><div class="icon-new {{new}}">New</div>
+			<div class="game-icon"><img src="{{img}}"></div>
+			<span>{{title}}</span>
+			<div class="icon-del">&times;</div>	
+		</a>
+	</li>			
+</script>
+
+<script type="text/javascript">
+var extData={$data|default='[]'};
+art.dialog.data('extData', extData);
+//Rend Template
+function rend(data,tmpl){
+	var str='';
+	data.forEach(function(elm,i){
+		var _tmp=tmpl;
+		for(var o in elm){
+			var reg=new RegExp('\\{\\{'+o+'\\}\\}','ig');
+			_tmp=_tmp.replace(reg,elm[o]);
+		}
+		str+=_tmp;
+	})
+	str=str.replace(/\{\{.*?\}\}/ig,'');
+	return str;
+}
+
+function dataSet(_index,enforce){
+	//var url='http://ext.thehotgames.com/data.json';
+	var gameBox=$('#gameBox');
+
+	function setData(data){
+		var type=_index||0,
+			navBox=$('#catNav'),
+			tmpl=$('.tmpl-game-item').html(),
+			html='';
+
+		if(type==0){
+			var html='',navStr='<li>All</li>',_data={};
+			data.forEach(function(elm,i){
+				_data=elm;
+				html+=rend(_data['data'],tmpl);
+				navStr+='<li>'+_data['name']+'</li>';
+			});
+			navBox.html(navStr).find('li:first').addClass('active');
+			$('.span10').addClass('panel-all');
+		}else{
+			var _data=data[_index-1]['data'],
+			html=rend(_data,tmpl);
+			$('.span10').removeClass('panel-all');
+		}
+		navBox.find('li').eq(_index).addClass('active').siblings().removeClass('active');
+
+		gameBox.html(html).removeClass('loading');
+	}
+
+	var gameData=extData;
+	setData(gameData);
+
+	if(_index>0){
+		bindDragEvent();
+	}
+}	
+
+dataSet();
+
+function bindDragEvent(){
+	var list =$('#gameBox').get(0);
+	new Sortable(list,{
+		onUpdate: function (/**Event*/evt){
+			var _index=$('#catNav li').index($('#catNav .active'));
+			console.log(_index);
+        	$('#gameBox>li').each(function(i,elm){
+        		extData[_index-1]['data'][i]=getItemData($(this));
+        	})
+			art.dialog.data('extData', extData);
+    	}
+    }); // That's all.
+}
+
+function getItemData(obj){
+	var item=obj.closest('li');
+	var data={
+		'url':item.find('a').attr('href'),
+		'img':item.find('img').attr('src'),
+		'title':item.find('span').text()
+	}
+	if(item.find('.icon-hot').hasClass('active')){
+		data.hot="active";
+	}
+	if(item.find('.icon-new').hasClass('active')){
+		data.new="active";
+	}
+	return data;
+}
+
+function extDataAddReset(){
+	//console.log('origin data reset');
+	extData=art.dialog.data('extData');
+	$('#catNav .active').click();  
+	//console.log(extData);
+}
+
+$('#catNav li').live('click',function(){
+	var _this=$(this),
+		_index=_this.index(),
+		name=_this.text();
+	art.dialog.data('extIndex', _index);
+	dataSet(_index);
+})
+
+$('.icon-del').live('click',function(){
+	var _this=$(this),
+		_parent=_this.closest('li'),
+		data=getItemData(_this);
+
+	_pIndex=$('#catNav li').index($('#catNav .active'));
+	handleData=extData[_pIndex-1]['data']||[];
+
+	var index;
+	handleData.forEach(function(elm,i){
+		if(JSON.stringify(elm)==JSON.stringify(data)){
+			index=i;
+			return;
+		}
+	})
+	handleData.splice(index,1);
+	_parent.remove();
+	return false;
+})
+
+$('.icon-hot,.icon-new').live('click',function(){
+	var _index=$('#catNav li').index($('#catNav .active'));
+	if(!(_index>0)){
+		alert('Can\'t be handle at "All" panel!');return false;
+	}
+	var _this=$(this);
+		_this.toggleClass('active');
+
+	if(_this.closest('a').find('.active').size()>1){
+		alert("Can't be Hot and New the same time!");
+		_this.removeClass('active');
+	}else{
+		var itemIndex=$('#gameBox>li').index(_this.closest('li'));
+		var handleData=extData[_index-1]['data'][itemIndex];
+
+		delete(handleData['hot']);
+		delete(handleData['new']);
+		
+		//Update Data
+		var _hCheck=_this.hasClass('icon-hot');
+		if(_this.hasClass('active')){
+			//Add
+			handleData[_hCheck?"hot":"new"]="active";
+			art.dialog.data('extData', extData);
+		}
+	}
+	return false;
+	
+})
+
+savePreviewflag=true;
+function savePreviewData(obj){
+	var obj=$(obj);
+	var originHtml='Save Preview Data';
+	//var data=JSON.stringify(extData);
+	obj.html('Preview Saving...');
+	if(!savePreviewflag){
+		alert('操作进行中，请等待返回结果！');
+		return;
+	}
+	savePreviewflag=false;
+	$.post('/admin.php/Index/saveExtPreviewData',{data:extData},function(result){
+		savePreviewflag=true;
+		if(result=='1'){
+			alert('保存成功！');
+		}else{
+			alert('保存失败，请重试！');
+		}
+		obj.html(originHtml);
+	})
+}
+
+publishNewflag=true;
+function publishNewVersion(obj){
+	var obj=$(obj);
+	if(!publishNewflag){
+		alert('操作进行中，请等待返回结果！');
+		return;
+	}
+	if(!confirm('Are you sure to publish new version?')){
+		return;
+	}
+
+	var obj=$(obj);
+	var originHtml='Publish New Version';
+	//var data=JSON.stringify(extData);
+	obj.html('New Version Publishing...');
+	publishNewflag=false;
+	$.post('/admin.php/Index/publishNewVersion',{data:1},function(result){
+		publishNewflag=true;
+		if(result=='1'){
+			alert('版本发布成功！');
+		}else{
+			alert('版本发布失败，请重试！');
+		}
+		obj.html(originHtml);
+	})	
+}
+
+
+
+</script>
+
+<include file="Public:footer" />

@@ -1,0 +1,286 @@
+<include file="Index:header" />
+<link href="{$domain}/Public/static/css/main.css?t={$timestamp}28" rel="stylesheet" />
+<eq name="cataTopic" value="1">
+<link href="{$domain}/Public/static_topic/{$CATEGORY|default='default'}/main.css?t={$timestamp}" rel="stylesheet" />
+</eq>
+
+<include file="Index:nav" />
+
+<style>
+.tophotgame{width:120px!important;height:120px!important;
+margin:0px 0px 10px 14px!important;}
+.tophotbox{text-align:center;overflow:hidden;margin-left:-12px;}
+.ad{overflow:hidden;}
+.tophotbox .g-tag{width:48px;height:48px;display:block;position:absolute;left:0px;top:0px;}
+</style>
+
+<script src="{$domain}/Public/static/js/jquery.min.js"></script>
+
+<!--AD Pre-->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script type="text/javascript">
+    var aeCheck=localStorage.aeCheck;
+    if(!aeCheck){
+        if(location.href.indexOf('f=ae')!='-1'){
+            localStorage.aeCheck='true';
+            aeCheck=true;
+        }else{
+            aeCheck=false;
+        }
+    }
+    var screenW=document.body.clientWidth,adSwitch=screenW<=1024;
+</script>
+<!---------->
+
+<div class="container wrapper" id="game-box">
+
+    <eq name="Think.get.utm" value="xfullgames">
+    <div style="width:970px;height:90px;background:rgba(13, 99, 131, 0.6);margin:5px 0px;margin-left:6%;overflow:hidden;">
+        <!-- Coop_Xfullgame_970x90 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:970px;height:90px"
+             data-ad-client="ca-pub-8739233621395816"
+             data-ad-slot="7280927882"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    </eq>
+
+    <neq name="topicInclude" value="">
+    <include file="$topicInclude" /> 
+    </neq>
+
+    <if condition="0 eq 1 AND $cataname neq '' AND $cataTopic neq 1 AND $Think.get.type neq 'tag' AND $Think.get.cata neq 'top' AND $Think.get.info neq 1 AND $Think.get.info neq 2">
+    <!-- Ad Box -->
+    <div class="wrap_ad" id="wrap_ad">
+        <div class="banner300">
+            <div class="title">Advertisement</div>
+            <div class="ad">
+
+                <!-- hotgame top1 -->
+                <script>
+                if(!adSwitch&&!aeCheck){
+                document.write('<ins class="adsbygoogle"'+
+                     'style="display:inline-block;width:300px;height:250px"'+
+                     'data-ad-client="ca-pub-8739233621395816"'+
+                     'data-ad-slot="1686325086"></ins>');
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                }
+                </script>
+
+                <!-- hotgame_top1-250x250 -->
+                <script>
+                if(adSwitch&&!aeCheck){
+                document.write('<ins class="adsbygoogle"'+
+                     'style="display:inline-block;width:250px;height:250px"'+
+                     'data-ad-client="ca-pub-8739233621395816"'+
+                     'data-ad-slot="4542896285"></ins>');
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                }
+                </script>
+
+            </div>
+        </div>
+        <div class="banner300">
+            <div class="title">Advertisement</div>
+            <div class="ad">
+
+                <!-- hotgame top2 -->
+                <script>
+                if(!adSwitch&&!aeCheck){
+                document.write('<ins class="adsbygoogle"'+
+                     'style="display:inline-block;width:300px;height:250px"'+
+                     'data-ad-client="ca-pub-8739233621395816"'+
+                     'data-ad-slot="3023457489"></ins>');
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                }
+                </script>
+
+                <!-- hotgame_top2-250x250 -->
+                <script>
+                if(adSwitch&&!aeCheck){
+                document.write('<ins class="adsbygoogle"'+
+                     'style="display:inline-block;width:250px;height:250px"'+
+                     'data-ad-client="ca-pub-8739233621395816"'+
+                     'data-ad-slot="6078505082"></ins>');
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                }
+                </script>
+            </div>
+        </div>
+        <div class="banner300">
+            <div class="title">Advertisement</div>
+            <div class="ad">
+                <!-- hotgame top3 -->
+                <script>
+                if(!adSwitch&&!aeCheck){
+                document.write('<ins class="adsbygoogle"'+
+                     'style="display:inline-block;width:300px;height:250px"'+
+                     'data-ad-client="ca-pub-8739233621395816"'+
+                     'data-ad-slot="8930390280"></ins>');
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                }
+                </script>
+
+                <!-- hotgame_top3-250x250 -->
+                <script>
+                if(adSwitch&&!aeCheck){
+                document.write('<ins class="adsbygoogle"'+
+                     'style="display:inline-block;width:250px;height:250px"'+
+                     'data-ad-client="ca-pub-8739233621395816"'+
+                     'data-ad-slot="7555238283"></ins>');
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                }
+                </script>
+            </div>
+        </div>
+        <div class="banner300">
+            <div class="title">Advertisement</div>
+            <div class="ad">
+                <iframe style="height:264px;width:120%;margin-left:-42px;" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes" src="javascript:;" data-src="http://www.thehotgames.com/money/mm2.html?t=3"></iframe>
+            </div>
+        </div>
+        
+        <div class="banner300" style="display:none;">
+            <div class="title">{$lan.nav.popular_games}</div>
+            <div class="ad">
+            <div class="tophotbox">
+            
+            <foreach name="webgame" item="vo" >    
+            <a target="_blank" href="<neq name='vo.1' value=''>{$vo.1}?f=topad<else/>http://www.thehotgames.com/webgames/{$key}/index.html?f=topad</neq>" class="tophotgame">
+                <img class="lazytop" src="{$domain}/Public/static/images/empty.gif" original="{$domain}/Public/webgame/{$key}_300x300.<eq name='key' value='bigfarm'>gif<else/>jpg</eq>" alt="{$vo.0}">
+                <span  title="{$vo.0}">{$vo.0}</span>
+                <neq name="vo.1" value="">
+                <em class="g-tag tag-hot"></em>
+                <else/>
+                <em class="g-tag tag-new"></em>
+                </neq>
+            </a>
+            </foreach>
+            
+            <volist name="newHotGame" id="vo" offset="0" length='8'>
+            <a target="_blank" href="{$domain}/{$lang}/game/{$utm_source.play}/{$vo.seo_name}.html{$utm_source.param}" class="tophotgame">
+                <img class="lazytop" src="{$domain}/Public/static/images/empty.gif" data-original="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default='images'}/{$vo.img}" alt="{$vo.name}">
+                <span  title="{$vo.name}">{$vo.name}</span>
+                <eq name="vo.hot" value="1"><em class="g-tag tag-hot"></em></eq>
+                <eq name="vo.new" value="1"><em class="g-tag tag-new"></em></eq>
+            </a>
+            </volist>
+            
+            </div>
+            </div>
+        </div>
+        
+        <div id="banner-fill" style="display:none;">
+            <div class="title">Advertisement</div>
+            <div class="ad">
+                <a href="{$domain}/{$lang}/game/{$utm_source.play}/snail-bob-3.html?rel=ad{$utm_source._param}" target="_blank"><img src='/Public/static/images/1390488035.21_1389975995.87_snailbob3.jpg'/></a>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+    <script type="text/javascript">
+    if(aeCheck){
+        var adBox=document.getElementById("wrap_ad");
+        adBox.parentNode.removeChild(adBox);
+    }
+    </script>
+    <!-- Ad Box End-->
+    </if>
+
+    <neq name="cataname" value="">
+    <div class="topcata-title"><h1><eq name="Think.get.type" value="topgame"><img src="{$domain}/Public/static/images/win.png" width="28" style="vertical-align:middle;">&nbsp;&nbsp;{$lan.nav.top_games|default="Top Games"}<else/>{$cataname}</eq></h1></div>
+    </neq>
+   
+    <div class="center" style="visibility:hidden;">
+        <a target="_blank" href="http://bigfarm.thehotgames.com?f=main" class="gmpage1"><img class="lazy" src="{$domain}/Public/static/images/empty.gif" data-original="{$domain}/Public/webgame/bigfarm_300x300.gif" alt="GoodGame BigFarm"><span title="GoodGame BigFarm">GoodGame BigFarm</span></a>
+        <a href="/{$lang}/game/category/christmas-games.html" class="gmpage1"><img class="lazy" src="{$domain}/Public/static/images/empty.gif" data-original="{$domain}/Public/static/images/icon-christmas.png" alt="{$lan.nav.merry_christmas}"><span title="{$lan.nav.merry_christmas}">{$lan.nav.merry_christmas}</span><em class="g-tag tag-hot"></em></a>
+              
+        <volist name="gameList" id="vo">
+        
+        <a target="_blank" href="<neq name="vo.url" value="">{$vo.url}{$utm_source.param}<else/>{$domain}/{$lang}/game/{$utm_source.play}/{$vo.seo_name}.html{$utm_source.param}</neq>" class="gmpage1">
+            <img class="lazy" src="{$domain}/Public/static/images/empty.gif" data-original="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default='images'}/{$vo.img}" alt="{$vo.name}">
+            <span  title="{$vo.name}">{$vo.name}</span>
+            <eq name="vo.hot" value="1"><em class="g-tag tag-hot"></em></eq>
+            <eq name="vo.new" value="1"><em class="g-tag tag-new"></em></eq>
+        </a>
+        
+        <eq name="key" value="1">
+        <a rel="nofollow" target="_blank" href="http://www.vtube.me?f=game" class="gmpage1">
+            <img class="lazy" src="{$domain}/Public/static/images/empty.gif" data-original="{$domain}/Public/static/images/tvbox.png" alt="Free Internet TV">
+            <span  title="Hot Pictures">Free Internet TV</span>
+            <em class="g-tag tag-new"></em>
+        </a>
+        </eq>       
+        
+        </volist>
+        
+        <div class="loading">
+            <div class="img">
+                <img src="{$domain}/Public/static/images/loading.gif">
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+
+
+<!--Right nav Start-->
+<include file="Index:rightnav" />
+<!--Right nav End-->
+
+<script src="{$domain}/Public/static/js/lazyload.js?t=908"></script>
+<script src="{$domain}/Public/static/js/main.js?t={$timestamp}30"></script>
+
+<include file="Index:footer_bar" />
+
+<include file="Index:footer_insert" />
+
+<!--Side Left Bar Start-->
+<div id="sideLeftBar">
+    <div class="sideLeftBarContent">
+        <div data="f"><a href="javascript:;"><img title="Share To Facebook" src="{$domain}/Public/static/images/facebook_32.png"></a></div>
+        <div data="g"><a href="javascript:;"><img title="Share To Google+" src="{$domain}/Public/static/images/googleplus_32.png"></a></div>
+        <div data="v"><a href="javascript:;"><img title="Share To VK" src="{$domain}/Public/static/images/vkontakte_32.png"></a></div>
+        <div data="t"><a href="javascript:;"><img title="Share To Twitter" src="{$domain}/Public/static/images/twitter_32.png"></a></div>
+        <span class="sideLeft-sep"></span>
+        <div data="history"><a href="javascript:;"><img title="Played Games" src="{$domain}/Public/static/images/history_48.png"></a></div>
+        <div data="top"><a href="javascript:;"><img title="Top Games" src="{$domain}/Public/static/images/top_48.png"></a></div>
+        <div data="lucky"><a href="javascript:;"><img title="Lucky Games" src="{$domain}/Public/static/images/rand_48.png"></a></div>
+        <div data="cate"><a href="javascript:;"><img title="Category Games" src="{$domain}/Public/static/images/cate_48.png"></a></div>
+    </div>
+    <div class="sideLeftContent">
+        <div class="sideLeftContent-title"><b>Played Games</b><span class="sideLeftClose"></span></div>
+        <div class="sideLeftContent-main">
+            <a href="#"><img class="lazy" src="http://image3.thehotgames.com/games/puzzle/1390488099.66_1389976298.27_candycrush.jpg" alt="Candy Crush">
+        </div>
+        <a href="" class="sideLeftContent-footer"><b>More >>&nbsp;&nbsp;</b></span></a>     
+    </div>
+</div>
+<!--Side Left Bar End-->
+
+<a href="{$domain}/{$lang}/game/category/christmas-games.html" target="_blank" title="{$lan.nav.merry_christmas}" style="position: fixed;left: 50px;bottom: 24px;z-index: 1000;"><img alt="{$lan.nav.merry_christmas}" src="{$domain}/Public/static/images/icon-christmas-tree.png"></a>
+
+</body>
+</html>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" _src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53041a1b1b87632e" async="async"></script>
+<script type="text/javascript">
+    //History
+    if(!storageSupport){
+        $(".gotohistory").remove();
+    }else{
+        if(storage.get("HistoryGame","data") && storage.get("HistoryGame","data")!==''){
+            var _hdata=storage.get("HistoryGame","data");
+            if(_hdata.length>0){
+                var _len=_hdata.length>98?99:_hdata.length;
+                $(".gotohistory").find("i").show().html(_len);
+            }
+        }
+    }
+</script>
+<!--<script src="{$domain}/Public/static/js/inlineinstall.js"></script>-->

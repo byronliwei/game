@@ -1,0 +1,92 @@
+<include file="Index:header" />
+<link href="/Public/static/css/tags.css?t={$timestamp}" rel="stylesheet" type="text/css" />
+<link href="/Public/static/css/main.css?t={$timestamp}" rel="stylesheet" /> 
+<include file="Index:nav" />
+
+<script type="text/javascript">site_config={ 'lang':'{$lang}','cata':'More' }</script>
+
+<script src="/Public/static/js/jquery.min.js"></script>
+<script src="/Public/static/js/lazyload.js?t=908"></script>
+
+<div id="main_content" style="visibility: hidden;">
+    <div id="thumbsList" style="margin-top:20px;">
+        
+        <volist name="cataList" id="vo">
+        <div class="thumb_container">
+            <div class="lay2">
+            </div>
+            <div class="lay3">
+            </div>
+            <a class="imglink" href="/{$lang}/game/category/{$vo.release_alias}.html{$utm_source.param}"
+            title="{$vo.name}">
+                <img class="lazy" src="/Public/static/images/empty.gif" data-original="/Public/static/images/more/{$vo.release_alias}.jpg"
+                alt="{$vo.name}" />
+            </a>
+            <a class="txtlink" href="/{$lang}/game/category/{$vo.release_alias}.html?f=taglist{$utm_source._param}"
+            title="{$vo.release_alias}">
+                <span>
+                    {$vo.name}
+                </span>
+            </a>
+        </div>
+        </volist>
+
+        <div class="clear">
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+<div class="clear"></div>
+
+<!--Right nav Start-->
+<include file="Index:rightnav" />
+<!--Right nav End-->
+<include file="Index:footer_bar" />
+<include file="Index:footer_insert" />
+
+<script type="text/javascript">
+    function adjustwindow() {
+        var wwidth = $('body').width();
+        var wheight = $(window).height();
+        if (wwidth <= 1024) {
+            $('.morebtn').remove();
+        }
+        var canpt = (wwidth) / 150;
+        var cpt = parseInt(canpt);
+        $('.thumbs_container').width(cpt * 150);
+        //$('.thumb_container').width(((wwidth - 90)/cpt)-9.5);
+        //$('.thumb_container').height(((wwidth - 90)/cpt)-9.5);
+        $('#thumbsList').width(cpt * 140);
+        var ctpt = parseInt(wheight / 75) - 1;
+        $('.taglist').height(ctpt * 75);
+        $('#header,#main_content').css('visibility', 'visible');
+    }
+    window.onresize = function() {
+        adjustwindow();
+    }
+    adjustwindow();
+    $("img.lazy").show().lazyload({
+        effect: "fadeIn",
+        failure_limit: 10000
+    });
+    var moretagshown = false;
+    function showhidemore() {
+        if (moretagshown == false) {
+            $('.more_tags').fadeIn();
+            var moreleft = $('.morebtn').offset().left;
+            $('.more_tags').css('left', (moreleft - 300) + 'px');
+            moretagshown = true;
+        } else {
+            $('.more_tags').fadeOut();
+            moretagshown = false;
+        }
+    }
+    setTimeout(function(){
+      $(".facebookNum").html("40k").show();
+      $(".facebookSanjiao").show();
+    },100);
+</script>
+
+</body>
+</html>

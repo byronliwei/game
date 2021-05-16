@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Detail:Play {$gameDetail.name} on gamev6.com-Free Online Mobile Games</title>
+  <meta name="description" content="Play {$gameDetail.name} online mobile games at gamev6.com! Including action games,classic games, car games, shooting games,sports games and more! Play now for free.">
+  <meta name="keywords" content="{$gameDetail.name}, mobile games, smartphone games, free mobile games, online mobile games ,games,free games,online games,tablet games, html5 games, h5 games,best games,hot games, classic games,action games,car games,shooting games,cooking games">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"/>
+
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="format-detection" content="address=no"/>
+  <meta name="msapplication-config" content="none"/>
+  <link href="/Public/static/mobile/static.css?t=7" rel="stylesheet" />
+</head>
+<body>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8739233621395816",
+          enable_page_level_ads: true
+     });
+     var loc=location.href;
+      var adChannel = 0;
+      if(loc.indexOf('hot')>-1){
+        adChannel = 1;
+      }
+      adConfig = {
+        'hotGameInfo1': ['3191447464','8524025264'],
+        'hotGameInfo2': ['8691186153','7757738507']
+      }
+</script>
+<div id="all">
+  <div id="header">
+    <a href="/?f=info" class="back-home"><img src="/Public/static/mobile/icon-home2.png" style="margin-top: 8px;"></a>
+    <img src="/Public/static/mobile/logo.png">
+  </div>
+
+  <div id="info-box">
+    <div class="info-detail">
+      <div class="info-icon"><img  alt="{$gameDetail.name}" src="http://image.gamez6.com/games/{$gameDetail.sort|default="images"}/{$gameDetail.img|addslashes=###}"></div>
+      <div class="info-title">{$gameDetail.name}</div>
+      <img src="/Public/static/mobile/star.png"><br>
+      <a href="/game/play/{$gameDetail.seo_name}.html{$utm_source.param}" class="info-play"><img alt="play now!" src="/Public/static/mobile/play.png"></a>
+      <div class="info-intro">{$gameDetail.desc}</div>
+    </div>
+
+  </div>
+
+  <div id="as-info" class="as-info">
+    <div class="as-title">Advertisement</div>
+		<div style="margin-top: 20px;">
+        <script type="text/javascript">
+          try{
+              document.write('<ins class="adsbygoogle" style="display:inline-block;width:320px;height:250px" data-ad-format="fluid" data-ad-client="ca-pub-8739233621395816" data-ad-slot="'+adConfig['hotGameInfo1'][adChannel]+'"><\/ins>');
+                (adsbygoogle = window.adsbygoogle || []).push({});
+          }catch(e){
+              console.log(e);
+          }
+      </script>
+    </div>
+
+  </div>
+  
+  <div class="info-footer-list">
+    <h3>Most Popular</h3>
+    <ul>
+    <volist name="gameList" id="vo" offset="0" length='6'>
+    <li class="pop_game_info infoList-new" data-qid="{$vo.id}">
+      <a href="/game/info/{$vo.seo_name}.html{$utm_source.param}">
+        <img class="lazy" data-qid="{$vo.id}" alt="{$vo.name}" data-src="/Public/static/mobile/empty.png" src="/Public/static/mobile/empty.png" data-original="http://image.gamez6.com/games/{$vo.sort|default='images'}/{$vo.img}"/>
+      </a>
+    </li> 
+    </volist>
+    </ul>
+  </div>
+  
+  <div id="as-info">
+    <div class="as-title">Advertisement</div>
+      <div style="margin-top: 20px;">
+    	<!-- gamev6-info-300x250-2 -->
+        <script type="text/javascript">
+          try{
+              document.write('<ins class="adsbygoogle" style="display:inline-block;width:320px;height:250px" data-ad-format="fluid" data-ad-client="ca-pub-8739233621395816" data-ad-slot="'+adConfig['hotGameInfo2'][adChannel]+'"><\/ins>');
+                (adsbygoogle = window.adsbygoogle || []).push({});
+          }catch(e){
+              console.log(e);
+          }
+      </script>
+    </div>
+  </div>
+
+  <div class="info-footer-list">
+    <h3>Related Games</h3>
+    <ul>
+    <volist name="gameList" id="vo" offset="6" length='6'>
+    <li class="rel_game_info infoList-new" data-qid="{$vo.id}">
+      <a href="/game/info/{$vo.seo_name}.html{$utm_source.param}">
+        <img class="lazy" data-qid="{$vo.id}" alt="{$vo.name}" data-src="/Public/static/mobile/empty.png" src="/Public/static/mobile/empty.png" data-original="http://image.gamez6.com/games/{$vo.sort|default='images'}/{$vo.img}"/>
+      </a>
+    </li> 
+    </volist>
+    </ul>
+  </div>
+</div>
+
+  <p class="botdesc">
+    Welcome to Gamev6.com! We offer you a varity of most popular mobile games here. You can play all the latest hot games on your mobile,pad and tablet without installation. Choose your favorite mobile games to play now. 
+  </p>
+
+
+  <div id="footer_bar" class="footer_tablet" onclick="scrollToTop();">
+    <div class="back_to_top"><img src="/Public/static/mobile/btt.png">BACK TO TOP</div>
+  </div>
+
+
+</body>
+<script src="/Public/static/mobile/jquery.min.js"></script>
+<script src="/Public/static/mobile/lazyload.js"></script>
+<script src="/Public/static/mobile/masonry.pkgd.min.js"></script>
+<script src="/Public/static/mobile/static.js"></script>
+<!-- 5 10 -->
+<script src="/Public/static/mobile/common.js?v=1"></script>
+<script type="text/javascript">
+  $("img.lazy").lazyload();
+  //  /**
+  //    *  图片懒加载
+  //    * */
+  //   // 获取window的引用:
+  //   var $window = $(window);
+  //   // 获取包含data-src属性的img，并以jQuery对象存入数组:
+  //   var lazyImgs = $('img[data-src]').get().map(function (i) {
+  //       return $(i);
+  //   });
+  //   // 定义事件函数:
+  //   var onScroll = function () {
+  //       // 获取页面滚动的高度:
+  //       var wtop = $window.scrollTop();
+  //       // 判断是否还有未加载的img:
+  //       if (lazyImgs.length > 0) {
+  //           // 获取可视区域高度:
+  //           var wheight = $window.height();
+  //           // 存放待删除的索引:
+  //           var loadedIndex = [];
+  //           // 循环处理数组的每个img元素:
+  //           lazyImgs.forEach(function ($i, index) {
+  //               // 判断是否在可视范围内:
+  //               if ($i.offset().top - wtop < wheight) {
+  //                   // 设置src属性:
+  //                   // $i.attr('src', $i.attr('data-src'));
+  //                   // 添加到待删除数组:
+  //                   loadedIndex.unshift(index);
+  //                   var url = 'https://wangmeng.online/setGameDetailsShowAmount'
+  //                   $.ajax({
+  //                       url: url,
+  //                       type: 'GET',
+  //                       data: {
+  //                           qid: $i.data('qid'),
+  //                           lang: 'en',
+  //                           website: 'gamev6'
+  //                       },
+  //                       success: function(data) {
+  //                           console.log(data)
+  //                       },
+  //                       error: function(err) {
+  //                           console.log(err)
+  //                       }
+  //                   })
+  //               }
+  //           });
+  //           // 删除已处理的对象:
+  //           loadedIndex.forEach(function (index) {
+  //               lazyImgs.splice(index, 1);
+  //           });
+  //       }
+  //   };
+  //   // 绑定事件:
+  //   $window.scroll(onScroll);
+  //   // 手动触发一次:
+  //   onScroll();    
+  //   $.ajax({
+  //     url: 'https://wangmeng.online/setDetailsShowAmount',
+  //     type: 'GET',
+  //     data: {
+  //         qid: {$gameDetail.id},
+  //         lang: 'en',
+  //         website: 'gamev6'
+  //     },
+  //     success: function(data) {
+  //         console.log(data)
+  //     },
+  //     error: function(err) {
+  //         console.log(err)
+  //     }
+  //   })
+  //   $('.info-play').click(function() {
+  //     $.ajax({
+  //       url: 'https://wangmeng.online/setTestClickAmount',
+  //       type: 'GET',
+  //       data: {
+  //           qid: {$gameDetail.id},
+  //           lang: 'en',
+  //           website: 'gamev6'
+  //       },
+  //       success: function(data) {
+  //           console.log(data)
+  //       },
+  //       error: function(err) {
+  //           console.log(err)
+  //       }
+  //     })
+  //   })
+  //   $('.infoList-new').click(function(){
+  //     var self = this
+  //     $.ajax({
+  //       url: 'https://wangmeng.online/setGameDetailsClickAmount',
+  //       type: 'GET',
+  //       data: {
+  //           qid: $(this).data('qid'),
+  //           lang: 'en',
+  //           website: 'gamev6'
+  //       },
+  //       success: function(data) {
+  //           console.log(data)
+  //       },
+  //       error: function(err) {
+  //           console.log(err)
+  //       }
+  //     })
+  //   })
+</script>
+</html>

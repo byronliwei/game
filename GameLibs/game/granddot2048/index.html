@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Grand Dot 2048</title>
+<meta name="viewport" content="minimal-ui, target-densitydpi=device-dpi, user-scalable=0, width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icon.png">
+<meta name="MobileOptimized" content="960"><meta name="msapplication-tap-highlight" content="no" />
+<meta http-equiv="Content-Type" content="text/html, charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<script type="text/javascript" src="static/game.js"></script>
+
+<meta name="description" content="&quot;Grand Dot – online 2048-type game.
+Grand Dot is a free html5 game about dots! It is a logic puzzle game and your mission is to match the elements with the same number of dots. It is the best way to relax, entertain yourself and to train your brain at the same time! Swipe or use the arrow keys on your keyboard to move the elements on the desk. But be careful! Don’t make a wrong move. Are you smart enough to complete the game? Go ahead and try to create the Grand Dot! You are at the world of dots now! Have fun!&quot;">
+</head>
+<body style="-ms-touch-action: none; margin: 0px; padding: 0px; background: #000;">
+
+<div id="main_container"></div>
+<script type="text/javascript">
+site_root='/';
+
+(function(){
+	
+	var browserOK = true;
+	
+	var isOperaMini = Object.prototype.toString.call(window.operamini) === "[object OperaMini]";
+	if (isOperaMini)
+	{
+		browserOK = false;
+	}
+	else if (!window.HTMLCanvasElement || !window.CanvasRenderingContext2D)
+	{
+		browserOK = false;
+	}
+	else
+	{
+		var canvas = document.createElement("canvas");
+		browserOK = (!!(canvas.getContext && canvas.getContext("2d")));
+	}
+
+	if (!browserOK) window.location = '../../gamebox/index.html';
+	return browserOK;
+})();
+
+if (window.navigator.standalone)
+{
+	// fix iPhone fullscreen mode when launched from desktop icon
+	Utils.layoutMargin.top = Math.max(15, ~~Utils.layoutMargin.top);
+	
+	var cls = (document.body.className || '').split(' ').filter(function(c){ return !!c.length; }); 
+	if (cls.indexOf('iphone-standalone-mode') < 0) 
+	{
+		cls.push('iphone-standalone-mode');
+		document.body.className = cls.join(' ');
+	}
+}
+
+</script>
+
+
+
+<link rel="stylesheet" href="static/components-1.css" />
+<link rel="stylesheet" href="static/main-1.css" />
+<link rel="stylesheet" href="static/responsive-1.css" />
+<script type="text/javascript" src="static/components.js"></script>
+
+<script type='text/javascript' src="static/portal_loader.js"></script>
+<script type='text/javascript'>
+(function(loader){
+	loader.backgroundUrl = 'static/grand_dot_2048_preloader.jpg'
+		var fn = loader.close || function(){};
+	loader.close = function()
+	{
+		return fn();
+	};
+	})(TTLoader);
+</script>
+<script type='text/javascript'>Utils.disableCorrectPixelRatio = true;</script>
+
+<script type="text/javascript" src="../../static/js/game.as.js"></script>
+</body>
+</html>
+<link href="../../static/css/game.common.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../static/js/zep.min.js"></script>
+<script type="text/javascript" src="../../static/js/game.common.js"></script>
+<script type="text/javascript" src="../../static/js/game.analytics.js"></script>

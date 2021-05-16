@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en_US" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+     <meta charset="utf-8">
+    <title>TheHotGames.Com - The Hot Games Around The World</title>
+    <link rel="shortcut icon" href="http://www.thehotgames.com/favicon.ico">
+    <meta name="description" content="Play the hot selection of free online games at TheHotGames.com! Including word games, casino games, card games, puzzle games and many more!">
+    <meta name="keywords" content="Popular Games,The Hot Games, Your Favorite Games,games, free, online, flash, play, arcade, puzzle, strategy, defense, shooter, platform, action, adventure, rpg, sports, racing, tower,mario games,barbie games">
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="TheHotGames - The Hot Games Around The World"/>
+    <meta property="og:image" content="http://www.thehotgames.com/original.jpg"/>
+    <meta property="og:site_name" content="TheHotGames.COM" />
+    <meta property="og:description" content="Play the hot selection of free online games at TheHotGames.com! Including word games, casino games, card games, puzzle games and many more!"/>
+    <link href="__PUBLIC__/game/css/style.css" rel="stylesheet">
+</head>
+<body>
+<style type="text/css">
+ul{margin-left:10px;}
+ul a{color:#fff;}
+
+</style>
+<ul>
+    <volist name="gameList" id="vo">
+    <li>
+        <a href="/game/play/{$vo.seo_name}.html" target="_blank" title="{$vo.name}">{$vo.name}</a>
+    </li>
+    </volist>
+</ul>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<include file="Pc:header" />
+    <div class="contain_games"  data-utmparam="{$utm_source.param}" data-utmplay="{$domain}/{$lang}/game/{$utm_source.play}/">
+        <div style="text-align: center;margin-top: 10px;">        
+            <script>
+                google_ad_slot = adConfig['pc-gamev6-970x90-index'][adChannel];
+                google_ad_width = 970;
+                google_ad_height = 90;
+                try{
+                    document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-8739233621395816"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                }catch(e){
+                    console.log(e);
+                }
+            </script>
+        </div>
+        <div class="games_list">
+            <div class="games_list-small-item">
+                <volist name="gameList" id="vo" offset='0' length='10'>
+                    <a href='<neq name="vo.url" value="">{$vo.url}{$utm_source.param}<else/>{$domain}/{$lang}/game/{$utm_source.play}/{$vo.seo_name}.html{$utm_source.param}</neq>'
+                        class="games_list-item" target="_blank">
+                        <if condition="strstr($vo['img'],'//www')">
+                                <img src="/Public/static/images/gamev6_bg.png" data-src="{$vo.img}">
+                            <else />
+                                <img src="/Public/static/images/gamev6_bg.png" data-src='http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default="images"}/<eq name="vo.feature" value="1">feature_</eq>{$vo.img|addslashes=###}'
+                                alt="">
+                            </if>
+                        <div class="game_name">{$vo.name|addslashes=###}</div>
+                        <eq name="vo.hot" value="1">
+                            <img class="hotnewtag" src="/Public/static/images/hottag.png" alt="">
+                        </eq>
+                        <eq name="vo.new" value="1">
+                            <img class="hotnewtag" src="/Public/static/images/newtag.png" alt="">
+                        </eq>
+                    </a>
+                </volist>
+            </div>
+            <volist name="gameList" id="vo" offset='10' length='1'>
+                <div class="games_list-big-item" style="text-align: center;">
+                    <div style="margin-top: 26px;">
+                    <script>
+                            google_ad_slot = adConfig['pc-gamev6-336x280-index'][adChannel];
+                            google_ad_width = 336;
+                            google_ad_height = 280;
+                            try{
+                                document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-8739233621395816"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            }catch(e){
+                                console.log(e);
+                            }
+                        </script>
+                    </div>
+                </div>
+            </volist>
+        </div>
+        <div class="games_list">
+            <volist name="gameList" id="vo" offset='10' length='1'>
+                <a href='<neq name="vo.url" value="">{$vo.url}{$utm_source.param}<else/>{$domain}/{$lang}/game/{$utm_source.play}/{$vo.seo_name}.html{$utm_source.param}</neq>'
+                    class="games_list-big-item" target="_blank">
+                    <if condition="strstr($vo['img'],'//www')">
+                            <img src="/Public/static/images/gamev6_bg.png" data-src="{$vo.img}">
+                        <else />
+                            <img src="/Public/static/images/gamev6_bg.png" data-src='http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default="images"}/<eq name="vo.feature" value="1">feature_</eq>{$vo.img|addslashes=###}'
+                            alt="">
+                        </if>
+                    <div class="game_name">{$vo.name|addslashes=###}</div>
+                    <eq name="vo.hot" value="1">
+                        <img class="hotnewtag" src="/Public/static/images/hottag.png" alt="">
+                    </eq>
+                    <eq name="vo.new" value="1">
+                        <img class="hotnewtag" src="/Public/static/images/newtag.png" alt="">
+                    </eq>   
+                </a>
+            </volist>
+            <div class="games_list-small-item">
+                <volist name="gameList" id="vo" offset='11' length='10'>
+                    <a href='<neq name="vo.url" value="">{$vo.url}{$utm_source.param}<else/>{$domain}/{$lang}/game/{$utm_source.play}/{$vo.seo_name}.html{$utm_source.param}</neq>'
+                        class="games_list-item" target="_blank">
+                        <if condition="strstr($vo['img'],'//www')">
+                                <img src="/Public/static/images/gamev6_bg.png" data-src="{$vo.img}">
+                            <else />
+                                <img src="/Public/static/images/gamev6_bg.png" data-src='http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default="images"}/<eq name="vo.feature" value="1">feature_</eq>{$vo.img|addslashes=###}'
+                                alt="">
+                            </if>
+                        <div class="game_name">{$vo.name|addslashes=###}</div>
+                        <eq name="vo.hot" value="1">
+                            <img class="hotnewtag" src="/Public/static/images/hottag.png" alt="">
+                        </eq>
+                        <eq name="vo.new" value="1">
+                            <img class="hotnewtag" src="/Public/static/images/newtag.png" alt="">
+                        </eq>   
+                    </a>
+                </volist>
+            </div>
+        </div>
+        <div class="games_list">
+            <div id="gameBall" class="games_list-big-item">
+                <volist name='tagList' id='vo' offset='0' length='30'>
+                    <a href="/cn/game/tag/{$vo.seo_name}.html" class="_blank">{$vo.name}</a>
+                </volist>
+            </div>
+            <div class="games_list-small-item">
+                <volist name="gameList" id="vo" offset='21' length='10'>
+                    <a href='<neq name="vo.url" value="">{$vo.url}{$utm_source.param}<else/>{$domain}/{$lang}/game/{$utm_source.play}/{$vo.seo_name}.html{$utm_source.param}</neq>'
+                        class="games_list-item" target="_blank">
+                        <if condition="strstr($vo['img'],'//www')">
+                                <img src="/Public/static/images/gamev6_bg.png" data-src="{$vo.img}">
+                            <else />
+                                <img src="/Public/static/images/gamev6_bg.png" data-src='http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default="images"}/<eq name="vo.feature" value="1">feature_</eq>{$vo.img|addslashes=###}'
+                                alt="">
+                            </if>
+                        <div class="game_name">{$vo.name|addslashes=###}</div>
+                        <eq name="vo.hot" value="1">
+                            <img class="hotnewtag" src="/Public/static/images/hottag.png" alt="">
+                        </eq>
+                        <eq name="vo.new" value="1">
+                            <img class="hotnewtag" src="/Public/static/images/newtag.png" alt="">
+                        </eq>   
+                    </a>
+                </volist>
+            </div>
+        </div>
+    </div>
+   <include file="Pc:footer" />

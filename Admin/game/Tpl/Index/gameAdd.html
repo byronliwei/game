@@ -1,0 +1,314 @@
+<include file="./Admin/core/Tpl/Public/header.html" />
+<include file="Public:sidebar" />
+<style type="text/css">
+.pic_list{display:block;padding:1px;text-align:center}
+.pic_list:hover{border:solid 1px #31B9FD;padding:0px}
+input{margin-bottom:0px!important;}
+.item-title{display: inline-block;width: 66px;text-align: right;}
+.game-desc{width: 300px;height: 100px;margin-bottom: 0;}
+.checkbox{height: 20px;}
+.checkbox label{display: inline-block;margin-right: 50px;margin-bottom: 0;}
+input[type="file"]{height: 22px;line-height: 22px;}
+</style>
+<!--Body Start-->
+<div class="span10">
+    <div align="center" class="container" id="content" style="width:100%;">
+        <form action="" method="post" enctype="multipart/form-data" class="clearfix" id="file_form" onSubmit="return checkForm(this)">
+            <input type="hidden" name="type" value="save">
+            <div style="text-align:left;margin-bottom:15px;"><b>游戏添加</b></div>
+            <table id="dia-list" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>条目</th>
+                        <th>内容<span class="text-info">（以下文字建议用英文）</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>游戏别名</td>
+                        <td>
+                            <input type="text" value="" name="seo_name" placeholder="不超过100个字符">
+                            <span class="text-info">（仅限字母、数字和下划线）</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>游戏名称</td>
+                        <td><input type="text" value="" name="name" placeholder="不超过100个字符"></td>
+                    </tr>
+                    <tr>
+                        <td>游戏图片</td>
+                        <td><input type="file" name="img"><span class="text-info">（小于30k，建议尺寸为180*120）</span></td>
+                    </tr>
+                    <tr>
+                        <td>游戏描述</td>
+                        <td><textarea name="desc" class="game-desc" placeholder="如游戏的规则、操作、提示等"></textarea><span class="text-info">（不少于20字符）</span></td>
+                    </tr>
+                    <tr>
+                        <td>游戏参数</td>
+                        <td id='game_param' style="line-height: 45px">
+                        <span class="item-title">宽度：</span><input style="width:40px;" type="text" value="" name="width" placeholder="数字"><span class="text-info">（不能小于200）</span><br>
+                        <span class="item-title">高度：</span><input style="width:40px;" type="text" value="" name="height" placeholder="数字"><span class="text-info">（不能小于200）</span><br>
+                        <span class="item-title">Swf地址：</span><input style="width:300px;" type="text" value="" name="swf" placeholder="绝对路径，如 http://www.xxx.com/raft-wars.swf"><br>
+                        <span class="item-title">来源：</span><input style="width:300px;" type="text" value="" name="origin" placeholder="填主域名即可，如 topgames.me"><br>
+                        <span class="item-title">分类：</span>
+                            <select style="width:130px;" name="rel_id" class="input-fix">
+                                <option value="hot">hot（热门）</option>
+                                <option value="car">car（汽车）</option>
+                                <option value="racing">racing（赛车）</option>
+                                <option value="action">action（动作）</option>
+                                <option value="basketball">basketball（篮球）</option>
+                                <option value="tank">tank（坦克）</option>
+                                <option value="puzzle">puzzle（拼图）</option>
+                                <option value="physics">physics（物理）</option>
+                                <option value="parking">parking（停车场）</option>
+                                <option value="ninja">ninja（忍者）</option>
+                                <option value="multiplayer">multiplayer（多人）</option>
+                                <option value="maze">maze（迷宫）</option>
+                                <option value="matching">matching（匹配）</option>
+                                <option value="logic">logic（逻辑）</option>
+                                <option value="life">life（生活）</option>
+                                <option value="funny">funny（搞笑）</option>
+                                <option value="skill">skill（技能）</option>
+                                <option value="dress-up">dress-up（装扮）</option>
+                                <option value="cooking">cooking（烹饪）</option>
+                                <option value="classic">classic（经典）</option>
+                                <option value="card">card（卡牌）</option>
+                                <option value="board">board（棋牌）</option>
+                                <option value="billiards">billiards（台球）</option>
+                                <option value="bike">bike（自行车）</option>
+                            </select><br>
+                            <span class="item-title">类型：</span>
+                            <select style="width:100px;" name="3d_type" class="input-fix">
+                                <option value="">flash</option>
+                                <option value="unity3d">unity3d</option>
+                                <option value="html5">HTML5</option>
+                            </select><br>
+                        <!-- 跳转类型：
+                            <select style="width:100px;" name="clearLang" class="input-fix">
+                                <option value="">无</option>
+                                <option value="unity3d">直接跳转swf地址</option>
+                            </select> -->
+                        </td>
+                    </tr>
+                    <tr style="display: none;">
+                        <td>显示国家</td>
+                        <td>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="br" name="br">巴西
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="br" name="br">台湾
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="br" name="br">美国
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="br" name="br">俄国
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="br" name="br">澳大利亚
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="br" name="br">法国
+                                </label>
+                              </div>
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <td style="word-break:break-all;width:180px;">
+                            文件包
+                        </td>
+                        <td style="word-break:break-all;">
+
+                                <span style="float:left">
+                                    <input type="file" placeholder="选择图片" class="input-fix" name="file" value=""> &nbsp;&nbsp;&nbsp;
+                                </span>
+                            <font class="text-info" style="line-height:30px;">（仅支持Zip文件）</font>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+            <div style="text-align:left;" >
+                <button type="submit" class="btn btn-primary">提交游戏</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!--Body End-->
+
+<script type="text/javascript">
+    var isAliasUsed = false;
+    var isImgSelected = false;
+    $(function() {
+        var alias_name = $('input[name=seo_name]');
+        alias_name.blur(function(e) {
+            var _this = $(this);
+            var val = $.trim(_this.val());
+            if (val) {
+                nameCheck(val);
+            }
+        });
+
+        var swfNode = $('input[name=swf]');
+        var originNode = $('input[name=origin]');
+        swfNode.blur(function(e) {
+            var _this = $(this);
+            var swfval = $.trim(_this.val());
+            var originval = $.trim(originNode.val());
+            if (swfval && !originval) {
+                originNode.val(url_domain(swfval));
+            }
+        });
+    });
+
+    function url_domain(data) {
+        var a = document.createElement('a');
+        a.href = data;
+        return a.hostname;
+    }
+
+    function checkForm() {
+        var nameNode = $('input[name=name]');
+        var name = nameNode.val();
+
+        var seo_nameNode = $('input[name=seo_name]');
+        var seo_name = seo_nameNode.val();
+
+        var descNode = $('textarea[name=desc]');
+        var desc = descNode.val();
+
+        var picfileNode = $('input[name=img]');
+        var picfile = picfileNode.val();
+
+        var widthNode = $('input[name=width]');
+        var width = parseInt(widthNode.val(), 10) || 0;
+
+        var heightNode = $('input[name=height]');
+        var height = parseInt(heightNode.val(), 10) || 0;
+
+        var swfNode = $('input[name=swf]');
+        var swf = swfNode.val();
+
+        var originNode = $('input[name=origin]');
+        var origin = originNode.val();
+
+        if (!name) {
+            alert('游戏名称不能为空！');
+            nameNode.focus();
+            return false;
+        }
+
+        if (!seo_name) {
+            alert('游戏别名不能为空！');
+            seo_nameNode.focus();
+            return false;
+        }
+
+        if (!desc) {
+            alert('游戏描述不能为空！');
+            descNode.focus();
+            return false;
+        }
+
+        if (desc.length < 20) {
+            alert('游戏描述不能少于20字符！');
+            descNode.focus();
+            return false;
+        }
+
+        if (width == 0) {
+            alert('宽度不能为0！');
+            widthNode.focus();
+            return false;
+        }
+
+        if (width < 200) {
+            alert('宽度不能小于200！');
+            widthNode.focus();
+            return false;
+        }
+
+        if (height == 0) {
+            alert('高度不能为0！');
+            heightNode.focus();
+            return false;
+        }
+
+        if (height < 200) {
+            alert('高度不能小于200！');
+            heightNode.focus();
+            return false;
+        }
+
+        if (!swf) {
+            alert('swf地址不能为空！');
+            swfNode.focus();
+            return false;
+        }
+
+        if (!origin) {
+            alert('来源不能为空！');
+            originNode.focus();
+            return false;
+        }
+
+        if (isAliasUsed) {
+            alert('游戏别名已被占用！');
+            return false;
+        }
+
+        if (!picfile) {
+            alert("请选择图片！");
+            return false;
+        } else {
+            extArray = new Array(".jpg", ".gif", ".png");
+            isImgSelected = checkFile(picfile,extArray);
+        }
+
+        if (!isImgSelected) {
+            return false;
+        }
+
+        return true;
+    }
+
+    //extArray = new Array(".gif", ".jpg", ".png");
+    function checkFile(file,extArray) {
+        var allowSubmit = false;
+        if (!file) {
+            return false;
+        }
+        while (file.indexOf("\\") != -1){
+            file = file.slice(file.indexOf("\\") + 1);
+        }
+        var ext = file.slice(file.indexOf(".")).toLowerCase();
+
+        for (var i = 0; i < extArray.length; i++) {
+            if (extArray[i] == ext) {
+                allowSubmit = true;
+                break;
+            }
+        }
+
+        if (allowSubmit){
+            return true;
+        }else{
+            alert("对不起，只能上传以下格式的文件:"
+            + (extArray.join(" ")) + "\n请重新选择符合条件的文件"
+            + "再上传.");
+            return false;
+        }
+    }
+
+    function nameCheck(val){
+        var seo_name=val;
+        $.post('__APP__/Index/checkGameAlias',{seo_name:seo_name}, function(result) {
+            isAliasUsed = result != '0';
+            if (result!='0') {
+                alert('已被占用，请使用其它别名！');
+            }
+        })
+    }
+</script>
+<include file="Public:footer" />

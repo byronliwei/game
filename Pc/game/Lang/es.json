@@ -1,0 +1,26 @@
+{
+	"---- Partes comunes ----":"",
+	"home":"Inicio",
+	"recently_played":"Recientes",
+	"foot_intro":"TheHotGames.Com es su plataforma preferida recursos de juego flash de fuego , sólo añadimos los juegos más populares en todo el Internet , por lo que nunca se cansa de nuestras categorías de juegos , incluyendo juegos de disparos , juegos de carreras , juegos de estrategia , juegos de rompecabezas , etc Usted no necesita pagar o incluso descargar nada . simplemente hacer clic y jugar sus juegos favoritos de Flash de forma gratuita. disfrutarlo !",
+	"privacy_policy":"Política de Privacidad",
+	"contact":"Contacto",
+	"play_more_games":"Más Juegos",
+	
+	"---- Inicio Contenido ----":"",
+	"index": {
+		"title":"el deporte más popular del mundo - TheHotGames.Com",
+		"meta": {
+			"description":"Juega a juegos populares en línea gratuito en TheHotGames.com , incluyendo juegos de palabras, juegos de carreras, juegos de cartas, juegos de rompecabezas y más juegos",
+			"keywords":"Hot , juegos, Volkswagen , deportes, tus juegos favoritos , juegos, gratis , online , flash , juego, arcade, puzzle, estrategia, defensa , tirador, plataformas, acción , aventura, juegos de rol , deportes , compitiendo con, torre , los juegos de Mario , juegos de Barbie"
+		}
+	},
+	
+	"play": {
+		"title":"jugar el juego popular [# N] - TheHotGames.Com",
+		"meta": {
+			"description":"Juega el juego popular [# N] en TheHotGames.com , incluyendo juegos de palabras, juegos de carreras , juegos de cartas , juegos de rompecabezas y más juegos",
+			"keywords":"Hot , juegos, [ # N] ,,, tus juegos favoritos populares libres, libre, en línea , flash, juego, centros comerciales , rompecabezas , estrategia, defensa , juegos de disparos , plataforma acción, aventura , juegos de rol , deportes, carreras , torre, los juegos de Mario , juegos de Barbie"
+		}
+	}
+}

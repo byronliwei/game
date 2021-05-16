@@ -1,0 +1,79 @@
+<include file="./Admin/core/Tpl/Public/header.html" />
+<include file="Public:sidebar" />
+<style type="text/css">
+</style>
+<!--Body Start-->
+<div class="span10">
+    <div class="container" id="content" style="width:100%;">
+        <div class="index">
+            <input type="button" id="btn" class="btn btn-blue" value="Begin" />
+            <input type="button" id="btnStop" class="btn btn-blue" style="display:none;" value="Stop" />
+            <span class="text-info" id="info"></span>
+        </div>
+        <ul id="ret">
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var all = {$count};
+    var pageSize = 100;
+    var pageCount = Math.floor(all / pageSize) + (all % pageSize ? 1 : 0);
+    var pageIndex = 0;
+    var retNode = null;
+    var isRun = false;
+    var btnBegin = null;
+    var btnStop = null;
+    $(function() {
+        retNode = $('#ret');
+        btnBegin = $('#btn');
+        btnStop = $('#btnStop');
+        btnBegin.click(function(e) {
+            isRun = true;
+            btnStop.show();
+            btnBegin.hide();
+            createIndex();
+        });
+
+        btnStop.click(function(e) {
+            isRun = false;
+            btnBegin.show();
+            btnStop.hide();
+        });
+
+        $('#info').html('  共 ' + all + ' 条记录');
+    });
+
+    function createIndex() {
+        if (!isRun) {
+            btnBegin.show();
+            btnStop.hide();
+            return;
+        }
+        var begin = 0;
+        var end = 0;
+        if (pageIndex < pageCount) {
+            begin = pageIndex * pageSize;
+            end = Math.min(begin + pageSize, all);
+        } else {
+            btnBegin.show();
+            btnStop.hide();
+            return;
+        }
+        $.ajax({
+            url: location.href + '?create=1&begin=' + begin + '&ps=' + pageSize
+        }).done(function(data) {
+            if (data === 'success') {
+                retNode.append('<li>' + begin + ' - ' + end + ' index create success</li>');
+            } else {
+                retNode.append('<li>' + begin + ' - ' + end + ' index create fail, info: ' + data + '</li>');
+            }
+            pageIndex++;
+            createIndex();
+        }).fail(function(xhr) {
+            alert('error');
+            console.log(xhr);
+        });
+    }
+</script>
+<!--Body End-->
+<include file="Public:footer" />

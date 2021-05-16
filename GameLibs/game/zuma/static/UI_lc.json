@@ -1,0 +1,36 @@
+{"frames": [
+
+{
+	"filename": "button-medium-idle.png",
+	"frame": {"x":446,"y":2,"w":153,"h":51},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":153,"h":51},
+	"sourceSize": {"w":153,"h":51}
+},
+{
+	"filename": "button-medium-idle_press.png",
+	"frame": {"x":446,"y":55,"w":151,"h":47},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":3,"w":151,"h":47},
+	"sourceSize": {"w":153,"h":51}
+},
+{
+	"filename": "panelconf_bg.png",
+	"frame": {"x":2,"y":2,"w":442,"h":223},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":1,"w":442,"h":223},
+	"sourceSize": {"w":444,"h":224}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "UI_lc.png",
+	"format": "RGBA8888",
+	"size": {"w":601,"h":227},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:86431c52471001905be948718f3b6405:de1895bf12a97181b1fc18e7f009aec5:e982d20a018b88ae37c79a96af66b7fa$"
+}
+}

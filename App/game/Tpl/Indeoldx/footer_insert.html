@@ -1,0 +1,219 @@
+<!--modal login start-->
+<div class="modal fade" id="login_modal">
+    <div class="modal-dialog" style="width: 380px;margin-top: 150px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <b>Login to TheHotGames</b>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="login-begin" class="simple-login">
+                    <form id="simple-login">
+                        <div class="position-re">
+                            <input class="dialog-input" type="text" name="username" id="login_username" autotype="username" value="User Name" data-value="User Name">
+                            <i class="position-admin"></i>
+                            <span class="reg_error_tip"  id="reg_username_error"></span>
+                        </div>
+                        <div class="position-re">
+                            <input class="dialog-input" type="text" name="password" id="login_password" autotype="password" value="Password" data-value="Password">
+                            <i class="position-login"></i>
+                            <span class="reg_error_tip"  id="reg_pwd_error"></span>
+                        </div>
+                        <div class="login-register">
+                            <input type="button" value="Login" class="simple-login-btn" onclick="modal_login(this)">
+                        </div>
+                        <p class="login_error_tip"></p>
+                        <p class="forget-password">
+                            <a href="javascript:void(0)" onclick="modal_goTo('register')">Register Now</a>
+                        </p>
+                    </form>
+                    <div class="other-login">
+                        <i class="line"></i>
+                        <span class="word">Or you can login with</span>
+                    </div>
+                    <div class="social-signup">
+                        <a href="javascript:void(0);" onclick="woos.user.fbConnect()" class="facebook-login-btn"></a>
+                    </div>
+                    <div class="social-signup" style="display:none">
+                        <a href="javascript:void(0);" onclick="woos.user.GPConnect()" class="googleplus-login-btn"></a>
+                    </div>
+                </div>
+                <div id="register-begin" class="simple-login hidden">
+                    <form id="simple-register">
+                        <div class="position-re">
+                            <input class="dialog-input" type="text" name="username" id="reg_username" autotype="username" value="User Name" data-value="User Name">
+                            <span class="reg_error_tip" id="reg_username_error"></span>
+                            <i class="position-admin"></i>
+                        </div>
+                        <div class="position-re">
+                            <input class="dialog-input" type="text" name="password" id="reg_password" autotype="password" value="Password" data-value="Password">
+                            <i class="position-login"></i>
+                            <span class="reg_error_tip" id="reg_pwd_error"></span>
+                        </div>
+                        <div class="position-re">
+                            <input class="dialog-input" type="text" name="email" id="reg_email" autotype="email" value="E-mail Address" data-value="E-mail Address">
+                            <i class="position-email"></i>
+                            <span class="reg_error_tip" id="reg_email_error"></span>
+                        </div>
+                        <div class="login-register">
+                            <input type="button" value="Register" class="simple-register" onclick="modal_register(this)">
+                        </div>
+                        <p class="forget-password">
+                            <a href="javascript:void(0)" onclick="modal_goTo('login')">Back to Login</a>
+                        </p>
+                    </form>
+                    <div class="other-login">
+                        <i class="line"></i>
+                        <span class="word">Or you can login with</span>
+                    </div>
+                    <div class="social-signup">
+                        <a href="javascript:void(0);" onclick="woos.user.fbConnect()" class="facebook-login-btn"></a>
+                    </div>
+                    <div class="social-signup" style="display:none">
+                        <a href="javascript:void(0);" onclick="woos.user.GPConnect()" class="googleplus-login-btn"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--modal login end-->
+
+<script src="{$domain}/Public/static/js/common.js?t={$timestamp}21"></script>
+<script src="{$domain}/Public/static/js/ext.js?t={$timestamp}81"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '326944870818413',
+              xfbml      : true,
+              version    : 'v2.1'
+            });
+        };
+
+        (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        $('.setting-container').mouseenter(function(){
+            if($(this).hasClass('setting-container')){
+                $(this).addClass('active');
+            }else{
+                $(this).addClass('select');
+            }
+            $(this).find('.popup-menu').removeClass('hidden');
+        })
+        $('.setting-container').mouseleave(function(){
+            if($(this).hasClass('setting-container')){
+                $(this).removeClass('active');
+            }else{
+                $(this).removeClass('select');
+            }
+            $(this).find('.popup-menu').addClass('hidden');
+        })
+    });
+</script>
+
+<script>
+    woos.config.set('baseUrl', 'http://www.thehotgames.com');
+    woos.config.set('wikiUrl', 'http://www.thehotgames.com');
+    var regTip = {
+        'username' : ['Username cannot be blank','Must be 5 -15 characters long','Only fill a-z and 0-9','Username and Password Cannot Be Empty'],
+        'password' : ['Password cannot be empty','Must be 6 -20 characters long','Only fill a-z and 0-9'],
+        'email'    : ['Email cannot be blank','Email Invalide']
+    }
+    var langItem = {
+        'login':'Login',
+        'register':'Register'
+    }
+</script>
+
+<eq name="Think.const.ACTION_NAME" value="play">
+<style type="text/css">
+.sideGame{background:rgba(255, 255, 255, 0.1);width:100px;display:none;height:98%;padding:1% 0px;position:fixed;right:-120px;top:0px;box-shadow: -1px 0px 4px rgba(0, 60, 102, 0.8);overflow: hidden;transition: all 0.1s;}
+.sideActive{right:0px!important;}
+#sideGameLeft{left:-120px!important;right:auto!important;}
+#sideGameLeft.sideActive{left:0px!important;}
+.sideGame li{text-align: center;list-style: none;margin:8px 0px;}
+.sideGame li a{display: block;transition: all 0.1s;}
+.sideGame li img{width: 80px;height:80px;border-radius: 8px;box-shadow: 0px 1px 4px #002A3D;}
+.sideGame li a:hover img{box-shadow: 0 0 0 2px #fff;}
+
+.sideGame .gototop {
+  display: none;
+  width: 100%;
+  height: 30px;
+  border-top: 1px dotted #F0F0F0;
+  background:#00374C url(/Public/static/images/comm_imgs.png?v=2) left top no-repeat;
+  background-position: 40px 2px;
+  cursor: pointer;
+  position: absolute;right: 0px;bottom: 14px;
+}
+.sideGame .gototop:hover{background-color:#005474 }
+</style>
+
+<div class="sideGame" id="sideGameLeft">
+<ul>
+    <volist name="newHotGame" id="vo" offset="10" length='20'>
+    <li>
+        <a href="{$domain}/{$lang}/game/{$utm_source.play}/{$vo.seo_name}.html{$utm_source.param}" target="_blank"><img class="lazy" src="{$domain}/Public/static/images/empty.gif" data-original="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default='images'}/{$vo.img}" alt="{$vo.name}" title="{$vo.name}"></a>
+    </li>
+    </volist>
+</ul>    
+</div>
+
+<div class="sideGame" id="sideGameRight">
+<ul>
+    <volist name="newHotGame" id="vo" offset="0" length='10'>
+    <li>
+        <a href="{$domain}/{$lang}/game/{$utm_source.play}/{$vo.seo_name}.html{$utm_source.param}" target="_blank"><img class="lazy" src="{$domain}/Public/static/images/empty.gif" data-original="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default='images'}/{$vo.img}" alt="{$vo.name}" title="{$vo.name}"></a>
+    </li>
+    </volist>
+
+</ul>    
+<div class="gototop" onclick="window.scrollTo(0,0);return false;" style="display: block;"></div>
+</div>
+
+<script type="text/javascript">
+    var sideBox=$('.sideGame');
+    var sidePicCheck=true;
+    window._sideShowCheck=false;
+
+    function sideShowCheck(){
+        var sHeight=$('body').scrollTop();
+        var sHeight=document.documentElement.scrollTop+document.body.scrollTop;
+        if(sHeight>=800&&!_sideShowCheck){
+            sideBox.show();
+            setTimeout(function(){
+                sideBox.addClass('sideActive');
+            },200);
+            _sideShowCheck=true;
+            //console.log('show');
+            if(sidePicCheck){
+                sideBox.find('img').attr('src',function(){
+                    return $(this).attr('data-original');
+                });
+                sidePicCheck=false;
+            }
+        }else if(sHeight<800&&_sideShowCheck){
+            sideBox.removeClass('sideActive');
+            _sideShowCheck=false;
+            //console.log('hide');
+        }        
+    }
+
+    window.onscroll=function(){
+        sideShowCheck();
+    }
+
+    $(function(){
+        sideShowCheck();
+    })
+</script>
+</eq>
+

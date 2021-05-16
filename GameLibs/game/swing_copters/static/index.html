@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Swing Copters</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="dns-prefetch" href="http://mmbiz.qpic.cn">
+    <link rel="dns-prefetch" href="http://res.wx.qq.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+        canvas {
+            image-rendering: optimizeSpeed;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: -o-crisp-edges;
+        image-rendering: optimize-contrast;
+        -ms-interpolation-mode: nearest-neighbor;
+        }
+    </style>
+
+</head>
+<body>	 
+    <canvas id="gameCanvas" width="320" height="500"></canvas>
+    <script type="text/javascript" src="WeixinApi.js" tppabs="http://h5.igamesky.cn/copers/WeixinApi.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+
+        window.wxData = {
+            "appId": "", // 服务号可以填写appId
+            "imgUrl":'icon.png'/*tpa=http://h5.igamesky.cn/copers/icon.png*/,
+            "link":'index.html'/*tpa=http://h5.igamesky.cn/copers/index.html*/,
+            "desc":"",
+            "title":"Swing Copers神经猫版"
+        };
+        window.wxFriend = {
+            "appId": "", // 服务号可以填写appId
+            "imgUrl":'icon.png'/*tpa=http://h5.igamesky.cn/copers/icon.png*/,
+            "link":'index.html'/*tpa=http://h5.igamesky.cn/copers/index.html*/,
+            "desc":"",
+            "title":"Swing Copers神经猫版"
+        };
+        WeixinApi.ready(function(Api) {
+            var wxCallbacks = {
+                ready : function() {
+                },
+                cancel : function(resp) {
+                },
+                fail : function(resp) {
+                },
+                confirm : function(resp) {
+                },
+                all : function(resp) {
+                }
+            };
+            Api.shareToFriend(wxFriend, wxCallbacks);
+            Api.shareToTimeline(wxData, wxCallbacks);
+            Api.shareToWeibo(wxData, wxCallbacks);
+        });
+    </script>
+    <audio id="audio_fcoin" src="fcoin.mp3" tppabs="http://h5.igamesky.cn/copers/audio/fcoin.mp3" type="audio/mpeg" preload="auto"></audio>
+    <audio id="audio_sfx_hit" src="sfx_hit.mp3" tppabs="http://h5.igamesky.cn/copers/audio/sfx_hit.mp3" type="audio/mpeg" preload="auto"></audio>
+    <audio id="audio_sfx_wing" src="sfx_wing.mp3" tppabs="http://h5.igamesky.cn/copers/audio/sfx_wing.mp3" type="audio/mpeg" preload="auto" loop="true"></audio>
+
+    <script type="text/javascript" src="cocos2d-html5.js" tppabs="http://h5.igamesky.cn/js/cocos2d-html5.js"></script>
+    <script type="text/javascript" src="copters.js" tppabs="http://h5.igamesky.cn/copers/copters.js"></script>
+    <script type="text/javascript" src="tongji.js" tppabs="http://h5.igamesky.cn/js/tongji.js"></script>
+</body>
+</html>

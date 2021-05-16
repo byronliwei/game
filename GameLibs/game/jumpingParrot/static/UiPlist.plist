@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>hard.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{134,235},{46,49}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{46,49}</string>
+			</dict>
+			<key>obs1.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{483,1},{46,300}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{46,300}</string>
+			</dict>
+			<key>obs2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,158},{46,300}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{46,300}</string>
+			</dict>
+			<key>obs3.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{49,158},{45,300}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{45,300}</string>
+			</dict>
+			<key>offBtn.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{207,235},{16,16}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{16,16}</string>
+			</dict>
+			<key>reStartBtn.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{96,158},{75,75}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{75,75}</string>
+			</dict>
+			<key>right.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{182,235},{23,25}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{23,25}</string>
+			</dict>
+			<key>role1.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{96,235},{36,64}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{36,64}</string>
+			</dict>
+			<key>role2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{250,227},{46,56}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{46,56}</string>
+			</dict>
+			<key>role3.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{250,158},{51,67}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{51,67}</string>
+			</dict>
+			<key>shareBtn.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{173,158},{75,75}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{75,75}</string>
+			</dict>
+			<key>arrow.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{303,158},{29,102}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{29,102}</string>
+			</dict>
+			<key>bland.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,1},{480,155}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{480,155}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>UiPlist.png</string>
+			<key>realTextureFileName</key>
+			<string>UiPlist.png</string>
+			<key>size</key>
+			<string>{530,459}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>530</integer>
+			<key>height</key>
+			<integer>459</integer>
+		</dict>
+	</dict>
+</plist>

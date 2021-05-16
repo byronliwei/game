@@ -1,0 +1,76 @@
+{"frames": [
+
+{
+	"filename": "book-page.png",
+	"frame": {"x":2,"y":2,"w":601,"h":382},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":601,"h":382},
+	"sourceSize": {"w":604,"h":382}
+},
+{
+	"filename": "button-medium-idle.png",
+	"frame": {"x":605,"y":134,"w":153,"h":51},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":153,"h":51},
+	"sourceSize": {"w":153,"h":51}
+},
+{
+	"filename": "button-medium-idle_press.png",
+	"frame": {"x":605,"y":237,"w":151,"h":47},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":3,"w":151,"h":47},
+	"sourceSize": {"w":153,"h":51}
+},
+{
+	"filename": "button_green.png",
+	"frame": {"x":605,"y":187,"w":153,"h":48},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":153,"h":48},
+	"sourceSize": {"w":153,"h":51}
+},
+{
+	"filename": "button_green_press.png",
+	"frame": {"x":2,"y":386,"w":145,"h":46},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":4,"w":145,"h":46},
+	"sourceSize": {"w":153,"h":51}
+},
+{
+	"filename": "screenshot.png",
+	"frame": {"x":605,"y":2,"w":200,"h":130},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":200,"h":130},
+	"sourceSize": {"w":200,"h":134}
+},
+{
+	"filename": "sparkle_2_logo_studio.png",
+	"frame": {"x":605,"y":286,"w":149,"h":121},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":149,"h":121},
+	"sourceSize": {"w":150,"h":121}
+},
+{
+	"filename": "star-big.png",
+	"frame": {"x":149,"y":386,"w":30,"h":29},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":2,"w":30,"h":29},
+	"sourceSize": {"w":34,"h":33}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "UI_deluxe.png",
+	"format": "RGBA8888",
+	"size": {"w":807,"h":434},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:bdc8aeedb28adb483d979bd351a20ce0:b21ae908a8049cbd15a72bc8778c5ab4:8a212e37ee7b62560c55bc6bf63167d1$"
+}
+}

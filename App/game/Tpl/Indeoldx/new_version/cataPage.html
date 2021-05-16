@@ -1,0 +1,24 @@
+<?php
+$page=$_GET['page'];
+$lan=$_GET['lang'];
+if(!$lan){
+	$lan=$_SESSION['lang'];
+}
+$str="";
+$str.='<div class="grid-item"><div class="item-inner"><a target="_blank" href="http://bigfarm.thehotgames.com?f=main" class="gmpage'.$page.'"><img class="lazy" src="/Public/static/images/empty.gif" data-original="/Public/webgame/bigfarm_300x300.gif" alt="GoodGame BigFarm"><span title="GoodGame BigFarm">GoodGame BigFarm</span></a></div></div>';
+$str.='<div class="grid-item"><div class="item-inner"><a target="_blank" href="http://empire.thehotgames.com?f=main" class="gmpage'.$page.'"><img class="lazy" src="/Public/static/images/empty.gif" data-original="/Public/images/empire.jpg" alt="GoodGame Empire"><span title="GoodGame Empire">GoodGame Empire</span></a></div></div>';
+
+for($i=0,$len=count($list);$i<$len;$i++){
+    $data=$list[$i];
+    if(!$data['seo_name']){continue;}
+
+	$str.='<div class="grid-item '.($data['feature']?'grid-item-width2':' ').'"><div class="item-inner"><a href="/'.$lan.'/game/'.$utm_source['play'].'/'.$data['seo_name'].'.html'.$utm_source['param'].'" target="_blank"><img class="lazy" src="/Public/static/new_version/empty.png" data-original="http://image'.rand(1,4).'.thehotgames.com/games/'.($data['sort']?$data['sort']:'images').'/'.addslashes($data['img']).'"><span title="'.addslashes($data['name']).'">'.addslashes($data['name']).'</span>'.($data['hot']?'<em class="g-tag tag-hot"></em>':' ').($data['new']?'<em class="g-tag tag-new"></em>':' ').'</a></div></div>';
+
+}
+$arr=array();
+$arr['html']=$str;
+$arr['len']=count($list);
+
+header('Content-Type: application/json');
+echo json_encode($arr);
+?>

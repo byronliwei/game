@@ -1,0 +1,84 @@
+<include file="./Admin/core/Tpl/Public/header.html" />
+<include file="Public:sidebar" />
+  
+  <!--Body Start-->
+  <div class="span10">
+			
+	<div align="center" class="container" id="content" style="width:100%;">
+		
+		<form id="reladd_form" class="clearfix" method="post" action="__GROUP__/App/releaseAdd">
+		<span style="float:left">
+			<input type="text" value="" name="release-alias" placeholder="version alias" class="input-fix"> &nbsp;&nbsp;&nbsp;
+			<button type="button" onclick="if(!$('input[name=release-alias]').val()){alert('请填写完整！');return;}$('#reladd_form').submit()" class="btn btn-success"><i class="icon"></i>Create Version</button>
+			
+			<select class="input-fix" id="clear-lang" name="clearLang" style="margin-left:25px;width:130px;">
+				<option value="">Choose Country</option>
+				<option value="all">All</option>
+				<volist name="Think.config.LANG" id="vo">
+				<option value="{$vo}">{$vo}</option>
+				</volist>
+			</select>
+
+			<select class="input-fix" id="clear-cata" name="clearLang" style="margin-left:25px;width:120px;">
+				<option value="">Choose Cata</option>
+				<option value="all">All Pages</option>
+				<option value="lanIndex">Index Page</option>
+				<option value="infoPage">Info Page</option>
+				<option value="play">Play Page</option>
+				<option value="category">Category Page</option>
+				
+			</select>			
+			<a type="button" class="btn btn-warning" href="javascript:void(0)" onclick="clearCache();"><i class="icon"></i>Clear Cache</a>
+		</span>
+		</form>
+							
+		<table id="film-list" class="table table-bordered">
+			<thead>
+				<tr>
+					<th><input type="checkbox" class="selectAll">&nbsp;&nbsp;Data ID</th>
+					<th>Version Alias</th>
+					<th>Review URL</th>
+					<th>Create Time</th>
+					<th>Handle</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="releaseList" id="vo">
+				<tr dataid="{$vo.id}">
+					<td style="word-break:break-all; width:100px;"><input type="checkbox" value="12" name="dataId">&nbsp;&nbsp;{$vo.id}</td>
+					<td style="word-break:break-all; width:100px;">{$vo.release_alias}</td>
+					<td style="word-break:break-all; width:200px;"><a target="_blank" href="__ROOT__/index.php/game/App?rel={$vo.id}">__ROOT__/index.php/game/App?rel={$vo.id}</a></td>
+					<td style="word-break:break-all; width:150px;">{$vo.time|date="Y-m-d H:i",###}</td>
+					<td>
+						<a href="__GROUP__/Index/releaseDist/relid/{$vo.id}">Dist</a>&nbsp;&nbsp;
+						<eq name="vo.topic" value="0">
+						<a  onclick="if(!confirm('确定'+$(this).text()+'?')){return false;}" href="__GROUP__/Index/topicSwitch/relid/{$vo.id}?t=on" class="btn">开启专题</a>
+						<else/>
+						<a  onclick="if(!confirm('确定'+$(this).text()+'?')){return false;}" href="__GROUP__/Index/topicSwitch/relid/{$vo.id}?t=off" class="btn btn-success">关闭专题</a>
+						</eq>
+						<!-- <a onclick="delSuggestion(this);" href="javascript:void(0);">删除</a> -->
+					</td>
+				</tr>
+				</volist>
+			</tbody>
+		</table>
+		<div style="text-align:left;"><a  class="btn btn-danger batch-del"><i class="icon  icon-minus"></i>Batch Del</a></div>
+		<div class="pagination">每页{$pageLen} 共{$pagination} &nbsp;</div>
+	</div> 
+
+  </div>
+  <!--Body End-->
+  
+
+<script type="text/javascript">
+	function clearCache(){
+		var lang=$('#clear-lang').val();
+		var cata=$('#clear-cata').val();
+		if(!lang||!cata){
+			alert('Please choose "Country" and "Cata" !');
+			return;
+		}
+		window.open('__GROUP__/Index/clearCache?lang='+lang+'&cata='+cata);		
+	}
+</script>
+<include file="Public:footer" />

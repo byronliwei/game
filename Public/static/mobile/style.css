@@ -1,0 +1,14 @@
+*{margin:0px;padding:0px;}
+body{font-family: arial;}
+
+
+#header{
+  height: 53px;
+  line-height: 53px;
+  background: url(bg-header.png) repeat-x;
+  top: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  vertical-align: middle;
+}

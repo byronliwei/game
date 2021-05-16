@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Copyright Zygomatic.nl -->
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="date" content="2014-12-18">
+	<meta name="gameCats" content="Puzzle">
+	<meta property="og:type" content="game">
+	<meta property="og:title" content="Rectangles">
+
+	<meta property="og:description" content="Drag to create rectangles in the game. Each rectangle may only contain 1 number representing the number of cells in the rectangle.">
+	<meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0,width=device-width">
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+		   
+	<link rel="shortcut icon" sizes="196x196" href="staticicon-196x196.png">
+	<link rel="apple-touch-icon" href="staticicon-60x60.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="staticicon-76x76.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="staticicon-120x120.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="staticicon-152x152.png">
+	<link rel="stylesheet" type="text/css" href="static/game.min.css">
+
+
+	<script src="static/ThirdParty.js"></script>
+	<script src="static/game.js"></script>
+</head>
+<body>
+
+<div id="gameContainer"></div>
+<div id="adContainer"><div id="timeLeft"></div></div>
+
+<div id="rotateHint">
+	<h2>Please rotate your device</h2>
+	<img class="rotate" src="static/rotate.png" alt="Please rotate your device">
+	<img id="rotateClose" src="static/close.png" alt="X">
+</div>
+<script type="text/javascript" src="../../static/js/game.as.js"></script>
+<link href="../../static/css/game.common.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../static/js/zep.min.js"></script>
+<script type="text/javascript" src="../../static/js/game.common.js"></script>
+<script type="text/javascript" src="../../static/js/game.analytics.js"></script>
+<script>
+	var gameName = document.title,
+		gameContainer = document.getElementById('gameContainer'),
+		gamePlay = new GamePlay();
+
+	function orderInit(a) 
+	{
+		switch(a) {
+			case 1: loadRec.creatloading(); break;
+			case 2: GameMenu.showMenu(); break;
+			case 3: GameHelp.showHelp(); break;
+			case 4: gamePlay.showPlay(); break;
+			case 5: GameOver.showOver();break;
+		}
+	}
+
+	GameLib.init(gameName, 800, 480);
+</script>
+
+</body>
+</html>

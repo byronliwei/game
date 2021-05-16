@@ -1,0 +1,53 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>Don't Drink And Drive</title>
+    <style>
+        body {
+            background-color: white;
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+
+        body, canvas, div {
+            user-select:none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+    <script src="static/d.js"></script>
+</head>
+<body>
+    <div id="gameDiv"></div>
+	<script language=javascript>
+		function moreGame(){
+			window.location.href=mobConfig.mainpage;
+		}
+		function share(){
+		}
+
+		function setGameResult(score,title){
+			if(score>0){
+				//game9g.score =parseInt(score);
+				//game9g.scoreName = "行驶了"+score+"米";	
+				//game9g.shareData.title =title;
+				//game9g.utils.shareConfirm("你酒后驾车行驶了"+score+"分，快分享给小伙伴们吧！", dp_share); 
+			}
+			var insertAds=setTimeout("mobConfig.stop()",1000);
+		}
+	</script>
+
+<script type="text/javascript" src="../../static/js/game.as.js"></script>
+</body>
+</html>
+<link href="../../static/css/game.common.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../static/js/zep.min.js"></script>
+<script type="text/javascript" src="../../static/js/game.common.js"></script>
+<script type="text/javascript" src="../../static/js/game.analytics.js"></script>

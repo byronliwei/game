@@ -1,0 +1,82 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+  <title>Flappy 2048</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  	<meta name="description" content="What would happen if Flappy Bird merged with the popular game called 2048? Here is your answer!" />
+  	<meta property="og:description" content="What would happen if Flappy Bird merged with the popular game called 2048? Here is your answer!" />
+   <!-- <meta property="og:type" content="website" />
+   <meta property="og:title" content="Flappy 2048" />
+   <meta property="og:url" content="http://flappy2048.com/" />
+   <meta property="og:site_name" content="Flappy 2048" />
+   <meta property="og:image" content="static/fbthumb.jpg" />
+   <meta property="fb:app_id" content="696924893682138" /> -->
+   <meta name="viewport" content="user-scalable=no, initial-scale=0.5, width=610, height=1024" />
+   <link rel="image_src" href="http://flappy2048.com/fbthumb.jpg" />
+</head>
+<body>
+ 
+ <style type="text/css">
+ .cellol {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select:none;
+  user-select:none;
+ }
+ </style>
+ 
+ <div id="lgd" style="width: 300px; height: 64px; position: absolute;"></div>
+ <script type='text/javascript'>
+ var lgdiv = document.getElementById('lgd');
+ lgdiv.style.left = Math.floor((window.innerWidth - 300)/2)+'px';
+ lgdiv.style.top = Math.floor((window.innerHeight - 64)/2)+'px';
+ lgdiv.style.fontFamily = 'Verdana';
+ lgdiv.style.fontSize = '16px';
+ lgdiv.style.fontWeight = 'bold';
+ lgdiv.style.textAlign = 'center';
+ lgdiv.innerHTML = 'Loading...';
+ </script>
+ 
+ <div id="fb-root"></div>
+<!--  <script>
+   window.fbAsyncInit = function() {
+     FB.init({
+       appId      : '696924893682138',
+       status     : true,
+       xfbml      : true
+     });
+   };
+
+   (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "static/all.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+ </script>
+
+ 
+ 
+
+ <div id="fb-root"></div>
+ <script>(function(d, s, id) {
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) return;
+   js = d.createElement(s); js.id = id;
+   js.src = "static/all.js#xfbml=1&appId=696924893682138";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));</script>
+  -->
+ 
+ 
+
+
+     <script type="text/javascript" src="../../static/js/game.as.js"></script>
+<link href="../../static/css/game.common.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../static/js/zep.min.js"></script>
+<script type="text/javascript" src="../../static/js/game.common.js"></script>
+<script type="text/javascript" src="../../static/js/game.analytics.js"></script>
+ 
+<script type='text/javascript' src='static/flappy2048.js'></script> 
+</body>
+</html>

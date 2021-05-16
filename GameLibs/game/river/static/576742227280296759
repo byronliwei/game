@@ -1,0 +1,55 @@
+{
+    "configar": {
+        "branding": {
+            "main": {
+                "label": "main",
+                "image": ".\/static\/logo_A10_202x50.png",
+                "url": "http:\/\/www.h5.gamez6.com\/",
+                "style": "",
+                "width": "202",
+                "height": "50",
+                "mime": "static\/png",
+                "type": "png",
+                "handler": "newTab",
+                "blacklisted": false
+            },
+            "more_games": {
+                "label": "more_games",
+                "image": "#",
+                "url": "http:\/\/www.h5.gamez6.com\/",
+                "style": "",
+                "width": "0",
+                "height": "0",
+                "mime": "static\/png",
+                "type": "png",
+                "handler": "newTab",
+                "blacklisted": false
+            },
+            "logo": {
+                "label": "logo",
+                "image": ".\/static\/logo_A10_202x50.png",
+                "url": "http:\/\/h5.games6.com\/",
+                "style": "",
+                "width": "202",
+                "height": "50",
+                "mime": "static\/png",
+                "type": "png",
+                "handler": "newTab",
+                "blacklisted": true
+            },
+            "splash_screen": {
+                "label": "splash_screen",
+                "image": "place_holder_string",
+                "url": "http:\/\/www.h5.gamez6.com\/",
+                "style": "",
+                "width": "0",
+                "height": "0",
+                "mime": "static\/png",
+                "type": "png",
+                "handler": "newTab",
+                "blacklisted": true
+            }
+        },
+        "localization": null
+    }
+}

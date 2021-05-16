@@ -1,0 +1,113 @@
+<include file="./Admin/core/Tpl/Public/header_notop.html" />
+<style type="text/css">
+.pic_list{display:block;padding:1px;text-align:center}
+.pic_list:hover{border:solid 1px #31B9FD;padding:0px}
+.game_pic{max-width:250px!important;}
+</style>
+  <!--Body Start-->
+  <div class="span12">
+
+	<div align="center" class="container" id="content" style="width:100%;">
+
+		<form id="search_form" class="clearfix" method="post" action="__GROUP__/Index/releaseDicAdd/relid/{$Think.get.relid}">
+		<span style="float:left">
+			<input type="hidden" value="{$Think.get.relid}" name="relid">
+			<input type="text" value="" name="key" class="input-fix" placeholder="游戏标题"> &nbsp;&nbsp;&nbsp;
+			<button type="button" onclick="if(!$('input[name=key]').val()){alert('请输入游戏标题！');return;}$('#search_form').submit()" class="btn btn-success"><i class="icon-search"></i> 搜索</button> &nbsp;&nbsp;&nbsp;
+
+
+			游戏分类:
+			<b>{$Think.get.type}</b>
+			<select style="width:100px;" id="sort-change" name="sort-change" class="input-fix">
+				<option value="">选择类别</option>
+				<option value="">ALL</option>
+				<option value="hot">hot</option>
+				<option value="html5">html5</option>
+				<option value="spiderman">spiderman</option>
+				<option value="ben10">ben10</option>
+				<option value="barbie">barbie</option>
+				<option value="mario">mario</option>
+				<option value="car">car</option>
+				<option value="christmas">christmas</option>
+				<option value="racing">racing</option>
+				<option value="action">action</option>
+				<option value="basketball">basketball</option>
+				<option value="tank">tank</option>
+				<option value="puzzle">puzzle</option>
+				<option value="physics">physics</option>
+				<option value="parking">parking</option>
+				<option value="ninja">ninja</option>
+				<option value="multiplayer">multiplayer</option>
+				<option value="maze">maze</option>
+				<option value="matching">matching</option>
+				<option value="logic">logic</option>
+				<option value="life">life</option>
+				<option value="funny">funny</option>
+				<option value="skill">skill</option>
+				<option value="dress-up">dress-up</option>
+				<option value="cooking">cooking</option>
+				<option value="classic">classic</option>
+				<option value="card">card</option>
+				<option value="board">board</option>
+				<option value="billiards">billiards</option>
+				<option value="bike">bike</option>
+			</select>
+		</span>
+		</form>
+
+		<form id="film_form" name="film_form" class="clearfix" method="post" action="__GROUP__/App/releaseAddDia">
+		<input type="hidden" name="relid" value="{$Think.get.relid}">
+		<table id="film-list" class="table table-bordered">
+			<thead>
+				<tr style="background:#f1f1f1">
+					<th colspan="4"><input type="checkbox" class="selectAll" checkname="dataId[]">&nbsp;&nbsp;游戏列表</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+				<volist name="gameList" id="vo" key="k">
+
+				<td style="word-break:break-all;width:25%" dataid="{$vo.id}">
+					<input type="checkbox" value="{$vo.id}" name="dataId[]" value="{$vo.id}">
+					&nbsp;<font <neq name="vo.t" value="">style="text-decoration:line-through;color:red"</neq> >{$vo.name|default='No name'}</font><br>
+					<b>{$vo.sort}</b><br>{$vo.origin}</b><br>
+					<a href="/game/play/{$vo.seo_name}.html" target="_blank"><img class="game_pic" src="http://image1.thehotgames.com/games/{$vo.sort|default='images'}/{$vo.img}"></a>&nbsp;
+
+				</td>
+				<if condition="($k)%4 eq 0">
+				</tr>
+				<tr>
+				</if>
+				</volist>
+				<php>$len=4-(count($diaList)%4);for($i=0;$i<$len;$i++){echo '<td></td>';}</php>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+		<div style="text-align:left;"><button  class="btn btn-success" type="button" onclick="if(!$('input[name=\'dataId[]\']:checked').size()){alert('请选择至少一个游戏！');return;}$('#film_form').submit();"><i class=" icon-chevron-right"></i> 加入版本</button></div>
+		<div class="pagination">
+			{$pagination} &nbsp;
+			<input type="text" name="num" id="num" class="input-fix span1"/>
+			<button class="btn btn-success" onclick="jumpNum()" type="button"><i class="icon"></i>跳转</button>
+		</div>
+	</div>
+
+  </div>
+  <!--Body End-->
+
+<script type="text/javascript">
+	$(function(){
+		$(".selectAll").click(function(){
+				var ck=false;
+				if($(this).is(":checked")){
+					ck=true;
+				}
+				$("input[name='dataId[]']").attr("checked",ck);
+		})
+
+		$("#sort-change").change(function(){
+			window.location.href="/admin.php/Index/releaseDicAdd/relid/{$Think.get.relid}?type="+$(this).val();
+		})
+	})
+</script>
+<include file="Public:footer" />

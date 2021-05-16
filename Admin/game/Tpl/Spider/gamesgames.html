@@ -1,0 +1,52 @@
+<include file="./Admin/core/Tpl/Public/header.html" />
+<include file="Public:spidernav" />
+<style type="text/css">
+</style>
+    <!--Body Start-->
+    <div class="span10">
+        <div class="container" id="content" style="width:100%;">
+            <h1>Gamesgames.com!</h1>
+            <div>
+                <input type="button" class="btn" value="Begin" />
+                <span class="text-info">all: {$count}</span>
+            </div>
+            <ul class="ret">
+
+            </ul>
+        </div>
+    </div>
+    <!--Body End-->
+    <script type="text/javascript">
+        var all = {$count};
+        var pageIndex = 0;
+        var pageSize = 5;
+        var pageCount = Math.floor(all / pageSize) + (all % pageSize == 0 ? 0 : 1);
+        $(function() {
+            $('.btn').click(function(e) {
+                addPic();
+            });
+        });
+
+        function addPic() {
+            if (! (pageIndex < pageCount)) {
+                return;
+            }
+            $.ajax({
+                url: location.href + '?add=1&pi=' + pageIndex + '&ps=' + pageSize
+            }).done(function(data) {
+                var begin = pageIndex * pageSize;
+                var end = Math.min(begin + pageSize, all);
+                if (data == 0) {
+                    $('.ret').append('<li>'+begin+' - '+end+' success</li>');
+                } else {
+                    $('.ret').append('<li>'+begin+' - '+end+' '+data+' fail</li>');
+                }
+                pageIndex++;
+                addPic();
+            }).fail(function(xhr) {
+                alert('error');
+                console.log(xhr);
+            });
+        }
+    </script>
+<include file="Public:footer" />

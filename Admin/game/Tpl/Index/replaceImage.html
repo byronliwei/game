@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>替换图片</title>
+    <link href="__PUBLIC__/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="__PUBLIC__/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/jcrop/jquery.jcrop.min.css">
+    <style type="text/css">
+    .container{margin-top:20px;width:760px;}
+    .upload-button{width: auto;position: relative;overflow: hidden;}
+    .file{position: absolute;right: 0px;top: 0px;font-family: Arial;font-size: 118px;margin: 0px;padding: 0px;cursor: pointer;opacity: 0;}
+    .draw{width: 500px;height: 500px;border: 1px solid #CCC;background-color: #EEE;overflow: auto;}
+    .draw img{max-width: none;max-height: none;}
+    .show-grid{margin-bottom: 20px;}
+    .row .span9,.row .span3{margin-left: 0;}
+    .currinfo{color: #888;}
+    #curr{border: 1px solid #ccc;padding:5px;}
+    .hs,.hs:hover{display: inline-block;text-decoration: none;color: #ccc;margin-top: 80px;}
+    .hs .btn{display: none;}
+    .hs:hover .btn{display: block;}
+    #curr{max-height: 200px;}
+    </style>
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="row show-grid">
+            <div class="btn btn-success upload-button upload-button-hover">
+                <i class="icon-upload icon-white"></i> 上传图片
+                <input type="file" id="uploadImage" name="file" class="file"/>
+            </div>
+            <span class="text-info">（只能上传单张1M以下png、jpg、gif图片）</span>
+        </div>
+        <div class="row">
+            <div class="span9">
+                <div class="draw">
+                    <if condition="$gameItem.sort eq ''">
+                    <img id="repimg" src="/Uploads/games/images/{$gameItem.img}" alt=""/>
+                    <else />
+                    <img id="repimg" src="/Uploads/games/{$gameItem.sort}/{$gameItem.img}" alt=""/>
+                    </if>
+                </div>
+            </div>
+            <div class="span3">
+                <p>当前缩略图：</p>
+                <p class="currinfo"><span class="text-info" id="width">{$gameItem.th_width}</span>px &nbsp;×&nbsp;<span class="text-info" id="height">{$gameItem.th_height}</span>px</p>
+                <p>
+                    <if condition="$gameItem.sort eq ''">
+                    <img id="curr" src="/Uploads/games/images/{$gameItem.img}" alt=""/>
+                    <else />
+                    <img id="curr" src="/Uploads/games/{$gameItem.sort}/{$gameItem.img}" alt=""/>
+                    </if>
+                </p>
+                <p>{$gameItem.img}</p>
+                <p>
+                    <input type="button" id="btnReplace" class="btn btn-submit" value="裁剪替换" />
+                    <a class="hs">直接替换（不裁剪）
+                        <input type="button" id="btnReplaceDirect" class="btn btn-submit" value="直接替换（不裁剪）" />
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/jcrop/jquery.jcrop.min.js"></script>
+    <script type="text/javascript">
+        var currNode = null;
+        var widthNode = null;
+        var heightNode = null;
+        var currWidth = {$gameItem.th_width};
+        var currHeight = {$gameItem.th_height};
+        var jcrop_api;
+
+        var repimgNode = null;
+        var pos = [0, 0, 0, 0];
+
+        var minWidth = 180;
+        var minHeight = 180;
+        var maxWidth = 600;
+        var maxHeight = 600;
+        var gameid = {$gameItem['id']};
+        $(function(){
+            currNode = $('#curr');
+            widthNode = $('#width');
+            heightNode = $('#height');
+            repimgNode = $('#repimg');
+
+            setJcrop();
+
+            $('#uploadImage').change(function(){
+                previewImage();
+            });
+
+            $('#btnReplace').click(function(){
+                replaceImage(true);
+            });
+
+            $('#btnReplaceDirect').click(function() {
+                replaceImage(false);
+            });
+        });
+
+        function replaceImage(isCut) {
+            var data = new FormData();
+            data.append('img', $('#uploadImage')[0].files[0]);
+            if (isCut) {
+                data.append('x', pos[0]);
+                data.append('y', pos[1]);
+                data.append('w', pos[2]);
+                data.append('h', pos[3]);
+            }
+            data.append('id', gameid);
+            $.ajax({
+                url: location.href,
+                data: data,
+                cache: false,
+                contentType: false,
+                processData: false,
+                type: 'POST'
+            }).done(function(data){
+                if (data == 'success') {
+                    alert('替换成功！');
+                    location.reload();
+                } else if (data == 'typeerror') {
+                    alert('图片格式不允许！');
+                } else if (data == 'dberror') {
+                    alert('数据库操作失败');
+                }
+            }).fail(function(xhr) {
+                console.error(xhr);
+            });
+        }
+
+        function setJcrop() {
+            repimgNode.Jcrop({
+                onChange: showCoords,
+                aspectRatio: 1,
+                minSize: [minWidth, minHeight],
+                maxSize: [maxWidth, maxHeight]
+            },function(){
+                jcrop_api = this;
+                jcrop_api.animateTo([0, 0, minWidth, minHeight]);
+            });
+        }
+
+        function showCoords(c){
+            pos = [c.x, c.y, c.w, c.h];
+        }
+
+        function previewImage() {
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL($('#uploadImage')[0].files[0]);
+
+            oFReader.onload = function (oFREvent) {
+                repimgNode.attr({
+                    'src': oFREvent.target.result,
+                    'style': ''});
+                if (jcrop_api) {
+                    jcrop_api.destroy();
+                }
+                setJcrop();
+            };
+        }
+    </script>
+</body>
+</html>

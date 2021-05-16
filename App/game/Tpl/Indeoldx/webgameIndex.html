@@ -1,0 +1,49 @@
+<include file="Index:header" />
+<link href="{$domain}/Public/static/css/web_index.css?t={$timestamp}" rel="stylesheet" />
+<link href="{$domain}/Public/static/css/main.css?t={$timestamp}" rel="stylesheet" />
+<style type="text/css">
+	*{margin:0px;padding: 0px;}
+    html,body{height:100%!important;min-height:610px}
+    body{overflow:auto!important;}
+    .gameBox{margin:0px;padding:0px;padding-top:60px;}
+    #headerSortList{display: none;}
+    .pop-container{top:60px;}
+</style>
+
+<eq name="gameDetail.tpl" value="0">
+<include file="Index:nav" />
+<else/>
+<style type="text/css">
+.gameBox{padding-top: 0px;}
+</style>
+</eq>
+
+<script type="text/javascript">
+    site_config={'lang':'{$lang}','cata':'webgame'}
+</script>
+
+<script src="{$domain}/Public/static/js/jquery.min.js"></script>
+
+<div class="gameBox">
+
+<iframe id="gameframe" width="100%" height="{$gameDetail.height|default="500"}" frameborder="0" src="{$gameDetail.url}" style="min-height:{$gameDetail.height|default="500"}px"></iframe>
+<div class="clear"></div>
+</div>
+
+<include file="Index:footer_insert" />
+
+<script type="text/javascript">
+function ajustFrame(){
+	var _minHeight={$gameDetail.height|default="500"};
+	var _len=<eq name="gameDetail.tpl" value="0">65<else/>0</eq>;
+    var _height=window.document.body.clientHeight-_len;
+    _height=_height<_minHeight?_minHeight:_height;
+    $("#gameframe").attr('height',_height);
+}
+$(function(){
+   ajustFrame();
+   window.onresize=function(){ajustFrame();} 
+})
+</script>
+</body>
+</html>

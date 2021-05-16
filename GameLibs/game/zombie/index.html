@@ -1,0 +1,41 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Zombie Effect</title>
+<meta name="keywords" content="Zombie Effect,Zombie Effect html5 game" />
+<meta name="description" content="Zombie Effect,Zombie Effect html5 game" />
+<link rel="apple-touch-icon" href="static/icon.png" />
+<link rel="shortcut icon" href="static/icon.png" />
+<link rel="icon" href="static/icon.png" />
+<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,target-densitydpi=device-dpi"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="full-screen" content="true"/>
+<meta name="screen-orientation" content="portrait"/>
+<meta name="x5-fullscreen" content="true"/>
+<meta name="360-fullscreen" content="true"/>
+<style>body{text-align:center;background:#000000;padding:0;border:0;margin:0;height:100%;}html{-ms-touch-action:none;overflow:hidden;}div,canvas{display:block;position:absolute;margin:0 auto;padding:0;border:0;}</style>
+</head>
+<body>
+<div style="position:relative;" id="gameDiv"></div>
+<script>var document_class = "Main";</script>
+<script src="static/egret_require.js"></script>
+<script src="static/egret_loader.js"></script>
+<script src="static/game-min.js"></script>
+<script>
+var support = [].map && document.createElement("canvas").getContext;
+if (support) {
+egret_h5.startGame();
+}
+else {
+alert("Egret 不支持您当前的浏览器")
+}
+</script>
+	<script type="text/javascript" src="../../static/js/game.as.js"></script>
+<link href="../../static/css/game.common.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../static/js/zep.min.js"></script>
+<script type="text/javascript" src="../../static/js/game.common.js"></script>
+<script type="text/javascript" src="../../static/js/game.analytics.js"></script>
+</body>
+</html>

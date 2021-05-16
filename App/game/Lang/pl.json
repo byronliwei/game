@@ -1,0 +1,26 @@
+{
+	"---- Części wspólne ----":"",
+	"home":"Strona główna",
+	"recently_played":"Ostatnio grane",
+	"foot_intro":"TheHotGames.Com jest preferowana platforma zasobów gry ognisty błysk , tylko dodać najpopularniejsze gry w Internecie , więc nigdy nie znudzi naszych kategorii gier , w tym gry strzelanki, gry wyścigowe, gry strategiczne , gry logiczne , itp. nie musisz płacić ani nawet nic ściągać . wystarczy kliknąć i grać w swoje ulubione gry flash za darmo . enjoy it!",
+	"privacy_policy":"Polityka prywatności",
+	"contact":"Kontakt",
+	"play_more_games":"Inne Gry",
+
+	"---- Strona główna zawartość ----":"",
+	"index": {
+		"title":"Najbardziej popularna gra na świecie - TheHotGames.Com",
+		"meta": {
+			"description":"Zagraj w darmowe gry online popularne w TheHotGames.com , w tym gry słowne, gry wyścigowe , gry w karty , gry zręcznościowe , gry i więcej",
+			"keywords":"Hot , gry, Volkswagen , sport, ulubione gry, gry, darmowe , forum , flash , gry, puzzle , zręcznościowe , strategiczne , defense , shooter, platformowe , akcji, przygodowe, RPG , sportowe , wieża , wyścigowe , gry Mario , gry Barbie."
+		}
+	},
+
+	"play": {
+		"title":"grać w popularne gry [#N] - TheHotGames.Com",
+		"meta": {
+			"description":"Zagraj w popularną grę [#N] w TheHotGames.com , w tym gry słowne, gry wyścigowe , gry w karty , gry zręcznościowe i więcej gier ",
+			"keywords":"Hot , gry, [#N] , wolne, popularne , ulubione gry, za darmo , online, Flash , gry, centra handlowe , puzzle , strategia , obrona , strzelanie gry, platforma akcja, przygoda , RPG , sportowe, Wyścigi , wieża, gry Mario , gry Barbie"
+		}
+	}
+}

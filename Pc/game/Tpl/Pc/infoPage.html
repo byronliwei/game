@@ -1,0 +1,325 @@
+<include file="Pc:header" />
+    <div class="fullbg">
+        <div class="close">
+            <img class="closenothover" width="30px" src="/Public/static/images/icon_narrow_default.png" alt="">
+            <img class="closehashover" width="30px" src="/Public/static/images/icon_narrow_selected.png" alt="">
+        </div>
+        <div class="gamePlay-content">
+            <img class="gamePlay-bg" src="{$gameDetail.img}">
+            <img class="gamePlay-icon" src="{$gameDetail.img}">
+            <div data-href="/game/play/{$gameDetail.seo_name}" class="gamePlay-button">Play Now!</div>
+            <div class="gamePlay-title">{$gameDetail.title}</div>
+        </div>
+    </div>
+    <div class="infopagetopad" style="text-align: center;margin-top: 10px;">
+        <script>
+            google_ad_slot = adConfig['pc-gamev6-728x90-info'][adChannel];
+            google_ad_width = 728;
+            google_ad_height = 90;
+            try{
+                document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-2104961258307381"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            }catch(e){
+                console.log(e);
+            }
+        </script>
+    </div>
+    <div class="detail-contain-warp">
+        <div class="detail-contain" id="game-col">
+            <div class="" style="width: 160px;height:600px;position: absolute;left: -160px;">
+                <script>
+                    google_ad_slot = adConfig['pc-gamev6-160x600-info1'][adChannel];
+                    google_ad_width = 160;
+                    google_ad_height = 600;
+                    try{
+                        document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-2104961258307381"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }catch(e){
+                        console.log(e);
+                    }
+                </script>
+            </div>
+            <if condition="$gameDetail.is_flash == 1 AND !strstr($gameDetail['link'],'swf')">
+                <div style="width: 100%;">
+                    {$gameDetail.link} 
+                    <div style="text-align: center;margin-top: 10px;">        
+                        <script>
+                            google_ad_slot = adConfig['pc-gamev6-728x90-play'][adChannel];
+                            google_ad_width = 768;
+                            google_ad_height = 160;
+                            try{
+                                document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-2104961258307381"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            }catch(e){
+                                console.log(e);
+                            }
+                        </script>
+                    </div> 
+                </div>
+            <else />
+                <div class="detail-recommend">
+                    <h3>Popular Games</h3>
+                    <volist name="topGame" id="vo" offset="0" length="6">
+                        <a href="/game/play/{$vo.seo_name}.html?sr={$vo.source}" data-source="{$vo.source}" class="games_list-item games_list-item-topgame" target="_blank">
+                            <img src="/Public/static/images/gamev61.png" data-qid="{$vo.id}" data-src="{$vo.img}">
+                            <div class="game_name">{$vo.name|addslashes=###}</div>
+                        </a>
+                    </volist>
+                </div>
+                <div class="detail-content" style="display: none;">
+                    <div class="detail-content-top">
+                        <div class="detail-img">
+                            <img src="/Public/static/images/gamez61.png" data-src="{$gameDetail.img}">
+                        </div>
+                        <div class="detail-info">
+                            <h3 class="detail-name">{$gameDetail.title}</h3>
+                            <div class="detail-star">
+                                <img src="/Public/static/images/star.png" alt="">
+                            </div>
+                            <div class="detail-plays">
+                                <img src="/Public/static/images/paly.png" alt="">
+                                <span>{:mt_rand(50000,99999)}</span>
+                            </div>
+                            <div class="detail-share">
+                                <img src="/Public/static/images/share.png" alt="">
+                                <span>{:mt_rand(500,999)}</span>
+                            </div>
+                            <a href="/{$lang}/game/play/{$gameDetail.seo_name}.html?sr={$vo.source}" data-source="{$vo.source}" class="detail-paly-btn">PLAY
+                                NOW</a>
+                        </div>
+                    </div>
+                    <div class="detail-desc">
+                        <p>{$gameDetail.desc}</p>
+                    </div>
+                    <div class="detail-tag">
+                        <a href="/cn/game/tag/{$gameDetail.sort}-games.html" class="detail-tag-item">{$gameDetail.sort}</a>
+                    </div>
+                    <div class="detail-shares">
+                        <div data-app="facebook" data-qid="{$gameDetail.id}" data-pic="http://image1.thehotgames.com/games/{$gameDetail.sort|default='images'}/{$gameDetail.img}"
+                            class="detail-shares-item detail-shares-item-d-f">
+                            <img src="/Public/static/images/facebook.png" alt="">
+                            Facebook
+                        </div>
+                        <div data-app="twitter" data-qid="{$gameDetail.id}" data-pic="http://image1.thehotgames.com/games/{$gameDetail.sort|default='images'}/{$gameDetail.img}"
+                            class="detail-shares-item detail-shares-item-d-t">
+                            <img src="/Public/static/images/twitter.png" alt="">
+                            Tweet
+                        </div>
+                        <div data-app="google" data-qid="{$gameDetail.id}" data-pic="http://image1.thehotgames.com/games/{$gameDetail.sort|default='images'}/{$gameDetail.img}"
+                            class="detail-shares-item detail-shares-item-d-g">
+                            <img src="/Public/static/images/gooegle.png" alt="">
+                            Google+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-contain detail-contain-duyiwuer">
+                    <div id="gamePlay-content" data-name="{$gameDetail.seo_name}" data-qid="{$gameDetail.id}">
+                        <img class="gamePlay-bg" src="{$gameDetail.img}">
+                        <img class="gamePlay-icon" src="{$gameDetail.img}">
+                        <div data-href="/game/play/{$gameDetail.seo_name}" class="gamePlay-button">Play Now!</div>
+                        <div class="gamePlay-title">{$gameDetail.title}</div>
+                        <video id="videoElement" style="display: none;"></video>
+                    </div>
+                    <div class="detail-content play-content">
+                        <div class="play-content-top">
+                            <div class="play-game-name">
+                                <h3>{$gameDetail.title}</h3>
+                                <div class="watchvideo" title="Walkthrough">
+                                    <img src="/Public/static/images/icon_how_to_play_selected3.png" alt="">
+                                </div>
+                                <div class="watchdesc">
+                                    <img class="imgnothover" src="/Public/static/images/icon_information_default.png" alt="">
+                                    <img class="imghashover" src="/Public/static/images/icon_how_to_play_selected1.png" alt="">
+                                </div>
+                                <div class="gamefullbtn">
+                                    <img class="fullnothover" src="/Public/static/images/icon_full_screen_default.png" alt="">
+                                    <img class="fullhashover" src="/Public/static/images/icon_how_to_play_selected2.png" alt="">
+                                </div>                            
+                                <div class="play-game-function"></div>
+                            </div>     
+                            <div class="play-iframe">
+                                <div id="play-iframe"></div>
+                                <div class="loadingGif">
+                                    <img width="100px" src="/Public/static/images/loading2.gif" alt="">
+                                </div>
+                                <div id="gameBoxFlash" data-source="{:I('get.sr')}" data-src="{$gameDetail.swf}" class="classgameBoxFlash" data-width="{$gameDetail.width}" data-height="{$gameDetail.height}">
+                                    <if condition="strstr($gameDetail['link'],'swf')">
+                                        <object width="100%" height="100%" wmode="direct" base="." data="{$gameDetail.swf}"
+                                            type="application/x-shockwave-flash">
+                                            <param value="direct" name="wmode">
+                                            <param value="base" name=".">
+                                        </object>
+                                    <else />
+                                        <iframe id="game_frame" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" webkit-playsinline="true" scrolling="no" seamless="" frameborder="0" sandbox="allow-forms allow-scripts allow-same-origin allow-popups" src=""></iframe>
+                                    </if>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align: center;margin-top: 10px;">        
+                            <script>
+                                google_ad_slot = adConfig['pc-gamev6-728x90-play'][adChannel];
+                                google_ad_width = 768;
+                                google_ad_height = 160;
+                                try{
+                                    document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-2104961258307381"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                }catch(e){
+                                    console.log(e);
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-recommend">
+                    <h3>Related Games</h3>
+                    <volist name="relatedGames" id="vo" offset="0" length="6">
+                        <a href="/game/play/{$vo.seo_name}.html?sr={$vo.source}" data-source="{$vo.source}" class="games_list-item games_list-item-relatedgame" target="_blank">
+                            <img src="/Public/static/images/gamev61.png" data-qid="{$vo.id}" data-src="{$vo.img}">
+                            <div class="game_name">{$vo.name|addslashes=###}</div>
+                        </a>
+                    </volist>
+                </div> 
+            </if>  
+            <div class="" style="width: 160px;height:600px;position: absolute;right: -160px;">
+                <script>
+                    google_ad_slot = adConfig['pc-gamev6-160x600-info2'][adChannel];
+                    google_ad_width = 160;
+                    google_ad_height = 600;
+                    try{
+                        document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-2104961258307381"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }catch(e){
+                        console.log(e);
+                    }
+                </script>
+            </div>                   
+        </div>
+    </div>
+    <if condition="strstr($gameDetail['link'],'swf')">
+        <div class="alertflash alertflashnone">
+            <div id="overlay" class="loaded" style="max-width: 550px;">
+                <a class="close_overlay" id="close_btn"></a>            
+
+                <div id="chrome-flash-warning-header">
+                    <h1>Enable plugin to play flash games</h1>
+                </div>
+                
+                <div id="chrome-flash-warning-paragraph-1">
+                    <p>
+                        To play these super cool games, you need to enable the Flash plugin in Chrome, the browser you're using.
+                
+                If you see either 
+                <img src="/Public/static/images/lock_icon1.png?v=a96e" height="20" width="20" style="vertical-align: middle;"> 
+                or <img src="/Public/static/images/info_icon1.png?v=a96e" height="20" width="20" style="vertical-align: middle;"> on the left side of your address bar, click on it. It will display this menu:
+                
+                Activate Flash in Chrome and enjoy our games!	</p>
+                </div>
+                
+                <img id="chrome-flash-warning-big" style="height: 190px; border: 1px solid grey; margin: 0 5px;" src="/Public/static/images/flash_1_en1.png?v=a96e">
+                
+                <div id="chrome-flash-warning-paragraph-2">
+                    <p>
+                        The Flash plugin may need to be activated in your Chrome settings. Don't worry, it's easy: 	</p>
+                </div>
+                
+                <img id="chrome-flash-warning-big" style="height: 190px; width: 45%; border: 1px solid grey; margin: 0 25px 0 0;" src="/Public/static/images/flash_2_en2.png?v=a96e">
+                
+                <i class="fas fa-arrow-right fa-2x" style="margin-top: 85px; margin-left: -25px; position: absolute;"></i>
+                
+                <img id="chrome-flash-warning-small" style="height: 190px; width: 45%; border: 1px solid grey;" src="/Public/static/images/flash_3_en3.png?v=a96e" >
+            </div>
+        </div>
+    </if>
+    <h3 class="walk_video_h3">
+        Need help? Watch walkthrough for this game
+    </h3>
+    <div class="walk_video">        
+        <div class="video-content" style="position: relative;">   
+            <div class="gobacktopalygame">Back To Game</div>   
+            <div class="videonotfound">
+                <img class="gamePlay-bg" src="{$gameDetail.img}">
+                <img class="gamePlay-icon" src="{$gameDetail.img}">
+                <div class="gamePlay-button">VIDEO NOT FOUND</div>  
+            </div>
+            <script type="text/javascript" id="veediInit">
+                 var _v,settings = {
+                      game : "{$gameDetail.title}",
+                      gametitle:"{$gameDetail.title}",
+                      publisherId : 74654583,
+                      width : 820,
+                      onVideoFound : function() {
+                          //console.log("veedi onVideoFound");
+                          $('.videonotfound').hide();
+                      },
+                      onVideoNotFound: function() {
+                          //console.log("veedi onVideoNotFound");
+                          $('.videonotfound').show();
+                      },
+                      onError: function(data) {
+                          //console.log("veedi onError");
+                          $('.videonotfound').show();
+                      },
+                  };
+                  (function(settings)  {
+                        var vScript = document.createElement('script');
+                        vScript.type = 'text/javascript'; vScript.async = true;
+                        vScript.src = '//www.veedi.com/player/embed/veediEmbed.js';
+                        vScript.onload = function() { _v = new VeediEmbed(settings); };
+                        var veedi = document.getElementById('veediInit'); veedi.parentNode.insertBefore(vScript, veedi);
+                })(settings);
+            </script>
+        </div>   
+        <div class="descandad">
+            <div class="walk_ad" style="text-align: center;">
+                <div class="" style="text-align: center;">
+                    <script>
+                        google_ad_slot = adConfig['pc-gamev6-300-250-play'][adChannel];
+                        google_ad_width = 300;
+                        google_ad_height = 250;
+                        try{
+                            document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-2104961258307381"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        }catch(e){
+                            console.log(e);
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="walk_desc">
+                <img src="{$gameDetail.img}" alt="">              
+                {$gameDetail.desc}
+            </div>
+        </div>     
+    </div>
+    <div style="text-align: center;margin-top: 10px;">        
+            <script>
+                google_ad_slot = adConfig['pc-info-zishiying'][adChannel];
+    
+                try{
+                    document.write(`<ins class="adsbygoogle"
+                                    style="display:block"
+                                    data-ad-format="autorelaxed"
+                                    data-ad-client="ca-pub-2104961258307381"
+                                    data-ad-slot="${google_ad_slot}"></ins>`);
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                }catch(e){
+                    console.log(e);
+                }
+            </script>
+        </div>
+    <div class="youmaylike-warp">
+        <h1>You may like</h1>
+        <div class="youmaylike">            
+            <div class="youmaylike_list">
+                <volist name="youMayLike" id="vo" offset="0" length="24">
+                    <a href="/game/play/{$vo.seo_name}.html?sr={$vo.source}" data-source="{$vo.source}" class="games_list-item detailmaylike" target="_blank">
+                        <img src="/Public/static/images/gamev61.png" data-qid="{$vo.id}" data-src="{$vo.img}">
+                        <div class="game_name">{$vo.name|addslashes=###}</div>
+                    </a>
+                </volist>
+            </div>            
+        </div>
+    </div>
+    <include file="Pc:footer" />

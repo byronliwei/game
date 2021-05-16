@@ -1,0 +1,136 @@
+
+<style type="text/css">
+.navTabs ul li a,.topcata-title h1{
+<in name='lang' value='cn,tw,ko,ar,th'>
+font-size:22px;
+</in>
+<in name='lang' value='ja,el,ru'>
+font-size:18px;
+</in>
+}
+</style>
+
+<div class="header">
+    <div class="headcont">
+        <div class="projectInfo">
+            <h1 class="colorChange animateAll" style="display:none;">TheHotGames</h1>
+        </div>
+        <div id="logo"><a title="{$lan.nav.merry_christmas}" href="{$domain}/{$lang}{$utm_source.param}"><img width="200" height="60" src="{$domain}/Public/static/images/header_logo_christmas.png"></a></div>
+        <div class="navTabs">
+            <ul>
+            <li class="hasNavSub">
+                <a href="{$domain}/{$lang}/game/more.html{$utm_source.param}">
+                {$lan.nav.categories}
+                <img width="10" src="{$domain}/Public/static/images/arrow_down.png"/>
+                </a>
+                <div class="navSub">
+                    <a style="color:red" href="{$domain}/{$lang}/game/category/hot-games.html{$utm_source.param}" >{$lan.nav.hot}</a>
+                    <a href="{$domain}/{$lang}/game/category/car-games.html{$utm_source.param}" >{$lan.nav.hot}</a>
+                    <a href="{$domain}/{$lang}/game/category/action-games.html{$utm_source.param}" >{$lan.nav.action}</a>
+                    <a href="{$domain}/{$lang}/game/category/classic-games.html{$utm_source.param}" >{$lan.nav.classic}</a>
+                    <a href="{$domain}/{$lang}/game/category/racing-games.html{$utm_source.param}" >{$lan.nav.racing}</a>
+                    <a href="{$domain}/{$lang}/game/category/physics-games.html{$utm_source.param}" >{$lan.nav.physics}</a>
+                    <a href="{$domain}/{$lang}/game/category/mario-games.html{$utm_source.param}">{$lan.nav.mario}</a>
+                    <a href="{$domain}/{$lang}/game/category/girls-games.html{$utm_source.param}">{$lan.nav.girls}</a>
+
+                    <a href="{$domain}/{$lang}/game/category/ninja-games.html{$utm_source.param}">{$lan.nav.ninja}</a>
+                    <a href="{$domain}/{$lang}/game/category/christmas-games.html{$utm_source.param}">{$lan.nav.christmas}</a>
+                    <a href="{$domain}/{$lang}/game/tag.html{$utm_source.param}">{$lan.nav.tag}</a>
+                    <a href="{$domain}/{$lang}/game/more.html{$utm_source.param}"><b>{$lan.nav.more}>></b></a>
+                </div>
+            </li>
+            <li class="hasNavSub">
+                <a href="{$domain}/{$lang}/webgame.html{$utm_source.param}">{$lan.nav.multiplayer}
+                <img width="10" src="{$domain}/Public/static/images/arrow_down.png"/>
+                </a>
+                <span class="icon-hot"></span>
+                <div class="navSub navSub-webgame">
+
+                    <a href="http://bigfarm.thehotgames.com/?f=main" title="Big Farm" target="_blank">
+                    <img width="40" height="40" src="{$domain}/Public/webgame/bigfarm_60x60.jpg" alt="Big Farm" />Big Farm
+                    </a>
+                    <a href="http://empire.thehotgames.com/?f=webgame" title="Empire" target="_blank">
+                        <img width="40" height="40" src="{$domain}/Public/webgame/empire_60x60.jpg" alt="Empire" />Empire
+                    </a>
+
+                    <a href="http://www.myfreezoo.com/?ref=hotgames" title="My Free Zoo" target="_blank">
+                        <img width="40" height="40" src="{$domain}/Public/webgame/My_Free_Zoo_60x60.jpg" alt="My Free Zoo" />My Free Zoo
+                    </a>
+
+                    <a href="http://www.thehotgames.com/webgames/barbarians/index.html{$utm_source.param}" target="_blank" title="Barbarians">
+                        <img width="40" height="40" src="{$domain}/Public/webgame/barbarians_60x60.jpg" alt="Barbarians" />Barbarians
+                    </a>
+
+                    <a href="http://www.thehotgames.com/webgames/dreamfields/index.html{$utm_source.param}" target="_blank" title="Dreamfields">
+                        <img width="40" height="40" src="{$domain}/Public/webgame/dreamfields_60x60.jpg" alt="Dreamfields" />Dreamfields
+                    </a>
+
+                    <a href="https://www.fishao.com/iframes/partner?affId=732&noreferral=0&nomailactivation=0&hideforgpass=0&hidebirthday=1&hideconfirmpass=0&nofblogin=0&hidesettingsmail=0&email=yes" title="fishao" target="_blank">
+                        <img width="40" height="40" src="{$domain}/Public/webgame/fishao_60x60.jpg" alt="fishao" />fishao
+                    </a>
+
+                    <a href="http://www.thehotgames.com/webgames/klondike/index.html{$utm_source.param}" target="_blank" title="Klondike">
+                        <img width="40" height="40" src="{$domain}/Public/webgame/klondike_60x60.jpg" alt="Klondike" />Klondike
+                    </a>
+
+                    <a href="{$domain}/{$lang}/webgame.html{$utm_source.param}" target="_blank"><b>{$lan.nav.more}>></b></a>
+
+                </div>
+            </li>
+            <li class="extra-nav-li">
+                <eq name="topgameCheck" value="0">
+                <a href="{$domain}/{$lang}/game/category/mario-games.html{$utm_source.param}">{$lan.nav.mario}</a>
+                <else/>
+                <a href="{$domain}/{$lang}/game/category/top.html{$utm_source.param}">{$lan.nav.top_games|default="Top Games"}</a>
+                </eq>
+                <span class="icon-new"></span>
+            </li>
+            <li class="search-li">
+                
+            <form action="{$domain}/{$lang}/game/search.html{$utm_source.param}" method="get" target="_blank" class="topSearch searchBox">
+                <input type="text" name="k" class="input-fix" value="{$lan.nav.mario}" placeholder="Find Game" />
+                <button type="submit" class="btn" value="Search"/>&nbsp;</button>
+            </form>
+
+            </li>
+            </ul>
+        </div>
+        
+        <!-- login begin -->
+        <div class="setting-container">
+            <a class="icon-setting"></a>
+            <div class="pop-container">
+                <ul class="popup-menu hidden">
+                    <li>
+                        <a id="btn-login" href="javascript:void(0)" onclick="woos.user.showLogin()">Login</a>
+                        <a id="btn-logout" style="display:none" href="javascript:void(0)" onclick="userLogout()">Log out</a>
+                        <a style="display:none;" href="javascript:void(0)" onclick="woos.user.showLogin()">Played Games</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="user-info">
+                <span class="user-logo" style="display:none;">
+                    <img src="{$domain}/Public/static/images/default.png" alt="">
+                </span>
+            </div>
+
+        </div>
+
+        <!-- login end -->        
+        <div id="topPlayed" onclick="location.href='{$domain}/{$lang}/history.html{$utm_source.param}'">
+            <span></span>Played
+            <div class="navSub">
+                <div class="playedList">
+                </div>
+                <a href="{$domain}/{$lang}/history.html{$utm_source.param}" target="_blank"><b>{$lan.nav.more}>></b></a>
+            </div>
+        </div>
+        <div class="fbcont facebookplus">
+            <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.thehotgames.com%3Ff%3DfbLike&amp;locale=en_US&amp;width=100&amp;layout=button&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:21px;" allowTransparency="true"></iframe>
+            <i class="facebookSanjiao"></i>
+            <div class="facebookNum"></div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <title>{$lan.index.title}</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+	<volist name="lan.index.meta" id="v">
+	<meta name="{$key}" content="{$v}">
+	</volist>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="{$lan.index.title}"/>
+    <meta property="og:image" content="<neq name="ogimage" value="">{$ogimage}<else/>http://www.thehotgames.com/original.jpg</neq>"/>
+    <meta property="og:site_name" content="TheHotGames.COM" />
+    <meta property="og:description" content="{$lan.index.meta.description}"/>
+    <link href="{$domain}/Public/static/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8739233621395816",
+          enable_page_level_ads: true
+     });
+</script>
+<script type="text/javascript">
+    function getParam(name){
+         var result = location.search.match(new RegExp("[\?\&]" + name+ "=([^\&]+)","i"));
+
+         if(result == null || result.length < 1){
+             return "";
+         }
+
+         return result[1];
+    }
+    function is_mobile() {  
+        var regex_match = /(nokia|iphone|android|motorola|^mot-|softbank|foma|docomo|kddi|up.browser|up.link|htc|dopod|blazer|netfront|helio|hosin|huawei|novarra|CoolPad|webos|techfaith|palmsource|blackberry|alcatel|amoi|ktouch|nexian|samsung|^sam-|s[cg]h|^lge|ericsson|philips|sagem|wellcom|bunjalloo|maui|symbian|smartphone|midp|wap|phone|windows ce|iemobile|^spice|^bird|^zte-|longcos|pantech|gionee|^sie-|portalmmm|jigs browser|hiptop|^benq|haier|^lct|operas*mobi|opera*mini|320x320|240x320|176x220)/i;  
+        var u = navigator.userAgent;  
+        if (null == u) {  
+            return true;  
+        }  
+        var result = regex_match.exec(u);  
+        if (null == result) {  
+            return false  
+        } else {  
+            return true  
+        }  
+    }
+
+    if(is_mobile()&&getParam('jump')!='false'){
+        //window.location.href="http://m.thehotgames.com";
+    }
+</script>
+
+<script type="text/javascript">
+    site_config={ 'lang':'{$lang}','cata':'{$Think.get.cata|default=index}','sort':'{$gameDetail.sort}','type':'{$Think.get.type}','fb':{ 'like':'{$commentLan.like|default="Like"}','unlike':'{$commentLan.unlike|default="Unlike"}' } }
+</script>
+<?php $timestamp=1226;?>

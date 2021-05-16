@@ -1,0 +1,26 @@
+{
+	"---- Gemensamma delar ----":"",
+	"home":"Home",
+	"recently_played":"Nyligen spelade",
+	"foot_intro":"TheHotGames.Com är att föredra plattform din eldiga resurser flash spel , vi bara lägga till de mest populära spelen runt på Internet, så att du aldrig kommer att tröttna på våra spelkategorierinklusive skytte spel , racing spel, strategispel , Pusselspel, etc. Du behöver inte betala eller ens ladda ner något . klicka och spela dina favorit Flash spel gratis . njuta av det!",
+	"privacy_policy":"Privacy Policy",
+	"contact":"Kontakt",
+	"play_more_games":"Fler spel",
+
+	"---- Home Innehåll ----":"",
+	"index": {
+		"title":"världens mest populära spel - TheHotGames.Com",
+		"meta": {
+			"description":"Spela populära gratis onlinespel i TheHotGames.com , inklusive ord , racing spel , kortspel, pussel och mer spel ",
+			"keywords":"Hot , spel , Volkswagen , sport , din favorit spel, spel, gratis, online , flash , lek, arkad , pussel , strategi , försvar, skytt, plattform , action , äventyr , rollspel , sport , tävlings, torn , Mario-spel , Barbie spel ."
+		}
+	},
+
+	"play": {
+		"title":"spela det populära spelet [ # N ] - TheHotGames.Com",
+		"meta": {
+			"description":"Spela det populära spelet [ # N ] i TheHotGames.com , inklusive ord , racing spel , kortspel, pussel och mer spel ",
+			"keywords":"Hot , spel, [ # N] , fria , populära , din favorit spel, gratis , på nätet , Flash , lek , köpcentra , pussel , strategi , försvar , skytte spel , plattform action , äventyr, rollspel , sport , racing , torn , Mario spel , Barbie spel"
+		}
+	}
+}

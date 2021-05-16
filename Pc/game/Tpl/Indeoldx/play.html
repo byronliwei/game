@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title><neq name="title" value="">{$title}<else/>{$lan.play.title}</neq></title>
+    <link rel="shortcut icon" href="http://www.thehotgames.com/favicon.ico">
+    <neq name="meta" value="">
+    <volist name="meta" id="v">
+    <meta name="{$key}" content="{$v}">
+    </volist>
+    <else/>
+    <volist name="lan.play.meta" id="v">
+    <meta name="{$key}" content="{$v}">
+    </volist>
+    </neq>
+    <?php $timestamp=1226;?>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="{$title}"/>
+    <meta property="og:image" content="http://www.thehotgames.com/Uploads/games/{$gameDetail.sort|default='images'}/{$gameDetail.img}"/>
+    <meta property="og:site_name" content="TheHotGames.COM" />
+    <meta property="og:description" content="{$meta.description}"/>
+    <link href="{$domain}/Public/static/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Public/static/css/<eq name="Think.get.version" value="new">new_main<else/>main</eq>.css?t={$timestamp}20" rel="stylesheet" />
+    <link href="/Public/static/css/play.css?t={$timestamp}95" rel="stylesheet" />
+    <link rel="stylesheet" href="/Public/static/css/play_rect.css?t={$timestamp}95" type="text/css">
+    <script type="text/javascript">
+    site_config={ 'lang':'{$lang}','cata':'PlayPage','sort':'{$gameDetail.sort}','n':'{$Think.get.n}','fb':{ 'like':'{$commentLan.like|default="Like"}','unlike':'{$commentLan.unlike|default="Unlike"}' } }
+    </script>
+    <style type="text/css">
+    .header{
+        position:relative!important;
+    }
+    #_preloader{
+        position: absolute;left: 0px;top: 0px;
+    }
+    #gameInfoBox{width:970px;padding:0px;overflow: hidden;}
+    </style>       
+</head>
+<body>
+
+    <script type="text/javascript">
+        function getParam(name){
+             var result = location.search.match(new RegExp("[\?\&]" + name+ "=([^\&]+)","i"));
+
+             if(result == null || result.length < 1){
+                 return "";
+             }
+
+             return result[1];
+        }
+        function is_mobile() {  
+            var regex_match = /(nokia|iphone|android|motorola|^mot-|softbank|foma|docomo|kddi|up.browser|up.link|htc|dopod|blazer|netfront|helio|hosin|huawei|novarra|CoolPad|webos|techfaith|palmsource|blackberry|alcatel|amoi|ktouch|nexian|samsung|^sam-|s[cg]h|^lge|ericsson|philips|sagem|wellcom|bunjalloo|maui|symbian|smartphone|midp|wap|phone|windows ce|iemobile|^spice|^bird|^zte-|longcos|pantech|gionee|^sie-|portalmmm|jigs browser|hiptop|^benq|haier|^lct|operas*mobi|opera*mini|320x320|240x320|176x220)/i;  
+            var u = navigator.userAgent;  
+            if (null == u) {  
+                return true;  
+            }  
+            var result = regex_match.exec(u);  
+            if (null == result) {  
+                return false  
+            } else {  
+                return true  
+            }  
+        }
+
+        if(is_mobile()&&getParam('jump')!='false'){
+            //window.location.href="http://m.thehotgames.com";
+        }
+        if(location.host.indexOf('the'+'hotgames.'+'c'+'o'+'m')==-1){
+            //location.href="http://"+"www"+".the"+"hot"+"games."+'c'+'o'+'m';
+        }
+        
+    </script>
+
+    <script src="/Public/static/js/jquery.min.js"></script>
+    <script src="/Public/static/js/lazyload.js?t=908"></script>
+
+    <!--AD Pre-->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script type="text/javascript">
+        var screenW=document.body.clientWidth,adSwitch=screenW<=1024,bigSwitch=screenW>=1550;
+    </script>
+    <!--xxx-->
+
+    <include file="Index:nav" />
+    
+    <!-- MUST INCLUDE THIS LINE TO DESTROY PRELOADER-->
+    <script type="text/javascript">
+        function removeAdSwf() {
+            document.getElementById("preloader").style.visibility = "hidden";
+            $('#prerollContainer').html('<h1 style="color:yellow;position:absolute;top:150px;font-size:36px;width:100%;text-align:center;">Game Loading...</h1>');
+        }
+        function noAdsReturned() {
+            showgame(true);
+        }
+    </script>
+    
+	<div id="top_asbox" style="margin-top:20px;width:970px;text-align:center;background:rgba(255,255,255,0.03);overflow:hidden;">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- new vesion-970x90 -->
+		<ins class="adsbygoogle"
+			 style="display:inline-block;width:970px;height:90px"
+			 data-ad-client="ca-pub-8739233621395816"
+			 data-ad-region="Play-Bot"
+			 data-ad-slot="4209079088"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>      
+	</div>   	
+
+    <div id="playContainer" style="padding-top:5px;">
+	
+        <div id="gamePlayBox" class="gamePlayPre" origin-width="{$gameDetail.width}" origin-height="{$gameDetail['height']+100}"style="width:{$gameDetail.width}px;height:{$gameDetail['height']+100}px;min-height:604px;">
+            
+            <!--Previous Game, Next Game-->
+            <a class="gameSwitch-btn gameSwitch-pre" title="Previous Game" href="/{$lang}/game/play/{$gameList[1]['seo_name']}.html{$utm_source.param}"></a>
+            <a class="gameSwitch-btn gameSwitch-next" title="Next Game" href="/{$lang}/game/play/{$gameList[7]['seo_name']}.html{$utm_source.param}"></a>
+
+            <!--gamePlay Left Start-->
+            <div id="gamePlayLeft" class="gamePlaySide">
+                <div id="playLeftAs" class="playSideAs" style="width:160px!important;">
+                    <div style="text-align:center;color:#CED9E5;position:absolute;top:-20px;left:45px;">Advertisement</div>
+                    <script>
+                    if(true){ 
+                    /*-- new vesion-160x600-Left --*/
+                    document.write('<ins class="adsbygoogle"'+
+                         'style="display:inline-block;width:160px;height:600px"'+
+                         'data-ad-client="ca-pub-8739233621395816"'+
+                         'data-ad-region="Play-Top" '+
+                         'data-ad-slot="7456102685"></ins>');
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    }else if(bigSwitch){
+                    /*-- new vesion-300x600-Left --*/
+                    document.write('<ins class="adsbygoogle"'+
+                         'style="display:inline-block;width:300px;height:600px"'+
+                         'data-ad-client="ca-pub-8739233621395816"'+
+                         'data-ad-region="Play-Top" '+
+                         'data-ad-slot="7020357482"></ins>');
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
+                    </script>                    
+                </div>
+                <ul id="playLeftGame" class="playSideGame">
+                <li><a target="_blank" href="http://bigfarm.thehotgames.com?f=hotgame"><img  src="/Public/webgame/bigfarm_300x300.gif" alt="GoodGame BigFarm"><span title="GoodGame BigFarm">GoodGame BigFarm</span></a></li>
+                <volist name="gameList" id="vo" offset="0" length="4">
+                <li>
+                    <a target="_blank" title="{$vo.name}" href="/{$lang}/game/info/{$vo.seo_name}.html{$utm_source.param}">
+                    <img src="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default='images'}/{$vo.img}"
+                        alt="{$vo.name}">
+                    <span>{$vo.name}</span>
+                    </a>
+                </li>
+                </volist>
+                </ul>
+            </div>
+            <!--gamePlay Left End-->
+
+            <!--prerollDiv Start-->
+            <div id="prerollDiv">
+                <div id="prerollTop">
+                    <span id="percent_span">
+                    </span>
+                    <span id="cntdown_span">
+                    </span>
+                    <span id="skip_span" style="display:none">
+                        {$lan.nav.skip_ad}
+                    </span>
+                </div>
+                <div id="prerollbrand">
+                    <span id="brand_cont">
+                    </span>
+                </div>
+                
+                <div id="prerollContainer" style="background:#fff;text-align:center;">
+                    <neq name="gameDetail.seo_name" value="lust-for-bust">
+                    <!--Start of Preloader call -->
+                    
+                    <object type="application/x-shockwave-flash" id="preloader" width="597" height="426" style="margin: 0px; visibility: visible;margin-top: 40px;" data="/Public/static/afg_hotgames.swf">
+                        <param name="quality" value="high">
+                        <param name="allowScriptAccess" value="always">
+                        <param name="allowFullScreen" value="false">
+                        <param name="movie" value="/Public/static/afg_hotgames.swf" wmode="transparent">
+                        <param name="bgcolor" value="#ffffff">
+                        <param name="flashvars" value="skip_after=8&amp;channels=Gaming+TextOverlay+<eq name="Think.get.utm" value="as_words">9224643487<else/>3398435882</eq>&amp;adsafe=medium&amp;duration=15&amp;publisherId=ca-games-pub-8739233621395816&amp;ad_type=video_image_flash_text&amp;descriptionUrl=http%3A%2F%2Fwww.thehotgames.com%2F{$lang}%2Fgame%2Fplay%2F{$gameDetail.seo_name}.html{$utm_source.param}">
+                    </object>
+                                                
+                    <else/>
+                    <iframe src="http://www.epicgameads.com/ads/banneriframe.php?id=qU0QoQa1wb&amp;t=300x250&amp;channel=0&amp;cb=1411793700387" style="width:300px;height:250px;margin-top:80px;" frameborder="0" scrolling="no"></iframe>
+                    </neq>
+                </div>
+
+                <div id="prerollLoading" style="display:none;">
+                    <div class="meter animate blue">
+                        <span style="width: 0%"><span></span></span>
+                    </div>
+                </div>
+
+            </div>
+            <!--prerollDiv End-->
+
+            <!--gameBox Start-->
+            <div id="gamebox" style="text-align:center;">
+            
+            <div id="gameBoxTop">
+                <h1>{$gameDetail.name}
+
+                <div id="gameTopTool">
+                    <a id="btn-video-play" href="#des-game-video" Title="Play Video" style="vertical-align:sub;"><img src="/Public/static/images/btn-play.png"/></a>
+                    <div class="fb-like" data-href="http://www.thehotgames.com/game/play/{$Think.get.n}.html" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="true" data-send="false">
+                    </div>
+                    <a id="gamedownload-btn" title="Download this Game" href="../shortcut/{$gameDetail.seo_name}"></a>
+                    <div id="turnofflight-btn" title="Turn Off Light"></div>
+                    <div id="maximize-btn" title="Full Screen"></div>
+                </div>
+                </h1>
+                <div class="topTags">
+                        <a class="btn" target="_blank" href="/{$lang}/game/category/car-games.html{$utm_source.param}">
+                            <img src="/Public/static/images/bg_tag.png">Car Games
+                        </a>
+                        <a class="btn" target="_blank" href="/{$lang}/game/category/action-games.html{$utm_source.param}">
+                            <img src="/Public/static/images/bg_tag.png">Action Games
+                        </a>
+                        <a class="btn" target="_blank" href="/{$lang}/game/category/classic-games.html{$utm_source.param}">
+                            <img src="/Public/static/images/bg_tag.png">Classic Games
+                        </a>
+                        <a class="btn" target="_blank" href="/{$lang}/game/category/racing-games.html{$utm_source.param}">
+                            <img src="/Public/static/images/bg_tag.png">Racing Games
+                        </a>
+                </div>
+            </div>
+
+            <div id="gameBoxFlash" origin-width="{$gameDetail.width}" origin-height="{$gameDetail['height']}" style="position:absolute;left:50%;top:50%;margin-left:-{$gameDetail['width']/2}px;margin-top:-{$gameDetail['height']/2-22}px; width:{$gameDetail.width}px;height:{$gameDetail.height}px;">
+
+            <eq name='gameDetail.3d_type' value="unity3d">
+                <object classid="clsid:444785F1-DE89-4295-863A-D46C3A781394" codebase="http://webplayer.unity3d.com/download_webplayer/UnityWebPlayer.cab#version=2,0,0,0" id="UnityObject" width="{$gameDetail.width}" height="{$gameDetail.height}">
+                    <param name="src" value="{$gameDetail.swf}">
+                    <param name="allowNetworking" value="internal">
+                    <param name="allowScriptAccess" value="never">
+                    <embed type="application/vnd.unity" pluginspage="http://www.unity3d.com/unity-web-player-2.x" id="UnityEmbed" width="100%" height="100%" src="{$gameDetail.swf}">
+                </object>
+            <else/>
+                <notin name="gameDetail.seo_name" value="temple-run,sniper-team-2">
+                
+                    <if condition="$gameDetail.origin eq '198.11.203.228'">
+                    
+                    <!--Mario game-->
+                    <iframe frameBorder="0" scrolling="no" src="/Public/game-refresh.html?url={$gameDetail.swf|urlencode}" width="100%" height="100%" rel="noreferrer"  ></iframe>
+                    <elseif condition="$gameDetail.3d_type eq 'html5'"/>
+                    
+                    <!--Html5 game-->
+                    <iframe frameBorder="0" scrolling="no" src="{$gameDetail.swf}" width="100%" height="100%" rel="noreferrer"></iframe>
+                    <else/>
+
+                    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="swflash.cab#version=9,0,16,0" tppabs="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,16,0" id="game" height="100%" width="100%">
+                        <param name="movie" value="{$gameDetail.swf}">
+                        <param name="quality" value="high">
+                        <param name="allowNetworking" value="internal">
+                        <param name="allowScriptAccess" value="never">
+                        <param value="base" name=".">
+                        <embed src="{$gameDetail.swf}" height="100%" width="100%" quality="high" name="FlashContent" allowscriptaccess="never" allownetworking="internal" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" base=".">
+                    </object>
+                    </if>
+                    
+                <else/>
+                <object width="100%" height="100%"  wmode="direct" base="." data="{$gameDetail.swf}" type="application/x-shockwave-flash">
+                    <param value="direct" name="wmode">
+                    <param value="base" name=".">
+                </object>
+                </notin>
+            </eq>
+            </div>
+
+            </div>
+            <!--gameBox End-->
+
+            <div id="gamePlayRight" class="gamePlaySide">
+                <div id="playRightAs" class="playSideAs" style="width:160px!important;">
+                    <div style="text-align:center;color:#CED9E5;position:absolute;top:-20px;left:45px;">Advertisement</div>
+                    <script>
+                    if(true){
+                    /*-- new vesion-new vesion-160x600-Right-2 --*/
+                    document.write('<ins class="adsbygoogle"'+
+                         'style="display:inline-block;width:160px;height:600px"'+
+                         'data-ad-client="ca-pub-8739233621395816"'+
+                         'data-ad-region="Play-Top" '+
+                         'data-ad-slot="6863687880"></ins>');
+                    }else{
+                    /*-- new vesion-300x600-Right --*/
+                    document.write('<ins class="adsbygoogle"'+
+                         'style="display:inline-block;width:300px;height:600px"'+
+                         'data-ad-client="ca-pub-8739233621395816"'+
+                         'data-ad-region="Play-Top" '+
+                         'data-ad-slot="2472406681"></ins>');
+                    }
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>                    
+                </div>
+                <ul id="playRightGame" class="playSideGame">
+                <li><a href="https://goo.gl/Ye8q6S" target="_blank"><img src="/Public/static/images/dancingballs.jpg" alt="Dancing Balls"><span title="Dancing Balls">Bottle Dancing Balls</span></a></li>
+
+                <volist name="gameList" id="vo" offset="6" length="4">
+                <li>
+                    <a target="_blank" title="{$vo.name}" href="/{$lang}/game/info/{$vo.seo_name}.html{$utm_source.param}">
+                    <img src="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default='images'}/{$vo.img}"
+                        alt="{$vo.name}">
+                    <span>{$vo.name}</span>
+                    </a>
+                </li>
+                </volist>
+                </ul>
+            </div>
+
+        </div>
+
+        <!--GameInfo Start-->
+        <div id="gameInfoBox">
+   
+             <div id="top_asbox-bot" style="margin-top:20px;width:970px;text-align:center;background:rgba(255,255,255,0.03);overflow:hidden;">
+
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- new vesion-970x250 -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:970px;height:250px"
+                     data-ad-client="ca-pub-8739233621395816"
+                     data-ad-slot="4724082727"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+   
+            <!-- bottom ad -->
+            <div class="bottomad mix">
+                <div class="adcont">
+                    <div class="description" style="width:98%;font-family:arial;">
+                        
+                        <div class="des-game-control" style="float:left;margin-right:15px;">
+                            <h2 style="color:#edb62b;font-size:16px;">{$gameDetail.name}</h2>
+                            <h2>{$lan.nav.controls}:</h2>
+                            <div class="keyboard">
+                                <span class="keyboard_UDLR01"></span>
+                                <span class="keyboard_ML"></span>
+                                <span class="keyboard_other">1</span>
+                                <span class="keyboard_other">2</span>
+                                <span class="keyboard_other">3</span>
+                            </div>
+                        </div>
+
+                        <div class="des-game-des">
+                            <h2>{$lan.nav.description}:</h2>
+                            {$gameDetail.desc}
+                            <!--Rating-->
+                            <div id="resultsRating" style="display:inline-block;color:#CECEDA;margin-left: 10px;" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+                                 - <span>Total AG Ratings: <span itemprop="ratingValue">4.{:rand(0,9)}</span> (<span class="agRatings" itemprop="ratingCount">{:rand(1000,8000)}</span> Vote)</span>
+                            </div>
+                        </div>
+
+                        <div id="des-game-video" class="des-game-video" style="clear:both;padding-top:10px;">
+                           <script type="text/javascript" id="veediInit">
+                               var _v,settings = {
+                                    game : "{$gameDetail.name}",
+                                    publisherId : 74654583,
+                                        onVideoFound :  function() {
+                                        },
+                                        onVideoNotFound : function() {
+                                            $('#des-game-video,#btn-video-play').remove();
+                                            $('.veedirelated').show();
+                                        },
+                                    width  : 970
+                              };
+                               (function(settings)  {
+                                   var vScript = document.createElement('script'); 
+                                    vScript.type = 'text/javascript'; vScript.async = true;
+                                    vScript.src = 'http://www.veedi.com/player/embed/veediEmbed.js';
+                                    vScript.onload = function(){_v = new VeediEmbed(settings);};
+                                    var veedi = document.getElementById('veediInit'); veedi.parentNode.insertBefore(vScript, veedi);
+                                })(settings);       
+                            </script>
+                        </div> 
+
+                        <div class="veedirelated" style="display:none;text-align: center;left: 10px;position: relative;text-align: center;clear: both; margin-top: 35px;">
+
+                            <volist name="gameList1" id="vo" offset="0" length="18">
+
+                            <a class="relategame2" target="_blank" href="/{$lang}/game/play/{$vo.seo_name}.html{$utm_source.param}"
+                            alt="{$vo.name}">
+                                <div class="thumb_container_related">
+                                    <img class="lazy" src="/Public/static/images/empty.gif" data-original="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$gameDetail.sort|default='images'}/{$vo.img}"
+                                    alt="{$vo.name}" />
+                                    <span style="overflow:hidden;">
+                                        {$vo.name}
+                                    </span>
+                                </div>
+                            </a>
+                            </volist>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- 3 --> 
+
+            <div class="bottomad copyright">
+                All copyrights and trademarks of this game are held by their respective
+                owners and their use is allowed under the fair use clause of the relevant
+                Copyright Law. If you believe we are violating your copyright, please refer
+                to our
+                <a href="/tos#dmca" target="_blank">
+                    DMCA statement
+                </a>
+                for more information.
+            </div>
+
+            <center style="color:#fff;margin:30px;clear:both">&copy;2010-2015 thehotgames.com All Rights Reserved.</center>
+
+        </div>
+        <!--GameInfo End-->
+
+
+    </div>
+    <div style="display:none" id="J_gameData" data-name="{$gameDetail.name}" data-img="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$gameDetail.sort|default='images'}/{$gameDetail.img}"></div>
+    <script type="text/javascript" src="/Public/static/js/play.js?t={$timestamp}12"></script>
+	<script type="text/javascript" src="/Public/static/js/ads.js?t={$timestamp}16"></script>
+    
+    <include file="Index:footer_insert" /> 
+    <script type="text/javascript">
+    checkCommentHeight();
+    //history
+    var playedHistory = (function () {
+        var storageHistory = function () {
+            if ($("#J_gameData").length < 1) return false;
+            if(!storageSupport) return;
+            var gameUrl = window.location.href;
+            var myDate = new Date();
+            var nowTime = (myDate.getMonth() + 1).toString() + "-" + myDate.getDate().toString() + "-" + myDate.getFullYear().toString();
+            var hdata = [];
+            var teArry = [];
+            if (storage.get("HistoryGame","data")) {
+                hdata = storage.get("HistoryGame","data");
+            }
+            if (storage.get("HistoryGame","data") && JSON.stringify(storage.get("HistoryGame","data")).indexOf(gameUrl) >= 0) {
+                for (var i = 0; i < hdata.length; i++) {
+                    if (hdata[i].url == gameUrl) {
+                        hdata.splice(i, 1);
+                    }
+                }
+            }
+            var gameName = $("#J_gameData").data("name") || "the hot game",
+            gameImg = $("#J_gameData").data("img") || "";
+            var temObj = {
+                name: gameName,
+                img: gameImg,
+                url: gameUrl,
+                date: new Date().toLocaleDateString()
+            }
+            teArry.push(temObj);
+            var newarry = teArry.concat(hdata);
+            storage.set("HistoryGame","data",newarry);
+        }
+        return {
+            init: function () {
+                storageHistory();
+            }
+        }
+    })();
+    playedHistory.init();
+    </script>  
+</body>
+</html>
+
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"ksdCn1QolK10uG", domain:"thehotgames.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=ksdCn1QolK10uG" style="display:none" height="1" width="1" alt="" /></noscript>

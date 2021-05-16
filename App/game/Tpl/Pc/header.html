@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <title>{$lan.index.title}</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <volist name="lan.index.meta" id="v">
+    <meta name="{$key}" content="{$v}">
+    </volist>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="{$lan.index.title}"/>
+    <meta property="og:image" content="<neq name="ogimage" value="">{$ogimage}<else/>http://www.thehotgames.com/original.jpg</neq>"/>
+    <meta property="og:site_name" content="TheHotGames.COM" />
+    <meta property="og:description" content="{$lan.index.meta.description}"/>
+    <link rel="stylesheet" href="/Public/static/css/home.css?v=<?php echo time();?>">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<script>
+   var loc=location.href;
+    var adChannel = 0;
+    if(loc.indexOf('www.game')>-1 ||loc.indexOf('s1.game')>-1  ){
+        adChannel = 0;
+    }else if(loc.indexOf('hot.game')>-1 ||loc.indexOf('s2.game')>-1 ){
+        adChannel = 0;
+    }
+    adConfig = {
+        'pc-gamev6-970x90-index': ['1122756701','9436360991'],
+        'pc-gamev6-336x280-index':['8269537410','4128193998'],
+        'pc-gamev6-728x90-info':['2557335293','5058132281'],
+        'pc-gamev6-160x600-info1':['9470938446','1174727599'],
+        'pc-gamev6-160x600-info2':['4828151709','1404035728'],
+        'pc-gamev6-728x90-play':['9884326824','2787192162'],
+        'pc-gamev6-160x600-play1':['1181384888','8175250217'],
+        'pc-gamev6-160x600-play2':['2216346523','1965065084']
+    }
+</script>
+<body>
+    <div class="header_games">
+        <div class="header_games-warp">
+            <a href="/" class="logo_games">
+                <img src="/Public/static/images/header_logo_new2.png" alt="">
+            </a>
+            <div class="classify_games" data-current="{$gamecate}">
+                <volist name='cate' id='vo' offset='0' length='7'>
+                    <a href="{$domain}/{$lang}/game/category/{$vo.name}-games.html{$utm_source.param}" class="classify-item">
+                        {$vo.name}
+                        <div data-current="{$vo.name}" class="<eq name='gamecate' value='$vo.name'>currentSelect</eq>"></div>
+                    </a>
+                </volist>
+                <div class="classify-item classify-item-more">
+                    More                
+                    <div class="moreContent">
+                        <volist name='cate' id='vo' offset='7' length='7'>
+                            <a href="{$domain}/{$lang}/game/category/{$vo.name}-games.html{$utm_source.param}" class="more_content-item">
+                                {$vo.name}                            
+                            </a>
+                        </volist>
+                    </div>
+                </div>
+            </div>
+            <div class="search-header_games">
+                <form action="/game/search.html" method="get">
+                    <input name='k' type="text" placeholder="search games">
+                    <button type="submit">
+                        <img src="/Public/static/images/search.png" alt="">
+                    </button>
+                </form>                        
+            </div>
+        </div>
+    </div>

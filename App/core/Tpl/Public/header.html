@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WeekMovie Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="__PUBLIC__/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="__PUBLIC__/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+    <link href="__PUBLIC__/css/main.css" rel="stylesheet" media="screen">
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="__PUBLIC__/artDialog/artDialog.js?skin=default"></script>
+    <script src="__PUBLIC__/artDialog/plugins/iframeTools.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  
+  	<!-- Header Start -->
+	<div  class="navbar navbar-inverse navbar-fixed-top">
+     <div class="navbar-inner">
+       <div class="container">
+         <a href="#" class="brand">管理中心</a>
+         <div class="navbar-inverse-collapse">
+           <ul class="nav">
+             <li <eq name="Think.const.GROUP_NAME" value="weekmovie">class="active" </eq> ><a href="__APP__/Index/panel">本周票房</a></li>
+             <li <eq name="Think.const.GROUP_NAME" value="tenpic">class="active" </eq> ><a href="__APP__/tenpic">十幅图</a></li>
+             <li <eq name="Think.const.GROUP_NAME" value="tarot">class="active" </eq> ><a href="__APP__/tarot">塔罗牌</a></li>
+             <li <eq name="Think.const.GROUP_NAME" value="nima">class="active" </eq> ><a href="__APP__/nima">小尼和小玛</a></li>
+             <li <eq name="Think.const.GROUP_NAME" value="agg">class="active" </eq> ><a href="__APP__/agg">聚合版</a></li>
+             <!--<li <eq name="Think.const.GROUP_NAME" value="shop">class="active" </eq> ><a href="__APP__/shop">跳楼价</a></li>
+             <li <eq name="Think.const.GROUP_NAME" value="lovetest">class="active" </eq> ><a href="#">爱情测试</a></li>-->
+           </ul>
+           <form action="" class="navbar-search pull-left">
+             <input type="text" placeholder="Search" class="search-query span2">
+           </form>
+           <ul class="nav pull-right">
+             <li class="divider-vertical"></li>
+             <li class="dropdown">
+               <a data-toggle="dropdown" class="dropdown-toggle" href="#">账户 <b class="caret"></b></a>
+               <ul class="dropdown-menu">
+                 <li><a href="#">退出</a></li>
+               </ul>
+             </li>
+           </ul>
+         </div><!-- /.nav-collapse -->
+       </div>
+     </div><!-- /navbar-inner -->
+   </div>
+   <!-- Header End -->
+
+  <div class="container-fluid" style="margin-top:60px;">
+  <div class="row-fluid">

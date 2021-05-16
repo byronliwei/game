@@ -1,0 +1,318 @@
+<include file="./Admin/core/Tpl/Public/header_notop.html" />
+
+<style type="text/css">
+.pic_list{display:block;padding:1px;text-align:center}
+.pic_list:hover{border:solid 1px #31B9FD;padding:0px}
+input{margin-bottom:0px!important;}
+.item-title{display: inline-block;width: 90px;text-align: right;}
+.game-desc{width: 300px;height: 100px;margin-bottom: 0;}
+.checkbox{height: 20px;}
+input{margin:5px 0px;vertical-align: middle;}
+.checkbox label{display: inline-block;margin-right: 50px;margin-bottom: 0;}
+input[type="file"]{height: 22px;line-height: 22px;}
+input[type="radio"]{width:18px;height:18px;vertical-align: 2px;}
+<eq name="gameDetail.3d_type" value="direct">
+.togItem{display:none;}
+</eq>
+</style>
+<!--Body Start-->
+<div class="span11">
+    <div align="center" class="container" id="content" style="width:100%;">
+        <form action="__APP__/Index/webGameAdd" method="post" enctype="multipart/form-data" class="clearfix" id="file_form" onSubmit="return checkForm(this)">
+            <input type="hidden" name="type" value="<neq name="gameDetail" value="">edit<else/>save</neq>">
+             <input type="hidden" name="id" value="{$Think.get.id}">
+            <div style="text-align:left;margin-bottom:15px;"><b>游戏<neq name="gameDetail" value="">编辑<else/>添加</neq></b></div>
+            <table id="dia-list" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>条目</th>
+                        <th>内容<span class="text-info">（以下文字建议用英文）</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>&#9733; 类型：</b> </td>
+                        <td>
+                        <select style="width:150px;" onchange="togShowItem(this);" name="3d_type" class="input-fix">
+                            <option value="webgame" <eq name="gameDetail.3d_type" value="webgame">selected="selected"</eq>>Webgame</option>
+                            <option value="direct" <eq name="gameDetail.3d_type" value="direct">selected="selected"</eq>>Direct Link</option>
+                        </select><br> 
+                        <span class="text-info">(注：Webgame类型是统一iframe嵌入模板，Direct Link是直链导量)</span>
+                        </td>
+                    </tr>
+
+                    <tr class="togItem">
+                        <td>游戏别名</td>
+                        <td>
+                            <input type="text" <neq name="gameDetail.seo_name" value="">disabled</neq> value="{$gameDetail.seo_name}" name="seo_name" placeholder="不超过100个字符">
+                            <span class="text-info">（显示在URL中，仅限字母、数字和下划线）</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>游戏名称</td>
+                        <td><input type="text" value="{$gameDetail.name}" name="name" placeholder="不超过100个字符"></td>
+                    </tr>
+                    <tr>
+                        <td>游戏图片</td>
+                        <td><input type="file" name="img"><br>
+                        <neq name="gameDetail.img" value=""><img src="/Uploads/games/webgame/{$gameDetail.img}"></neq><br><span class="text-info">（小于30k，建议尺寸为180*180,请自行上传标准尺寸）</span></td>
+                    </tr>
+                    <tr class="togItem">
+                        <td>游戏描述</td>
+                        <td><textarea name="desc" class="game-desc" placeholder="如游戏的规则、操作、提示等">{$gameDetail.desc}</textarea><span class="text-info">（不少于20字符）</span></td>
+                    </tr>
+                     <tr class="togItem">
+                        <td><b>模板选择：</b> </td>
+                        <td>
+                        <select style="width:150px;" name="tpl" class="input-fix">
+                            <option value="0" <eq name="gameDetail.tpl" value="0">selected="selected"</eq>>显示头尾</option>
+                            <option value="1" <eq name="gameDetail.tpl" value="1">selected="selected"</eq>>不显示头尾</option>
+                        </select>  
+                        <span class="text-info">(注：默认显示头尾)</span>
+                        </td>
+                    </tr>                    
+                    <tr class="togItem">
+                        <td><b>最小高度：</b> </td>
+                        <td>
+                            <input style="width:100px;" type="text" value="{$gameDetail.height|default=610}" name="height" placeholder="数字"><span class="text-info"> (注：默认最小高度610px)</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>URL地址：</b> </td>
+                        <td>
+                        <input type="radio" value="unite" name="urltype" <neq name="gameDetail.swf.all" value="">checked="checked"</neq>> 统一地址：<input style="width:300px;margin-top:-10px;" type="text" name="url" value="{$gameDetail.swf.all}" placeholder="URL地址"><br>
+                        <input type="radio" value="differ" name="urltype" <eq name="gameDetail.swf.all" value="">checked="checked"</eq>> 区分语言：<br>
+                        
+                        <eq name="gameDetail.swf.all" value="">
+                        <foreach name="gameDetail.swf" item="vo" >
+                        <span>
+                            <input type="text" value="{$key}" placeholder="语言" name="lang[]" style="width:70px">
+                            <input style="width:300px;" type="text" value="{$vo}" name="langurl[]" placeholder="URL地址">
+                            <a class="btn" onclick="delTr(this)">移除</a><br>
+                        </span>
+                        </foreach>
+                        </eq>
+
+                        <div style="margin-top:10px;"><button class="btn btn-success" onclick="addDia(this);" type="button"><i class="icon  icon-plus"></i></button></div>
+                        </td>
+                    </tr>
+
+                     <tr>
+                        <td><b>显示位置：</b> </td>
+                        <td>
+                            <input type="number" value="<neq name="gameDetail.pos" value="">{$gameDetail.pos}<else/>-1</neq>" placeholder="请填写数字" name="position" style="width:100px;margin-top:-10px;"> &nbsp;&nbsp;&nbsp;
+                            <input class="typecheck" value="hot" name="hot_new" type="radio" <eq name="gameDetail.hot" value="1">checked="checked"</eq>>Hot&nbsp; 
+                            <input class="typecheck" value="new" name="hot_new" type="radio"  <eq name="gameDetail.new" value="1">checked="checked"</eq>>new&nbsp;
+                            <input class="typecheck" value="" name="hot_new" type="radio">无<br>
+                            <span class="text-info">(默认只保存在游戏库，不显示在分类中)</span><br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="text-align:left;" >
+                <button type="submit" class="btn btn-primary">提交游戏</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!--Body End-->
+
+<script type="text/javascript">
+    var itemType='{$gameDetail.3d_type|default="webgame"}';
+    function togShowItem(obj){
+        var _this=$(obj),val=_this.val();
+        if(val=='direct'){
+            $('.togItem').hide();
+        }else{
+            $('.togItem').show();
+        }
+        itemType=val;
+    }
+
+    function addDia(obj){
+        var str=
+            '<span>'+
+            '    <input type="text" value="" placeholder="语言" name="lang[]" style="width:70px">'+
+            '    <input style="width:300px;" type="text" value="" name="langurl[]" placeholder="URL地址">'+
+            '   <a class="btn" onclick="delTr(this)">移除</a><br>'+
+            '</span>';
+        var _this=$(obj),_p=_this.parent();
+        _p.before(str);
+    }
+
+    function delTr(obj){
+        var _this=$(obj),_p=_this.parent();
+        _p.remove();        
+    }
+
+    var _focusbox;
+    $('input[name="lang[]"]').live('click',function(){
+        var _this=$(this);
+        _focusbox=_this;
+        var str=
+            '<select class="input-fix" onchange="langchange(this)" id="clear-lang" name="clearLang" style="margin-left:25px;width:100px;">'+
+            '    <option value="">选择语言</option>'+
+            <volist name="Think.config.LANG" id="vo">
+            '    <option value="{$vo}">{$vo}</option>'+
+            </volist>
+            '</select>';
+
+        lanDia=art.dialog({
+            id: 'testID2',
+            follow: _this.get(0),
+            content: str
+        });
+    })
+
+    function langchange(obj){
+        var _this=$(obj);
+        _focusbox.val(_this.val());
+        lanDia.close();
+    }
+
+    var isAliasUsed = false;
+    var isImgSelected = false;
+    $(function() {
+        var alias_name = $('input[name=seo_name]');
+        alias_name.blur(function(e) {
+            var _this = $(this);
+            var val = $.trim(_this.val());
+            if (val) {
+                nameCheck(val);
+            }
+        });
+
+        var swfNode = $('input[name=swf]');
+        var originNode = $('input[name=origin]');
+        swfNode.blur(function(e) {
+            var _this = $(this);
+            var swfval = $.trim(_this.val());
+            var originval = $.trim(originNode.val());
+            if (swfval && !originval) {
+                originNode.val(url_domain(swfval));
+            }
+        });
+    });
+
+    function url_domain(data) {
+        var a = document.createElement('a');
+        a.href = data;
+        return a.hostname;
+    }
+
+    function checkForm() {
+        var nameNode = $('input[name=name]');
+        var name = nameNode.val();
+
+        var seo_nameNode = $('input[name=seo_name]');
+        var seo_name = seo_nameNode.val();
+
+        var descNode = $('textarea[name=desc]');
+        var desc = descNode.val();
+
+        var picfileNode = $('input[name=img]');
+        var picfile = picfileNode.val();
+
+
+        var swfNode = $('input[name=swf]');
+        var swf = swfNode.val();
+
+        var originNode = $('input[name=origin]');
+        var origin = originNode.val();
+
+        var type=$('input[name=type]').val();
+
+        if (!name&&itemType=='webgame') {
+            alert('游戏名称不能为空！');
+            nameNode.focus();
+            return false;
+        }
+
+        if (!seo_name&&itemType=='webgame') {
+            alert('游戏别名不能为空！');
+            seo_nameNode.focus();
+            return false;
+        }
+
+        var reg=/^[a-zA-Z0-9_-]{1,}$/;
+        if (!seo_name.match(reg)&&itemType=='webgame'){
+            alert('游戏别名只能由字母数字下划线组成！');
+            return false;
+        }
+
+        if (!desc&&itemType=='webgame') {
+            alert('游戏描述不能为空！');
+            descNode.focus();
+            return false;
+        }
+
+        if (desc.length < 20&&itemType=='webgame') {
+            alert('游戏描述不能少于20字符！');
+            descNode.focus();
+            return false;
+        }
+
+        if ((isAliasUsed&&type!="edit")&&itemType=='webgame') {
+            alert('游戏别名已被占用！');
+            return false;
+        }
+
+        if(!$('input[name="urltype"]:checked').val()){
+             alert('请输入URL地址！');
+            return false;           
+        }
+
+        if (!picfile&&type!="edit") {
+            alert("请选择图片！");
+            return false;
+        } else {
+            extArray = new Array(".jpg", ".gif", ".png");
+            isImgSelected = checkFile(picfile,extArray);
+        }
+
+        if (!isImgSelected&&type!="edit") {
+            return false;
+        }
+
+        return true;
+    }
+
+    //extArray = new Array(".gif", ".jpg", ".png");
+    function checkFile(file,extArray) {
+        var allowSubmit = false;
+        if (!file) {
+            return false;
+        }
+        while (file.indexOf("\\") != -1){
+            file = file.slice(file.indexOf("\\") + 1);
+        }
+        var ext = file.slice(file.indexOf(".")).toLowerCase();
+
+        for (var i = 0; i < extArray.length; i++) {
+            if (extArray[i] == ext) {
+                allowSubmit = true;
+                break;
+            }
+        }
+
+        if (allowSubmit){
+            return true;
+        }else{
+            alert("对不起，只能上传以下格式的文件:"
+            + (extArray.join(" ")) + "\n请重新选择符合条件的文件"
+            + "再上传.");
+            return false;
+        }
+    }
+
+    function nameCheck(val){
+        var seo_name=val;
+        $.post('__APP__/Index/checkGameAlias',{seo_name:seo_name}, function(result) {
+            isAliasUsed = result != '0';
+            if (result!='0') {
+                alert('已被占用，请使用其它别名！');
+            }
+        })
+    }
+</script>
+<include file="Public:footer" />

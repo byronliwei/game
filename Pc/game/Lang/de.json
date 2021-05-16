@@ -1,0 +1,26 @@
+{
+	"---- Gemeinsame Teile ----":"",
+	"home":"Home",
+	"recently_played":"Zuletzt gespielt",
+	"foot_intro":"TheHotGames.Com Ihre gewünschte Plattform feurigen Flash-Spiel Ressourcen können wir nur hinzufügen, die beliebtesten Spiele rund um das Internet , so dass Sie nie müde, unser Spiel Kategorien, einschließlich Schießspiele , Rennspiele , Strategiespiele, Puzzle -Spiele, etc. Sie brauchen nicht zu zahlen oder sogar nichts herunterladen . klicken Sie einfach auf und spielen Sie Ihre Lieblings- Flash- Spiele kostenlos. genießen Sie es!",
+	"privacy_policy":"Datenschutzrichtlinien",
+	"contact":"Kontakt",
+	"play_more_games":"Mehr Spiele",
+
+	"---- Startseite Inhalt ----":"",
+	"index": {
+		"title":"das weltweit beliebteste Spiel - TheHotGames.Com",
+		"meta": {
+			"description":"Spielen Sie beliebte kostenlose Online-Spiele in TheHotGames.com , einschließlich Wortspiele, Rennspiele, Kartenspiele, Puzzle-Spiele und mehr Spiele",
+			"keywords":"Hot , Spiele, Volkswagen , Sport, Ihre Lieblings- Spiele, Spiele, gratis , online, Flash , Spiel , Arcade , Puzzle, Strategie , Verteidigung, Shooter , Plattform-, Action-, Adventure , Rollenspiele , Sport , Renn- , Turm- , Mario -Spiele, Barbie -Spiele."
+		}
+	},
+
+	"play": {
+		"title":"spielen das beliebte Spiel [#N] - TheHotGames.Com",
+		"meta": {
+			"description":"Spielen Sie das beliebte Spiel [#N] in TheHotGames.com , einschließlich Wortspiele, Rennspiele, Kartenspiele, Puzzle-Spiele und mehr Spiele",
+			"keywords":"Hot , Spiele, [#N] , frei, beliebt, Ihre Lieblings- Spiele, kostenlose , online, Flash , Spiel , Einkaufszentren , Puzzle, Strategie , Verteidigung, Schießen Spiele, Plattform Action, Abenteuer, Rollenspiel- , Sport- , Renn- , Turm- , Mario -Spiele, Barbie Spiele"
+		}
+	}
+}

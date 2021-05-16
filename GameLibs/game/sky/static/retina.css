@@ -1,0 +1,44 @@
+/*************************************************
+general retina declarations for all layouts
+*************************************************/	
+@media 
+(-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) {
+#top-search .wrapper {background:url(../images/search-bg@2x.png) no-repeat 0px 0px;}
+#trending-wrapper .carousel-control-wrapper {background:url(../images/carousel-control-wrapper-bg@2x.png) no-repeat 0px 0px;}
+#trending-wrapper .sort-buttons .active {background:url(../images/sort-button-active-trending@2x.png) no-repeat 0px 0px;}
+#trending-wrapper .sort-buttons a:active {background:url(../images/sort-button-active-trending@2x.png) no-repeat 0px -40px;}
+#sizzlin-header .inner {background:url(../images/sizzlin-icon@2x.png) no-repeat 13px 10px;}
+#top-ten-selector-right {background:url(../images/top-ten-selector-right@2x.png) no-repeat 0px 0px;}
+#top-ten.solo #top-ten-selector-right {background:url(../images/top-ten-selector-right-reverse@2x.png) no-repeat 0px 0px;}
+.post-loop .sortbar-control {background:url(../images/sortbar-large-control-bg@2x.png) no-repeat 0px 0px;}
+.post-loop .sortbar .sort-buttons .active {background:url(../images/sort-button-active-main@2x.png) no-repeat 0px 0px;}
+.post-loop .sortbar .sort-buttons a:active {background:url(../images/sort-button-active-main@2x.png) no-repeat 0px -50px;}
+.pagination .sort-buttons .active {background:url(../images/sort-button-pagination@2x.png) no-repeat 0px 0px;}
+.pagination .sort-buttons a:active {background:url(../images/sort-button-pagination@2x.png) no-repeat 0px -40px;}
+#sidebar .filterbar .sort-buttons .active {background:url(../images/sort-button-active-widget@2x.png) no-repeat 0px 0px;}
+#sidebar .filterbar .sort-buttons a:active {background:url(../images/sort-button-active-widget@2x.png) no-repeat 0px -40px;}
+#recommended .filterbar .sort-buttons .active {background:url(../images/sort-button-active-recommended@2x.png) no-repeat center 0px;}
+#recommended .filterbar .sort-buttons a:active {background:url(../images/sort-button-active-recommended@2x.png) no-repeat center -35px;}
+#recommended .filterbar .sort-buttons .active .left-side {background:url(../images/sort-button-left@2x.png) no-repeat left 0px;}
+#recommended .filterbar .sort-buttons a:active .left-side {background:url(../images/sort-button-left@2x.png) no-repeat left -35px;}
+#recommended .filterbar .sort-buttons .active .right-side {background:url(../images/sort-button-right@2x.png) no-repeat right 0px;}
+#recommended .filterbar .sort-buttons a:active .right-side {background:url(../images/sort-button-right@2x.png) no-repeat right -35px;}
+#comments .filterbar .sort-buttons span.current {background:url(../images/sort-button-active-widget@2x.png) no-repeat center 0px;}
+#comments .filterbar .sort-buttons a:active {background:url(../images/sort-button-active-widget@2x.png) no-repeat center -35px;}
+
+}
+
+/*************************************************
+retina declarations for specific responsive layouts
+*************************************************/	
+/* Landscape phones and down */
+@media 
+(-webkit-min-device-pixel-ratio: 2) and (max-width: 480px), 
+(min-resolution: 192dpi) and (max-width: 480px) {
+#trending-wrapper .sort-buttons .active {background:url(../images/sort-button-active-trending-mobile@2x.png) no-repeat 0px 0px;}
+#trending-wrapper .sort-buttons a:active {background:url(../images/sort-button-active-trending-mobile@2x.png) no-repeat 0px -40px;}
+.post-loop .sortbar .sort-buttons .active {background:url(../images/sort-button-active-main-mobile@2x.png) no-repeat 0px 0px;}
+.post-loop .sortbar .sort-buttons a:active {background:url(../images/sort-button-active-main-mobile@2x.png) no-repeat 0px -50px;}
+
+}

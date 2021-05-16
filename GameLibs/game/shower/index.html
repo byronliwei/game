@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html style="min-height: 567px;"><head>
+    <meta charset="UTF-8">
+	<title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+      <meta name="viewport" content="width = device-width, initial-scale=1, maximum-scale=1.01, minimal-ui">
+    <script>
+    window.addEventListener("load", function() {
+   function onTouchPreventDefault(event) { event.preventDefault(); };
+   document.addEventListener("touchmove", onTouchPreventDefault, false);
+   document.addEventListener("touchstart", onTouchPreventDefault, false);
+}, false);
+</script>
+    <style type="text/css">
+        BODY, HTML {
+            -webkit-touch-callout: none;
+            -webkit-text-size-adjust: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            margin:             0;
+            padding:            0;
+            font-family:        Arial, Verdana, sans-serif;
+            font-size:          12px;
+            font-weight:        normal;
+            color:              #ccc;
+            background-color:   #000000;
+            overflow:           hidden;
+        }
+    </style>
+     
+    <script src="static/phaser.min.js"></script>
+    <script src="static/game.min.js"></script>
+
+    
+</head>
+<body style="overflow: hidden;">
+
+<script type="text/javascript" src="../../static/js/game.as.js"></script>
+<link href="../../static/css/game.common.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../static/js/zep.min.js"></script>
+<script type="text/javascript" src="../../static/js/game.common.js"></script>
+<script type="text/javascript" src="../../static/js/game.analytics.js"></script>
+</body></html>

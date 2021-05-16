@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>正在观看《{$minfo.title}》 - 本周票房</title>
+	<style>
+	.ad-bottom-container {
+	position:relative;
+	height:60px;
+	width:100%;
+	margin-top:0px;
+	}
+	.ad-bottom-holder {
+	height:60px;
+	width:960px;
+	margin:0 auto;
+	}
+	html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #555;
+}
+a{
+	color: #007fff;
+	text-decoration: none;
+}
+p {
+margin: 0 0 10px;
+}
+.x-pl-container{
+    height: 100%;
+    position: relative;
+}
+.x-pl-sidebar{
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #f4f4f4;
+    width: 200px;
+    height: 100%;
+    border-right: 1px solid #ddd;
+}
+
+.x-pl-main{
+    margin-left: 200px;
+    height: 100%;
+}
+
+.x-pl-main iframe{
+    width: 100%;
+    height: 100%;
+}
+.btn {
+display: inline-block;
+padding: 4px 12px;
+margin-bottom: 0;
+font-size: 14px;
+line-height: 20px;
+color: #666;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+background-color: #dfdfdf;
+border:solid 0px;
+}
+.x-pl-hiddenbtn{
+    position: absolute;
+    top: 50%;
+    left: 200px;
+    width: 20px;
+    height: 200px;
+    padding: 0;
+    margin-top: -100px;
+    margin-left: -10px;
+    z-index: 10000;
+    border-radius:2px;
+}
+.x-pl-hiddenbtn:hover{background:#ccc}
+.icon {
+display: inline-block;
+font-family: 'entypo';
+speak: none;
+font-size: 12px;
+width: 20px;
+height: 20px;
+margin-top: -6px;
+margin-right: 10px;
+line-height: 22px;
+text-align: center;
+text-decoration: none;
+vertical-align: middle;
+text-shadow: none;
+font-variant: normal;
+font-style: normal;
+font-weight: normal;
+text-transform: none;
+-webkit-font-smoothing: antialiased;
+-moz-font-smoothing: antialiased;
+-ms-font-smoothing: antialiased;
+-o-font-smoothing: antialiased;
+font-smoothing: antialiased;
+}
+.icon.iconModeList:before {
+content: '\2630';
+}
+
+.icon.after {
+margin-right: 0;
+}
+.x-pl-title{
+    font-size: 18px;
+    font-weight: bold;
+}
+.x-pl-info{
+    padding: 10px;
+    font-size: 13px;
+}
+.x-pl-info p{ line-height: 30px;}
+.x-pl-playsource{
+    background-color: black;
+    color: #eee;
+    font-size: 12px;
+    text-align: center;
+}
+.x-pl-sourcename{
+    color: #f82;
+    font-weight: bold;
+}
+.maskLayer {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    position: absolute;
+}
+.x-pl-copymask {
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -150px;
+    z-index: -1;
+    position: absolute;
+    z-index: 10000;
+    background-color: white;
+    padding: 20px;
+    font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+
+	<div class="x-pl-container">
+		<div class="x-pl-sidebar">
+
+			<div class="x-pl-playsource">
+				当前视频来自<a><span class="x-pl-sourcename">网络视频收集</span></a>
+			</div>
+
+			<div class="x-pl-info">
+				<p class="x-pl-title">
+					<a href="/movie/thor-the-dark-world/">{$minfo.title}</a>
+				</p>
+				<p>
+					<b>导演</b>：{$minfo.director}
+					<br>
+					<b>主演</b>：{$minfo.casts}
+					<br>
+					<b>上映</b>：{$minfo.date_pub}
+					<br>
+				</p>
+				<p>
+					<div class="btn-group x-usermovie-buttons x-usermovie-controls">
+						<!-- <a href="#" class="btn-mini mark btn x-tooltip" title="分享" style="background:#007FFF;color:#fff;font-weight:bold" data-type="like"> <i class="icon-heart"></i>
+							<span>分享给好友</span>
+						</a> -->
+						<!-- 分享 -->
+						<div class="bshare-custom"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/button.js#style=-1&amp;uuid=&amp;pophcol=1&amp;lang=zh"></script><a class="bshareDiv" onclick="javascript:return false;"></a><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+						<!-- 分享 -->
+					</div>
+				</p>
+				<div style="padding-top:20px;">
+					<img width="170" height="" class="posterLayer" alt="" src="{$Think.config.AJAX_URL}/Uploads/poster/poster_{$minfo.id_db}_s.jpg">
+				</div>
+			</div>
+
+		</div>
+		<button class="btn x-pl-hiddenbtn">
+			<b style="font-size:24px;font-weight:bold;font-family:'黑体'">&lt;</b>
+		</button>
+		<div class="x-pl-main">
+			<iframe id="iframe" frameborder="0" src="{$minfo.url}" id="play_area"></iframe>
+		</div>
+	</div>
+	
+<script src="http://192.168.1.100/public/js/jquery.js"></script>
+<script>
+$(function(){
+	$('.x-pl-hiddenbtn').toggle(function(){
+		$(this).css("left","10px").find("b").html("&gt;");
+		$(".x-pl-sidebar").hide();
+		$(".x-pl-main").css("margin-left","0px");
+		
+	},function(){
+		$(this).css("left","200px").find("b").html("&lt;");
+		$(".x-pl-sidebar").show();
+		$(".x-pl-main").css("margin-left","200px");
+		
+	});
+})
+</script>
+
+
+</body>
+</html>

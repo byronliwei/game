@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="referrer" content="never">
+<script type="text/javascript">
+    var url = decodeURIComponent(location.href.split('url=')[1]);
+</script>
+<style type="text/css">
+html,body{padding:0;margin: 0;height: 100%;width:100%;overflow: hidden;}
+body{background: #333 url('/Public/static/images/play_loading.gif') no-repeat center center;}
+</style>
+</head>
+<body>
+    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="swflash.cab#version=9,0,16,0" tppabs="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,16,0" id="game" height="100%" width="100%">
+        <script type="text/javascript">
+        document.write('<param name="movie" value="' + url + '">');
+        </script>
+        <param name="quality" value="high">
+        <param name="allowNetworking" value="internal">
+        <param name="allowScriptAccess" value="never">
+        <param name="wmode" value="transparent" />
+        <script type="text/javascript">
+        document.write('<embed src="'+url+'" height="100%" width="100%" quality="high" name="FlashContent" wmode="transparent" allowscriptaccess="never" allownetworking="internal" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">');
+        </script>
+    </object>
+</body>
+</html>

@@ -1,0 +1,84 @@
+{"frames": [
+
+{
+	"filename": "mult1.png",
+	"frame": {"x":262,"y":2,"w":26,"h":22},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":0,"w":26,"h":22},
+	"sourceSize": {"w":32,"h":27}
+},
+{
+	"filename": "mult2.png",
+	"frame": {"x":229,"y":2,"w":31,"h":22},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":31,"h":22},
+	"sourceSize": {"w":32,"h":27}
+},
+{
+	"filename": "mult3.png",
+	"frame": {"x":67,"y":2,"w":29,"h":27},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":0,"w":29,"h":27},
+	"sourceSize": {"w":32,"h":27}
+},
+{
+	"filename": "mult4.png",
+	"frame": {"x":98,"y":2,"w":32,"h":26},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":26},
+	"sourceSize": {"w":32,"h":27}
+},
+{
+	"filename": "mult5.png",
+	"frame": {"x":132,"y":2,"w":30,"h":26},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":30,"h":26},
+	"sourceSize": {"w":32,"h":27}
+},
+{
+	"filename": "mult6.png",
+	"frame": {"x":35,"y":2,"w":30,"h":27},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":30,"h":27},
+	"sourceSize": {"w":32,"h":27}
+},
+{
+	"filename": "mult7.png",
+	"frame": {"x":197,"y":2,"w":30,"h":25},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":30,"h":25},
+	"sourceSize": {"w":32,"h":27}
+},
+{
+	"filename": "mult8.png",
+	"frame": {"x":2,"y":2,"w":31,"h":27},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":31,"h":27},
+	"sourceSize": {"w":32,"h":27}
+},
+{
+	"filename": "mult9.png",
+	"frame": {"x":164,"y":2,"w":31,"h":25},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":31,"h":25},
+	"sourceSize": {"w":32,"h":27}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "gp_multipliers.png",
+	"format": "RGBA8888",
+	"size": {"w":290,"h":31},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:13e21f31921b3fbe13197fcf2d50d3b6:de23b6e4d8a1368f6a816406ae37abac:b825ae7d56598cd37c57d0d19d1c9e65$"
+}
+}

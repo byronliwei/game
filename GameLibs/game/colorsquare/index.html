@@ -1,0 +1,72 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Colorsquare</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="game-id" content="colorsquare" />
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+
+    <style>
+        body {
+            text-align: center;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+
+        html {
+            -ms-touch-action: none; /* Direct all pointer events to JavaScript code. */
+        }
+    </style>
+
+</head>
+<body>
+<div style="display:inline-block;width:100%; height:100%;margin: 0 auto; background: black; position:relative;"
+     id="gameDiv">
+    <canvas id="gameCanvas" width="480" height="640" style="background-color: #000000"></canvas>
+</div>
+    <script>
+	    function reload(){
+	    	window.location.href=window.location.href;
+	    }
+
+		function share(){
+			var shareBox=$('#share_box');
+			setTimeout(function(){
+				shareBox.show();
+			},400)
+			
+			shareBox.on('click touchstart',function(){
+				shareBox.hide();
+			})
+		}
+    
+        function clickMore(){
+          window.location.href='http://www.weekmovie.net/weixin/game/list/index.html?f=gun';
+        }
+    </script>
+
+
+<script>var document_class = "GameApp";</script>
+<script src="static/game-min.js"></script>
+<script src="static/egret_require.js"></script>
+<script src="static/egret_loader.js"></script>
+<script>
+    egret_h5.startGame();
+</script>
+
+<script type="text/javascript" src="../../static/js/game.as.js"></script>
+</body>
+</html>
+<link href="../../static/css/game.common.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../static/js/zep.min.js"></script>
+<script type="text/javascript" src="../../static/js/game.common.js"></script>
+<script type="text/javascript" src="../../static/js/game.analytics.js"></script>

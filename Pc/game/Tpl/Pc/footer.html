@@ -1,0 +1,126 @@
+<div class="footer_games">
+    <div class="footer_games-warp">
+        <div class="footer-share">
+            <div data-app="facebook" data-qid="" data-pic=""
+                class="detail-shares-item">
+                <img src="/Public/static/images/facebook.png" alt="">                
+            </div>
+            <div data-app="twitter" data-qid="" data-pic=""
+                class="detail-shares-item">
+                <img src="/Public/static/images/twitter2.png" alt="">                
+            </div>
+            <div data-app="google" data-qid="" data-pic=""
+                class="detail-shares-item">
+                <img src="/Public/static/images/google-plus.png" alt="">                
+            </div>
+        </div>
+        <div class="footer-copyright">
+            Copyright © 2019-2020 | All rights reserved.
+        </div>
+        <div class="contactus">
+            <a href="https://sites.google.com/view/gamev6-terms">Use terms</a> |
+            <a href="https://sites.google.com/view/gamev6com-privacy-policy">Privacy</a> |
+            <a href="mailto:ylnrsyb.dev@gmail.com">Contact us</a>
+        </div>
+    </div>
+</div>
+<div class="backtotop">
+    <img src="/Public/static/images/icon_return_top_selected.png" alt="">
+</div>
+<div id="cookie-notice">
+    <div class="cookie-notice-container">
+      <span id="cn-notice-text" class="cn-text-container">
+        We use cookies to ensure that we give you the best experience on our website. 
+        If you continue to use this site we will assume that you are happy with it.
+      </span>
+      <span id="cn-notice-buttons" class="cn-buttons-container">
+        <a id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button bootstrap" aria-label="Ok">yes</a>
+        <a id="cn-more-info" class="cn-more-info cn-button bootstrap" aria-label="Privacy policy">no</a>
+      </span>
+      <a href="javascript:void(0);" id="cn-close-notice" data-cookie-set="accept" class="cn-close-icon" aria-label="Ok">×</a>
+    </div>
+  </div>
+</body>
+
+</html>
+<script src="/Public/static/js/jquery.min.js"></script>
+<script src="/Public/static/js/clipboard.min.js"></script>
+
+<script src="/Public/static/js/base.js?v=<?php echo time();?>"></script>
+<script src="/Public/static/js/ima.js"></script>
+<script src="/Public/static/js/myima.js?v=<?php echo time();?>"></script>
+<script>
+    $(function () {
+        $('.detail-shares-item').click(function () {
+            var that = this
+            var appname = $(this).data('app')
+            var qid = $(this).data('qid') || ''
+            var pic = $(this).data('pic') || ''
+            if (appname === 'link') {
+                var clipboard = new ClipboardJS('.applink', {
+                    text: function () {
+                        return location.href
+                    }
+                });
+                alert('Success Copy')
+            } else {
+                share(qid, pic, appname)
+            }
+        })
+    })
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+
+    function share(qid, pic, media) {
+        var url = location.href + '/tag/share/pic/' + pic + '/?t=119&media=' + media;
+        var utm = getQueryString('utm');
+        if (utm) url = url + '&utm=' + utm;
+
+        var version = getQueryString('v');
+        if (version == 1) url = url + '&v=' + version;
+
+        url = encodeURIComponent(url);
+        var title = document.title.split(' - ')[0];
+        var via = "";
+
+        var locUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+        switch (media) {
+            case 'twitter':
+                locUrl = 'https://twitter.com/share?url=' + url + '&text=' + title + '&via=' + via
+                // locUrl='https://twitter.com/intent/tweet?url='+url+'&text='+title+'&via='+via
+                break;
+            case 'google':
+                locUrl = 'https://plus.google.com/share?url=' + url;
+                break;
+            case 'messenger':
+                locUrl = 'fb-messenger://share/?app_id=1053226548106670&link=' + url + '&redirect_uri=' + location.protocol +
+                    '//' + location.host;
+                break;
+            case 'pinterest':
+                locUrl = 'http://pinterest.com/pin/create/link/?url=' + url + '&media=' + pic + '&description=' + title;
+                break;
+            case 'whatsapp':
+                locUrl = "whatsapp://send?text=" + url
+                break;
+        }
+
+        openwindow(locUrl, '', 800, 500);
+    }
+
+    function openwindow(url, name, iWidth, iHeight) {
+        var url;
+        var name;
+        var iWidth;
+        var iHeight;
+        var iTop = (window.screen.availHeight - 30 - iHeight) / 2;
+        var iLeft = (window.screen.availWidth - 10 - iWidth) / 2;
+        window.open(url, name, 'height=' + iHeight + ',,innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' +
+            iWidth + ',top=' + iTop + ',left=' + iLeft +
+            ',toolbar=no,menubar=no,scrollbars=auto,resizeable=yes,location=no,status=no');
+    }
+</script>

@@ -1,0 +1,26 @@
+{
+	"---- Partes comuns ----":"",
+	"home":"Home",
+	"recently_played":"Recentemente jogados",
+	"foot_intro":"TheHotGames.Com é a sua plataforma preferida recursos jogo flash de fogo , só adicionar os jogos mais populares em torno da Internet , para que você nunca vai se cansar de nossas categorias de jogo, incluindo jogos de tiro , jogos de corrida , jogos de estratégia , puzzle jogos , etc Você não precisa pagar ou até mesmo baixar nada . basta clicar e jogar seus jogos favoritos em Flash gratuitamente. divirta-se!",
+	"privacy_policy":"Política de Privacidade",
+	"contact":"Contacto",
+	"play_more_games":"Mais jogos",
+
+	"---- Início conteúdo ----":"",
+	"index":{
+		"title":"o jogo mais popular do mundo - TheHotGames.Com",
+		"meta":{
+			"description":"os jogos mais populares on-line grátis em TheHotGames.com , incluindo jogos de palavras, jogos de corridas , jogos de cartas , jogos de quebra-cabeça e mais jogos",
+			"keywords":"Hot , jogos, Volkswagen , esportes, seus jogos favoritos , jogos, livre, em linha , flash , jogo, arcade, puzzle, estratégia , defesa, tiro , plataforma, ação, aventura, RPG , esportes , competência, torre , jogos de Mario, jogos de Barbie ."
+		}
+	},
+
+	"play":{
+		"title":"jogar o jogo popular [#N]- TheHotGames.Com",
+		"meta":{
+			"description":"Jogue o jogo popular [#N] em TheHotGames.com , incluindo jogos de palavras, jogos de corridas , jogos de cartas , jogos de quebra-cabeça e mais jogos",
+			"keywords":"Hot , jogos, [#N] , livre , popular, seus jogos favoritos, livre, em linha , flash, jogo, shopping centers , puzzle , estratégia, defesa , jogos de tiro , plataforma ação, aventura, RPG , esportes, competência , torre, jogos do Mario , jogos de Barbie"
+		}
+	}
+}

@@ -1,0 +1,44 @@
+<include file="Pc:header" />
+    <div style="text-align: center;margin-top: 10px;">        
+        <script>
+            google_ad_slot = adConfig['pc-hotgame-search-970x90'][adChannel];
+            google_ad_width = 970;
+            google_ad_height = 90;
+            try{
+                document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-2104961258307381"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            }catch(e){
+                console.log(e);
+            }
+        </script>
+    </div>
+    <div class="search-result">
+        <div class="search-result-wrap">
+            <h1>Serach Your Games</h1>
+            <div class="search-input">
+                <form action="/game/search.html" method="get">
+                    <input name='k' type="text" value="{$_GET['k']}" placeholder="search games">
+                    <button type="submit">
+                        <img src="/Public/static/images/icon_search.png" alt="">
+                    </button>
+                </form>  
+            </div>
+        </div>
+        <if condition="$search_empty eq 1">
+            <div class="searchnotfound">
+                <img src="/Public/static/images/img_Default.png" alt="">
+                <p>Sorry, there is no matched games~</p>
+            </div>
+            <h3 class="searchtuijian">Try these popular games below</h3>
+        </if>
+        <div class="search-result-wrap-list">
+            <volist name="result" id="vo" offset="0" length="14">
+                <a href="/game/play/{$vo.seo_name}.html?sr={$vo.source}" class="games_list-item" target="_blank">
+                    <img src="/Public/static/images/gamev61.png" data-qid="{$vo.id}" data-src="{$vo.img}">
+                    <div class="game_name">{$vo.name}</div>
+                </a>
+            </volist>
+            
+        </div>
+    </div>
+    <include file="Pc:footer" />

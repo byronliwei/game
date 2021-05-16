@@ -1,0 +1,27 @@
+{
+	"---- 公用部分 ----":"",
+	"home": "Home",
+	"recently_played": "Recently played",
+	"foot_intro":"TheHotGames.Com is your #1 source for hot flash games. We only add the most popular games from around the internet so you never have a chance to get bored. Our game categories include shooting games, racing games, strategy games, puzzle games and others. You don't need to pay or even download anything. Just click and play you favorite flash games for free. Enjoy! ",
+	"privacy_policy": "Privacy Policy",
+	"contact": " Contact",
+	"play_more_games":"PLAY MORE GAMES",
+	
+	"---- 首页内容 ----":"",
+	"index":{
+		"title": "TheHotGames.Com - The Hot Games Around The World",
+		"meta":{
+			"description":"Play the hot selection of free online games at TheHotGames.com! Including word games, casino games, card games, puzzle games and many more!",
+			"keywords":"Popular Games,The Hot Games, Your Favorite Games,games, free, online, flash, play, arcade, puzzle, strategy, defense, shooter, platform, action, adventure, rpg, sports, racing, tower,mario games,barbie games"
+		}
+	},
+	
+	"play":{
+		"title": "Play hot game {name}-TheHotGames.Com",
+		"meta":{
+			"description":"Play hot game {name} at TheHotGames.com! Including word games, casino games, card games, puzzle games and many more!",
+			"keywords":"Hot,Games,{name},free,Popular,Your Favorite,games,free, online, flash, play, arcade, puzzle, strategy, defense, shooter, platform, action, adventure, rpg, sports, racing, tower,mario games,barbie games"
+		}
+	}-
+	
+}

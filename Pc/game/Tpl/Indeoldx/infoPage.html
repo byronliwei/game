@@ -1,0 +1,293 @@
+<include file="Index:header" />
+
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/78384429/160x600', [160, 600], 'div-gpt-ad-1496907163530-0').addService(googletag.pubads());
+    googletag.defineSlot('/78384429/728x90', [728, 90], 'div-gpt-ad-1496907163530-1').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+
+<link href="/Public/static/css/main.css?t={$timestamp}88" rel="stylesheet" />
+<link rel="stylesheet" href="/Public/static/css/desc.css?t={$timestamp}88" type="text/css">
+<script src="/Public/static/js/jquery.min.js"></script>
+<script src="/Public/static/js/lazyload.js?t=908"></script>
+<include file="Index:nav" />
+<style type="text/css">
+.header{
+    position:relative!important;
+}
+.gamedescwrap {
+  margin: 20px auto 0;
+}
+.sideActive{top:10px!important;}
+</style> 
+<script type="text/javascript">
+    var screenW=document.body.clientWidth,adSwitch=screenW<=1024,bigSwitch=screenW>=1550;
+</script>
+<!--desc-->
+<div class="gamedescwrap">
+    <!--infro-->
+    <div class="descinfro">
+        <div class="lefttop">
+            <!--navigate links-->
+            <ul class="navigate nav-tabs box-part">
+                <li class="active">{$lan.nav.game_intro}</li>
+                <li class="tab"><a id="screenshot_link" href="#screenshot">{$lan.nav.screen_shot}</a></li>
+                <li class="tab"><a id="relatedgames_link" href="#relatedgames">{$lan.nav.related_games}</a></li>
+            </ul>
+
+
+
+            <!--navigate links-->
+            <div class="comWrap img_desc fbcomborder" style="float:left;">
+                <div class="top1">
+                    <div class="top_as_336x280" style="overflow:hidden;">
+                        <div class="as_title">Advertisement</div>
+                        <div class="as as_content" style="background:#f1f1f1;">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <!-- game_info 336x280-1 -->
+                            <ins class="adsbygoogle"
+                                 style="display:inline-block;width:336px;height:280px"
+                                 data-ad-client="ca-pub-8739233621395816"
+                                 data-ad-slot="7158616684"></ins>
+                            <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
+                    </div>
+                    <!--description-->
+                    <div class="inText">
+                        <div class="text_c inList">
+                            <span><h1 style="text-transform:uppercase;font-size:16px;">{$gameDetail.name}</h1></span>
+                            <div class="facebooklike" style="display: inline-block;margin:0px 0 0 20px;height:17px;">
+                                <div class="fb-like" style="float:left;" data-href="http://www.thehotgames.com/game/play/{$Think.get.n}.html" data-send="false" data-layout="button_count" data-width="80" data-show-faces="true"></div>
+                            </div>
+                        </div>
+                        <div class="text_c inList" id="game_tags">
+                            <span class="h2">{$lan.nav.tag}:</span>
+                            <neq name="gameDetail.sort" value="">
+                                <a href="/{$lang}/game/category/{$gameDetail.sort}-games.html{$utm_source.param}" target="_blank">{$gameDetail.sort} Games</a>
+                            <else/>
+                                <a href="/{$lang}/game/category/hot-games.html{$utm_source.param}" target="_blank">Hot Games</a>
+                            </neq>
+                        </div>
+                        <div class="text_d inList" style="max-height: 130px;">
+                            <span class="h2">{$lan.nav.description}:</span>
+                            <span style="display: inline-block;max-height: 86px;overflow: hidden;text-overflow: ellipsis;">
+                                {$gameDetail.desc}
+                            </span>
+                        </div>
+                        <p style="text-align:left;">
+                            <b style="padding:0px;">{$gameDetail.name}</b><br>
+                            <a target="_self" href="/{$lang}/game/play/{$gameDetail.seo_name}.html{$utm_source.param}" title="Play Now">
+                            http://www.thehotgames.com/game/play/{$gameDetail.seo_name}.html
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <!--screenshots-->
+            <div class="screenshot comWrap fbcomborder" id="screenshot">
+                
+                <div class="mid_screen" style="width: 158px;height: 158px;margin: 8px 108px 0;">
+                    <a style="font-size:18px;text-decoration:underline;" href="/{$lang}/game/play/{$gameDetail.seo_name}.html{$utm_source.param}">
+                        <img src="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$gameDetail.sort|default='images'}/{$gameDetail.img}" style="width: 100%;height: 100%;border: 3px solid #3C5B9E;border-radius: 12px;">
+                        <center><img style="width:142px;height:23px;margin:15px 0px;" src="/Public/static/images/star.png">{$gameDetail.name}</center>
+                    </a>
+                </div>
+
+                <div class="mid_as_336x280" style="overflow:hidden;">
+                    <div class="as_title">Advertisement</div>
+                    <div class="as" style="background:#f1f1f1;">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- game_info 336x280-2 -->
+                        <ins class="adsbygoogle"
+                             style="display:inline-block;width:336px;height:280px"
+                             data-ad-client="ca-pub-8739233621395816"
+                             data-ad-slot="8635349882"></ins>
+                        <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <!--screenshots-->
+
+            
+            <style type="text/css">
+
+                #play_btn{background: #6db440}
+                #play_btn:hover{background: #4e812d}
+            </style>
+
+            <!-- similar games -->
+            <div class="relatedgame comWrap fbcomborder" id="relatedgames" style="height: 445px;overflow: hidden">
+                <div class="inTitle"><b>{$lan.nav.related_games}</b></div>
+                
+                
+                <div class="game_related">
+                <volist name="gameList" id="vo" offset="0" length="15">
+                    <div class="relateditem">
+                        <a target="_blank" href="/{$lang}/game/info/{$vo.seo_name}.html{$utm_source.param}">
+                            <img alt="{$vo.name}" class="lazy" src="{$domain}/Public/static/images/empty.gif" data-original="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default='images'}/{$vo.img}"/>
+                        </a>
+                    </div>
+                </volist>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <!-- similar games end-->
+			
+			<div class="relatedgame comWrap fbcomborder" style="background:transparent;">
+				<!-- /78384429/728x90 -->
+				<div id='div-gpt-ad-1496907163530-1' style='height:90px; width:728px;margin:0px auto'>
+				<script>
+				googletag.cmd.push(function() { googletag.display('div-gpt-ad-1496907163530-1'); });
+				</script>
+				</div>			
+			</div>
+
+            <div class="bottom-tags comWrap fbcomborder">
+                <div class="inTitle"><b>{$lan.nav.top_collections}</b></div>
+
+                <ul class="tag_list">
+                    <assign name="nav" value="$lan.nav"/>
+                    <volist name="tagList" id="vo"> 
+                    <li><a href="/{$lang}/game/tag/{$vo.seo_name}.html{$utm_source.param}" target="_blank">{$nav[$vo['name']]|default=$vo['name']}</a></li>
+                    </volist>
+                </ul>
+            </div>	
+			
+            <div class="copyright">&copy;2010-2015 thehotgames.com All Rights Reserved.</div>
+        </div>
+        <!-- right area -->
+        <div class="right_area">
+            <div class="inTitle"><b>{$lan.nav.top_games}</b></div>
+            <ul class="toplist">
+                <volist name="gameList1" id="vo" offset="0" length="4">
+                <li>
+                    <a target="_blank" class="img" href="/{$lang}/game/info/{$vo.seo_name}.html{$utm_source.param}"><img src="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default='images'}/{$vo.img}"/></a>
+                    <a target="_blank" class="number win{$key}" href="/{$lang}/game/info/{$vo.seo_name}.html">{$key+1}</a>
+                    <a class="name" target="_blank" href="/{$lang}/game/info/{$vo.seo_name}.html{$utm_source.param}">{$vo.name}</a>
+                </li>
+                </volist>
+            </ul>
+        </div>
+        <div class="as_160x600">
+            <div class="as_title">Advertisement</div>
+            <div style="width:160px;height:600px;background:rgba(255,255,255,0.05);overflow:hidden;" class="as">
+				<!-- /78384429/160x600 -->
+				<div id='div-gpt-ad-1496907163530-0' style='height:600px; width:160px;'>
+				<script>
+				googletag.cmd.push(function() { googletag.display('div-gpt-ad-1496907163530-0'); });
+				</script>
+				</div>
+            </div>
+        </div>
+        <!-- right area -->
+        <div class="clear"></div>
+    </div>
+    <!--infro-->
+</div>
+
+<!-- Fixed AS -->
+<div id="stickyunit" style="display:block;position:fixed;left:10px;top:80px;width:160px;height:600px;background:rgba(255,255,255,0.05);transition: all 0.1s;overflow:hidden;">
+    <script type="text/javascript">
+    var _width=160;
+    if(screenW>=1280){
+        if(!bigSwitch){
+            /*game_info 160x600*/
+            document.write('<ins class="adsbygoogle"'+
+             'style="display:inline-block;width:160px;height:600px"'+
+             'data-ad-client="ca-pub-8739233621395816"'+
+             'data-ad-slot="1112083081"></ins>');
+
+        }else{
+            _width=300;
+            /*-- game_info 300x600 --*/
+            document.write('<ins class="adsbygoogle"'+
+             'style="display:inline-block;width:300px;height:600px"'+
+             'data-ad-client="ca-pub-8739233621395816"'+
+             'data-ad-slot="9075513482"></ins>');
+        }
+        (adsbygoogle = window.adsbygoogle || []).push({});
+
+        var _left=150;
+        try{
+            var _marginLeft=$('.gamedescwrap').offset().left;
+            if(_marginLeft<_width){
+                _left=0;
+            }else{
+                _left=_marginLeft-(_width+12);
+            }
+        }catch(e){}
+        $('#stickyunit').css({'width':_width+'px','left':_left+'px'}).show();
+    }else{
+        $('#stickyunit').hide();
+    }
+    </script>
+</div>
+
+<script type="text/javascript">
+
+    $("img.lazy").lazyload({
+        effect: "fadeIn",
+        failure_limit: 10000,
+    });
+
+    var sideBox=$('#stickyunit');
+    window._sideShowCheck=false;
+
+    function sideShowCheck(){
+        var sHeight=$('body').scrollTop();
+        if(sHeight>=30&&!_sideShowCheck){
+            sideBox.show();
+            setTimeout(function(){
+                sideBox.addClass('sideActive');
+            },200);
+            _sideShowCheck=true;
+            //console.log('show');
+        }else if(sHeight<30&&_sideShowCheck){
+            sideBox.removeClass('sideActive');
+            _sideShowCheck=false;
+            //console.log('hide');
+        }        
+    }
+
+    window.onscroll=function(){
+        sideShowCheck();
+    }
+
+    $(function(){
+        sideShowCheck();
+    })
+</script>
+
+
+
+<div id="fb-root"></div>
+
+<!--Right nav Start-->
+<include file="Index:rightnav" />
+<!--Right nav End-->
+
+<include file="Index:footer_insert" />
+<script type="text/javascript">
+    $(function(){
+        checkCommentHeight();
+        if(screenW<1180){
+            $('.rightnav').hide();
+        }
+    })
+</script>
+</html>

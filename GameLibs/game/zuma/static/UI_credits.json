@@ -1,0 +1,60 @@
+{"frames": [
+
+{
+	"filename": "10tons-logo-color.png",
+	"frame": {"x":200,"y":424,"w":130,"h":41},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":41},
+	"sourceSize": {"w":130,"h":41}
+},
+{
+	"filename": "button-medium.png",
+	"frame": {"x":120,"y":371,"w":83,"h":51},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":51},
+	"sourceSize": {"w":83,"h":51}
+},
+{
+	"filename": "button-medium_press.png",
+	"frame": {"x":120,"y":424,"w":78,"h":48},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":2,"w":78,"h":48},
+	"sourceSize": {"w":83,"h":51}
+},
+{
+	"filename": "logo_cangrejo.png",
+	"frame": {"x":2,"y":371,"w":116,"h":101},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":9,"w":116,"h":101},
+	"sourceSize": {"w":120,"h":120}
+},
+{
+	"filename": "panel-medium.png",
+	"frame": {"x":2,"y":2,"w":357,"h":367},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":357,"h":367},
+	"sourceSize": {"w":357,"h":369}
+},
+{
+	"filename": "pattern.png",
+	"frame": {"x":200,"y":467,"w":1,"h":1},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":1,"h":1},
+	"sourceSize": {"w":100,"h":100}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "UI_credits.png",
+	"format": "RGBA8888",
+	"size": {"w":361,"h":474},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:93871c874ddfd17404200bbc90f607f1:97d2602da93fb9f5803641ad59af0bc4:7722a56766abbc40446fc838728efa9b$"
+}
+}

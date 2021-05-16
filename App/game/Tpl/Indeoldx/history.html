@@ -1,0 +1,97 @@
+<include file="Index:header" />
+
+<script type="text/javascript">
+    site_config={ 'lang':'{$lang}','cata':'historyPage' }
+</script>
+
+<style type="text/css">
+    .gameBox{text-align: center;padding: 20px;margin: 0 auto;padding-bottom: 40px;overflow: hidden;}
+    .gameBox .noHistory{
+        margin-top: 20%;
+        font-size: 16px;
+        color: #fff;
+    }
+    .gameBox .noHistory a{
+        color: #ff0000;
+        float: none;
+        width: 90px;
+    }
+    .gameBox a {
+        display: inline-block;
+        float: left;
+        margin: 4px;
+        width: 150px;
+        height: 150px;
+        position: relative;
+    }
+    .gameBox a img {
+        width: 100%;
+        height: 100%;
+        border: 0px solid transparent;
+        -webkit-box-shadow: 2px 2px 5px #222222;
+        -moz-box-shadow: 2px 2px 5px #222222;
+        box-shadow: 2px 2px 5px #222222;
+    }
+    .gameBox a span {
+        display: none;
+    }
+    .gameBox a i {
+        display: block;
+        background-color: rgba(16, 140, 223, 0.7);
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        line-height: 23px;
+        text-align: center;
+        font-size: 15px;
+        color: white;
+        font-family: 'HKFont';
+        font-weight: normal;
+        padding: 2px 0 1px;
+        letter-spacing: 0.3px;
+        font-style: normal;
+    }
+    .gameBox a:hover span {
+        display: block;
+        background-color: rgba(16, 140, 223, 0.7);
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        line-height: 23px;
+        text-align: center;
+        font-size: 15px;
+        color: white;
+        font-family: 'HKFont';
+        font-weight: normal;
+        padding: 2px 0 1px;
+        letter-spacing: 0.3px;
+    }
+    .gameBox a:hover i {
+        display: none;
+    }
+</style>
+<link href="/Public/static/css/main.css?t={$timestamp}" rel="stylesheet"/>
+
+<include file="Index:nav" />
+
+<div class="gameBox historybox" id="J_gameBox" style="margin-top:75px;margin-left:40px;margin-right:120px;">
+    <div class="topcata-title"><h1>Played List<i class="deleteAll">&macr;</i></h1></div>
+    <center></center>
+</div>
+<div class="clear">
+</div>
+
+<!--Right nav Start-->
+<include file="Index:rightnav" />
+<!--Right nav End-->
+
+<script src="/Public/static/js/jquery.min.js?t={$timestamp}"></script>
+<script src="/Public/static/js/main.js?t={$timestamp}"></script>
+<script src="/Public/static/js/lazyload.js?t=908"></script>
+<script src="/Public/static/js/common.js?t={$timestamp}"></script>
+<script  type="text/javascript" src="/Public/game/js/history.js?t={$timestamp}"></script>
+
+<include file="Index:footer_bar" />
+<include file="Index:footer_insert" />
+</body>
+</html>

@@ -1,0 +1,57 @@
+<include file="./Admin/core/Tpl/Public/header.html" />
+<include file="Public:sidebar" />
+<style type="text/css">
+.pic_list{display:block;padding:1px;}
+.pic_list:hover{border:solid 1px #31B9FD;padding:0px}
+.game_pic{width:80px;float:left;margin-right:5px;}
+</style>  
+  <!--Body Start-->
+  <div class="span10">
+		
+	<div align="center" class="container" id="content" style="width:100%;">
+		
+		<form id="tagadd_form" class="clearfix" method="post" action="__GROUP__/App/tagAdd">
+		<span style="float:left">
+			<input type="text" value="" name="tagname" placeholder="Tag Name" class="input-fix"> &nbsp;&nbsp;&nbsp;
+			<button type="button" onclick="if(!$('input[name=tagname]').val()){alert('请填写完整！');return;}$('#tagadd_form').submit()" class="btn btn-success"><i class="icon"></i>Create Tag</button>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="__GROUP__/App/tagJsonCreate" target="_blank">Create Json</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="__GROUP__/App/extractTag" target="_blank">Extract tags</a>
+		</span>
+		</form>
+		
+		<table id="film-list" class="table table-bordered">
+			<thead>
+				<tr>
+					<th><input type="checkbox" class="selectAll">&nbsp;&nbsp;ID</th>
+					<th>Tag Name</th>
+					<th>seo_name</th>
+					<th>Time</th>
+					<th>Handle</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="tagList" id="vo">
+				<tr dataid="{$vo.id}">
+					<td style="word-break:break-all; width:80px;"><input type="checkbox" value="{$vo.id}" name="dataId">&nbsp;&nbsp;{$vo.id}</td>
+					<td style="word-break:break-all; width:150px;"><a href="/game/play/{$vo.seo_name}.html" target="_blank" title="{$vo.name}">{$vo.name}</a></td>
+					<td>{$vo.seo_name}</td>
+					<td>{$vo.time|date="Y-m-d H:i",###}</td>
+					<td style="word-break:break-all;">
+						<a onclick="delSuggestion(this);" href="javascript:void(0);">Edit</a>
+					</td>
+				</tr>
+				</volist>
+			</tbody>
+		</table>
+		<div style="text-align:left;"><a  class="btn btn-danger batch-del"><i class="icon  icon-minus"></i>Batch Del</a></div>
+		<div class="pagination">
+			{$pagination} &nbsp; 
+			<input type="text" name="num" id="num" class="input-fix span1"/> 
+			<button class="btn btn-success" onclick="jumpNum()" type="button"><i class="icon"></i>Go</button>
+		</div>
+	</div> 
+
+  </div>
+  <!--Body End-->
+  
+<include file="./Admin/core/Tpl/Public/footer.html" />

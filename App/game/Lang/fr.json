@@ -1,0 +1,26 @@
+{
+	"---- Parties communes ----":"",
+	"home":"Home",
+	"recently_played":"Recently Played",
+	"foot_intro":"TheHotGames.Com est votre plate-forme préférée des ressources en jeu flash de feu , nous ne ajoutons jeux les plus populaires autour de l'Internet , de sorte que vous ne vous lasserez jamais de nos catégories de jeux , y compris les jeux de tir , jeux de course , jeux de stratégie , jeux de réflexion , etc Vous n'avez pas besoin de payer ou même télécharger quoi que ce soit . cliquez simplement et jouer à vos jeux préférés flash gratuits . profiter!",
+	"privacy_policy":"Politique de confidentialité",
+	"contact":"Contact",
+	"play_more_games":"Plus de Jeux",
+
+	"---- Accueil Contenu ----":"",
+	"index": {
+		"title":"jeu le plus populaire au monde - TheHotGames.Com",
+		"meta": {
+			"description":"Jouer à des jeux populaires en ligne gratuits , y compris dans TheHotGames.com jeux de mots , jeux de course , jeux de cartes , jeux de puzzle et plus de jeux,",
+			"keywords":"Hot , jeux, Volkswagen , sports, vos jeux préférés , jeux, gratuits , en ligne , flash , jeu, arcade , puzzle , stratégie, défense , tireur, plate-forme, action, aventure, jeux de rôle , sports , course , tour, jeux Mario, jeux Barbie ."
+		}
+	},
+
+	"play": {
+		"title":"jouer le jeu populaire [#N] - TheHotGames.Com",
+		"meta": {
+			"description":"Jouer le jeu populaire [#N] dans TheHotGames.com , y compris les jeux de mots , jeux de course , jeux de cartes , jeux de puzzle et plus de jeux",
+			"keywords":"Hot , jeux, [#N] , libre, vos jeux préférés , populaire, gratuit , en ligne , flash , jeu , centres commerciaux , puzzle, stratégie , défense , jeux de tir, la plate-forme action, aventure, jeux de rôle, sport , course , tour, les jeux Mario , jeux de Barbie"
+		}
+	}
+}

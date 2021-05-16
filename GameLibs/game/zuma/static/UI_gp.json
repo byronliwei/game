@@ -1,0 +1,60 @@
+{"frames": [
+
+{
+	"filename": "bg_fog1.png",
+	"frame": {"x":2,"y":2,"w":320,"h":88},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":320,"h":88},
+	"sourceSize": {"w":320,"h":90}
+},
+{
+	"filename": "bg_fog2.png",
+	"frame": {"x":324,"y":2,"w":320,"h":88},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":320,"h":88},
+	"sourceSize": {"w":320,"h":90}
+},
+{
+	"filename": "button-pause.png",
+	"frame": {"x":742,"y":2,"w":44,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":44,"h":44},
+	"sourceSize": {"w":44,"h":44}
+},
+{
+	"filename": "button-pause_press.png",
+	"frame": {"x":742,"y":48,"w":42,"h":42},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":2,"w":42,"h":42},
+	"sourceSize": {"w":44,"h":44}
+},
+{
+	"filename": "gh_logo.png",
+	"frame": {"x":646,"y":2,"w":94,"h":72},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":1,"w":94,"h":72},
+	"sourceSize": {"w":97,"h":74}
+},
+{
+	"filename": "pattern.png",
+	"frame": {"x":646,"y":76,"w":1,"h":1},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":1,"h":1},
+	"sourceSize": {"w":100,"h":100}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "UI_gp.png",
+	"format": "RGBA8888",
+	"size": {"w":788,"h":92},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:467bd75e85efe497f0598bf537bc826c:a515a9cc7aae58ab64d4ed16cdc7f864:a3817aa6a334477bc10013ea3b1a447a$"
+}
+}

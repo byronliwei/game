@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Play {$gameDetail.name} on gamev6.com-Free Online Mobile Games</title>
+  <meta name="description" content="Play {$gameDetail.name} online mobile games at gamev6.com! Including action games,classic games, car games, shooting games,sports games and more! Play now for free.">
+  <meta name="keywords" content="{$gameDetail.name}, mobile games, smartphone games, free mobile games, online mobile games ,games,free games,online games,tablet games, html5 games, h5 games,best games,hot games, classic games,action games,car games,shooting games,cooking games">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="format-detection" content="address=no"/>
+  <meta name="msapplication-config" content="none"/>
+  <link href="/Public/static/mobile/static.css?t=1" rel="stylesheet" />
+  <style type="text/css">
+    html,body{height: 100%;}
+  </style>
+</head>
+<body style="overflow:hidden;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8739233621395816",
+          enable_page_level_ads: true
+     });
+     var loc=location.href;
+      var adChannel = 0;
+      if(loc.indexOf('hot')>-1){
+        adChannel = 1;
+      }
+      adConfig = {
+        'hotGamePlay': ['9069340549','7311957899']
+      }
+</script>
+<div id="play-box">
+
+  <div class="related-toggle"></div>
+  <div id="relatedGameList">
+    <ul class="style-iconlist">
+      <volist name="gameList" id="vo" offset="0"><li><a href="/game/info/{$vo.seo_name}.html{$utm_source.param}"><img class="lazy" src="http://image.gamez6.com/games/{$vo.sort|default="images"}/<eq name="vo.feature" value="1">feature_</eq>{$vo.img|addslashes=###}?t=2"></a></li></volist>
+    </ul>
+
+  </div>
+
+  <div class="play-container">
+      <iframe id="game_frame" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" webkit-playsinline="true" scrolling="no" seamless="" frameborder="0" style="display: block; overflow: hidden; width: 364px; height: 607px;" src="{$gameDetail.swf}"></iframe>
+      <!-- <object id="game_frame" scrolling="no" height="100%" width="100%" frameborder="0" seamless="true" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" webkit-playsinline="true" data="{$gameDetail.swf}"></object> -->
+  </div>
+  <div id="vas-container" style="display:none;">
+    <div id="vas-box">
+      <div id="vas-timecount">Advertisement: please wait <b>10</b> seconds</div>
+      <div id="vas-inner"></div>
+    </div>
+  </div>
+
+  <div id="playbot-as">
+    <div class="related-toggle"></div>
+        
+        <!-- gamev6-play_bottom-Search -->
+        <script type="text/javascript">
+          try{
+              document.write('<ins class="adsbygoogle" style="display:inline-block;width:320px;height:100px" data-ad-format="fluid" data-ad-client="ca-pub-8739233621395816" data-ad-slot="'+adConfig['hotGamePlay'][adChannel]+'"><\/ins>');
+                (adsbygoogle = window.adsbygoogle || []).push({});
+          }catch(e){
+              console.log(e);
+          }
+      </script>
+  </div>
+
+</div>
+</body>
+<script src="/Public/static/mobile/jquery.min.js"></script>
+<script type="text/javascript">
+var cLi=$('.style-iconlist li');
+$('.style-iconlist').width(cLi.width()*cLi.size()+30);
+$('.related-toggle').on('click',function(){
+$('#play-box').toggleClass('botrel-toggle')
+})
+$('#game_frame').height($(window).height())
+	$('#game_frame').width($(window).width())
+$(window).resize(function(){
+	$('#game_frame').height($(window).height())
+	$('#game_frame').width($(window).width())
+})
+</script>
+<!-- <script src="/Public/static/mobile/game.common.js"></script> -->
+<script src="/Public/static/mobile/static.js"></script>
+
+<!-- <script type="text/javascript" src="/Public/static/mobile/game.as.js?t=18"></script> -->
+</body>
+</html>
+<a href="/?f=button" id="game-home-button"></a>
+<link href="/Public/static/mobile/game.common.css?v=1" rel="stylesheet" type="text/css">
+<!-- <script type="text/javascript" src="/Public/static/mobile/game.common.js"></script> -->
+<!-- 5 10 -->
+</html>
+<script src="/Public/static/mobile/common.js?v=1"></script>

@@ -1,0 +1,152 @@
+﻿{
+  "languageCode": "en-US",
+
+  "touch_start": {
+    "text": "Touch to start..."
+  },
+  "play": {
+    "text": "Play"
+  },
+  "settings" : {
+    "text": "Settings"
+  },
+  "credits" : {
+    "text": "Credits"
+  },
+  "reset"   : {
+    "text": "Reset Data"
+  },
+  "back"    : {
+    "text": "Back"
+  },
+  "game_by" : {
+    "text": "A GAME BY:"
+  },
+  "html_version": {
+    "text": "HTML5 version by:"
+  },
+  "reset_conf" : {
+    "text": "Are you sure you want to reset data?"
+  },
+  "yes": {
+    "text": "Yes"
+  },
+  "no": {
+    "text": "No"
+  },
+  "pause" : {
+    "text": "Pause"
+  },
+  "continue" : {
+    "text": "Continue"
+  },
+  "restart" : {
+    "text": "Restart"
+  },
+  "quit" : {
+    "text": "Quit"
+  },
+  "restart_conf": {
+    "text": "Are you sure you want to restart?"
+  },
+  "quit_conf": {
+    "text": "Are you sure you want to quit?"
+  },
+
+  "skip": {
+    "text": "Skip"
+  },
+  "how_to_play": {
+    "text": "How to play"
+  },
+  "tutorial_1": {
+    "text": "Tap here to\nlaunch an orb."
+  },
+  "tutorial_2": {
+    "text": "Good! Tap here to\nlaunch another orb."
+  },
+  "tutorial_3": {
+    "text": "Tap the slinger\nto swap orbs."
+  },
+  "tutorial_4": {
+    "text": "Make matches of 3\nor more like colored orbs."
+  },
+  "tutorial_5": {
+    "text": "Excellent! Pop the remaining\norbs to continue."
+  },
+  "tutorial_6": {
+    "text": "You have received a powerup.\nFor every three consequential\nmatches, you get a powerup!\n3x, 6x, 9x and so on!\nTry shooting it!"
+  },
+  "tutorial_7": {
+    "text": "Clear this last wave\nto end the tutorial."
+  },
+  "loading": {
+    "text": "loading..."
+  },
+  "wave": {
+    "text": "Wave"
+  },
+  "level_completed": {
+    "text": "Level Completed"
+  },
+  "time": {
+    "text": "Time"
+  },
+  "next_level": {
+    "text": "Next Level"
+  },
+
+  "game_over": {
+    "text": "Game Over"
+  },
+  "failed": {
+    "text": "Failed"
+  },
+  "play_again": {
+    "text": "Play Again"
+  },
+  "exit": {
+    "text": "Exit"
+  },
+
+  "download": {
+    "text": "Download"
+  },
+  "close": {
+    "text": "Close"
+  },
+  "feature_1": {
+    "text": "Play more than 90 exciting levels in this\nfantastic bubble game."
+  },
+  "feature_2": {
+    "text": "Choose from 3 game modes and use 16 different enchantments."
+  },
+  "feature_3": {
+    "text": "Check your book of achievements for statistics like your quest progress\nand the amount of levels you've won."
+  },
+  "feature_4": {
+    "text": "Earn achievements for popping 10,000 orbs, collecting three power-ups\nin 5 seconds, and more."
+  },
+
+  "level_1": {
+    "text": "Forest Awake"
+  },
+  "level_2": {
+    "text": "Eye of the Pond"
+  },
+  "level_3": {
+    "text": "Sleeping Ground"
+  },
+  "level_4": {
+    "text": "Autumn Leaves"
+  },
+  "level_5": {
+    "text": "Twisted Treeline"
+  },
+  "level_6": {
+    "text": "Innocent Green"
+  },
+  "level_7": {
+    "text": "Murky Branches"
+  }
+}

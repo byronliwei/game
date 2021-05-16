@@ -1,0 +1,69 @@
+<include file="./Admin/core/Tpl/Public/header.html" />
+<include file="Public:sidebar" />
+  
+  <!--Body Start-->
+  <div class="span10">
+			
+	<div align="center" class="container" id="content" style="width:100%;">
+		
+		<form id="reladd_form" class="clearfix" method="post" action="__GROUP__/App/releaseAdd" enctype="multipart/form-data">
+		<input name="type" value="countryGame" type="hidden">
+		<span style="float:left">
+			<select class="input-fix" id="clear-lang" name="country" style="width:100px;">
+				<option value="">All</option>
+				<volist name="Think.config.LANG" id="vo">
+				<option value="{$vo}">{$vo}</option>
+				</volist>
+			</select>
+			<button type="button" onclick="if(!$('select[name=country]').val()){alert('请填写完整！');return;}$('#reladd_form').submit()" class="btn btn-success"><i class="icon"></i>Add Country</button> &nbsp;&nbsp;&nbsp;
+
+			<input type="file" class="input-fix" name="file" value="" style="width:180px;">
+			<button type="button" onclick="if(!$('select[name=country]').val()||!$('input[name=file]').val()){alert('请选择国家和导入的文件！');return;}$('#reladd_form').submit()" class="btn btn-success"><i class="icon"></i>Import Topgame Data</button>
+		</span>
+		</form>
+							
+		<table id="film-list" class="table table-bordered">
+			<thead>
+				<tr>
+					<th><input type="checkbox" class="selectAll">&nbsp;&nbsp;Data ID</th>
+					<th>Version Alias</th>
+					<th>Review URL</th>
+					<th>Create Time</th>
+					<th>Handle</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="releaseList" id="vo">
+				<tr dataid="{$vo.id}">
+					<td style="word-break:break-all; width:100px;"><input type="checkbox" value="12" name="dataId">&nbsp;&nbsp;{$vo.id}</td>
+					<td style="word-break:break-all; width:100px;">{$vo.release_alias}</td>
+					<td style="word-break:break-all; width:200px;"><a target="_blank" href="/{$vo.release_alias}/game/category/top.html">__ROOT__/index.php/game/App?rel={$vo.id}</a></td>
+					<td style="word-break:break-all; width:150px;">{$vo.time|date="Y-m-d H:i",###}</td>
+					<td>
+						<a href="__GROUP__/Index/releaseDist/relid/{$vo.id}?type=countryGame">Dist</a>&nbsp;&nbsp;
+						<eq name="vo.lang_enable" value="0">
+						<a  onclick="if(!confirm('确定'+$(this).text()+'?')){return false;}" href="__GROUP__/Index/rankSwitch/relid/{$vo.id}?t=on" class="btn">开启排行</a>
+						<else/>
+						<a  onclick="if(!confirm('确定'+$(this).text()+'?')){return false;}" href="__GROUP__/Index/rankSwitch/relid/{$vo.id}?t=off" class="btn btn-success">关闭排行</a>
+						</eq>
+
+						<eq name="vo.topic" value="0">
+						<a  onclick="if(!confirm('确定'+$(this).text()+'?')){return false;}" href="__GROUP__/Index/topicSwitch/relid/{$vo.id}?t=on" class="btn">开启专题</a>
+						<else/>
+						<a  onclick="if(!confirm('确定'+$(this).text()+'?')){return false;}" href="__GROUP__/Index/topicSwitch/relid/{$vo.id}?t=off" class="btn btn-success">关闭专题</a>
+						</eq>
+
+						<!-- <a onclick="delSuggestion(this);" href="javascript:void(0);">删除</a> -->
+					</td>
+				</tr>
+				</volist>
+			</tbody>
+		</table>
+		<div style="text-align:left;"><a  class="btn btn-danger batch-del"><i class="icon  icon-minus"></i>Batch Del</a></div>
+		<div class="pagination">每页{$pageLen} 共{$pagination} &nbsp;</div>
+	</div> 
+
+  </div>
+  <!--Body End-->
+  
+<include file="Public:footer" />

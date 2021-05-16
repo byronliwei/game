@@ -1,0 +1,29 @@
+  </div>
+  </div>
+  
+<script type="text/javascript">
+
+function jumpNum(num){
+	num=parseInt(num);
+	if(!num){
+		num=parseInt($("#num").val());
+	}
+	if(!num){
+		alert('页码错误!!');
+		return false;
+	}
+	var str=window.location.href;
+	jurl=str.replace(/p\/\d+\.html/,'');
+	jurl+='/p/'+num+'.html';
+	window.location.href=jurl;
+}
+</script>
+  
+  
+<!--Footer Start -->
+	<footer class="footer">
+	        &copy; 2013 WeekMovie All Rights Reserved
+	</footer>
+<!--Footer End -->
+  </body>
+</html>

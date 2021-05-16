@@ -1,0 +1,147 @@
+<include file="Pc:header" />
+    <div class="detail-contain-warp">
+        
+        <div class="detail-contain">
+            <div class="" style="width: 160px;height:600px;position: absolute;left: -160px;">
+                <script>
+                    google_ad_slot = adConfig['pc-gamev6-160x600-info1'][adChannel];
+                    google_ad_width = 160;
+                    google_ad_height = 600;
+                    try{
+                        document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-8739233621395816"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }catch(e){
+                        console.log(e);
+                    }
+                </script>
+            </div>
+            <div class="detail-recommend">
+                <h3>Top Games</h3>
+                <volist name="gameList1" id="vo" offset="0" length="3">
+                    <a href="/{$lang}/game/info/{$vo.seo_name}.html{$utm_source.param}" class="games_list-item">
+                        <if condition="strstr($vo['img'],'//www')">
+                            <img src="/Public/static/images/gamev6_bg.png" data-src="{$vo.img}">
+                        <else />
+                            <img src="/Public/static/images/gamev6_bg.png" data-src='http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default="images"}/<eq name="vo.feature" value="1">feature_</eq>{$vo.img|addslashes=###}'
+                            alt="">
+                        </if>
+                    </a>
+                </volist>
+            </div>
+            <div class="detail-content">
+                <div class="detail-content-top">
+                    <div class="detail-img">
+                        <if condition="strstr($vo['img'],'//www')">
+                            <img src="/Public/static/images/gamev6_bg.png" data-src="{$gameDetail.img}">
+                        <else />
+                            <img src="/Public/static/images/gamev6_bg.png" data-src='http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$gameDetail.sort|default="images"}/<eq name="gameDetail.feature" value="1">feature_</eq>{$gameDetail.img|addslashes=###}'
+                            alt="">
+                        </if>
+                    </div>
+                    <div class="detail-info">
+                        <h3 class="detail-name">{$gameDetail.name}</h3>
+                        <div class="detail-star">
+                            <img src="/Public/static/images/star.png" alt="">
+                        </div>
+                        <div class="detail-plays">
+                            <img src="/Public/static/images/paly.png" alt="">
+                            <span>{:mt_rand(50000,99999)}</span>
+                        </div>
+                        <div class="detail-share">
+                            <img src="/Public/static/images/share.png" alt="">
+                            <span>{:mt_rand(500,999)}</span>
+                        </div>
+                        <a href="/{$lang}/game/play/{$gameDetail.seo_name}.html{$utm_source.param}" class="detail-paly-btn">PLAY
+                            NOW</a>
+                    </div>
+                </div>
+                <div class="detail-desc">
+                    <p>{$gameDetail.desc}</p>
+                </div>
+                <div class="detail-tag">
+                    <a href="/cn/game/tag/{$gameDetail.sort}-games.html" class="detail-tag-item">{$gameDetail.sort}</a>
+                </div>
+                <div class="detail-shares">
+                    <div data-app="facebook" data-qid="{$gameDetail.id}" data-pic="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$gameDetail.sort|default='images'}/{$gameDetail.img}"
+                        class="detail-shares-item">
+                        <img src="/Public/static/images/facebook.png" alt="">
+                        Facebook
+                    </div>
+                    <div data-app="twitter" data-qid="{$gameDetail.id}" data-pic="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$gameDetail.sort|default='images'}/{$gameDetail.img}"
+                        class="detail-shares-item">
+                        <img src="/Public/static/images/twitter.png" alt="">
+                        Tweet
+                    </div>
+                    <div data-app="google" data-qid="{$gameDetail.id}" data-pic="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$gameDetail.sort|default='images'}/{$gameDetail.img}"
+                        class="detail-shares-item">
+                        <img src="/Public/static/images/gooegle.png" alt="">
+                        Google+
+                    </div>
+                    <div data-app="link" data-qid="{$gameDetail.id}" data-pic="http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$gameDetail.sort|default='images'}/{$gameDetail.img}"
+                        class="applink detail-shares-item">
+                        <img src="/Public/static/images/link.png" alt="">
+                        Copy Link
+                    </div>
+                </div>
+                <div style="text-align: center;margin-top: 10px;">        
+                    <script>
+                        google_ad_slot = adConfig['pc-gamev6-728x90-info'][adChannel];
+                        google_ad_width = 728;
+                        google_ad_height = 90;
+                        try{
+                            document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-8739233621395816"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        }catch(e){
+                            console.log(e);
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="" style="width: 160px;height:600px;position: absolute;right: -175px;">
+                <script>
+                    google_ad_slot = adConfig['pc-gamev6-160x600-info2'][adChannel];
+                    google_ad_width = 160;
+                    google_ad_height = 600;
+                    try{
+                        document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-8739233621395816"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }catch(e){
+                        console.log(e);
+                    }
+                </script>
+            </div>
+            <div class="detail-recommend">
+                <h3>Related Games</h3>
+                <volist name="gameList1" id="vo" offset="3" length="3">
+                    <a href="/{$lang}/game/info/{$vo.seo_name}.html{$utm_source.param}" class="games_list-item">
+                        <if condition="strstr($vo['img'],'//www')">
+                            <img src="/Public/static/images/gamev6_bg.png" data-src="{$vo.img}">
+                        <else />
+                            <img src="/Public/static/images/gamev6_bg.png" data-src='http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default="images"}/<eq name="vo.feature" value="1">feature_</eq>{$vo.img|addslashes=###}'
+                            alt="">
+                        </if>
+                    </a>
+                </volist>
+            </div>
+        </div>
+    </div>
+    <div class="youmaylike-warp">
+        <h1>YOU MAY LIKE</h1>
+        <div class="youmaylike">
+            <div class="games-ads"></div>
+            <div class="youmaylike_list">
+                <volist name="gameList" id="vo" offset="0" length="10">
+                    <a href="/{$lang}/game/info/{$vo.seo_name}.html{$utm_source.param}" class="games_list-item">
+                        <if condition="strstr($vo['img'],'//www')">
+                                <img src="/Public/static/images/gamev6_bg.png" data-src="{$vo.img}">
+                            <else />
+                                <img src="/Public/static/images/gamev6_bg.png" data-src='http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default="images"}/<eq name="vo.feature" value="1">feature_</eq>{$vo.img|addslashes=###}'
+                                alt="">
+                            </if>
+                    </a>
+                </volist>
+            </div>
+            <div class="games-ads"></div>
+        </div>
+    </div>
+    <include file="Pc:footer" />

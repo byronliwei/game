@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>gamev6.com-Free Online Mobile Games</title>
+  <meta name="description" content="Play great free online mobile games at gamev6.com! Including action games,classic games, car games, shooting games,sports games and more! Play now for free.">
+  <meta name="keywords" content="mobile games, smartphone games, free mobile games, online mobile games ,games,free games,online games,tablet games, html5 games, h5 games,best games,hot games, classic games,action games,car games,shooting games,cooking games">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="format-detection" content="address=no"/>
+  <meta name="msapplication-config" content="none"/>
+  <link href="/Public/static/mobile/static.css?t=7" rel="stylesheet" />
+  <script src="/Public/static/mobile/categorizr.min.js"></script>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    var loc=location.href;
+    var adChannel = 0;
+    var adPubid = 2;
+    if(loc.indexOf('hot')>-1){
+      adChannel = 1;
+     
+    }else if(loc.indexOf('s1')>-1){
+      adChannel = 2;
+      
+    }else if(loc.indexOf('s2')>-1){
+      adChannel = 3;
+      
+    }else if(loc.indexOf('free.game')>-1){
+        adChannel = 4;
+       
+      }
+    adConfig = {
+      'hotGameIndex1': ['4743425567','5272348100','9764706004','7642704033',''],
+      'hotGameIndex2': ['1542547153','6261996140','8726956506','8738618692',''],
+      'hotGameIndex3': ['3402423737','9538896174','4596139808','1406923587','']
+    }
+    adPub = {
+      'id': ['ca-pub-8739233621395816','ca-pub-3961823097646209','ca-pub-2104961258307381']
+    }
+  </script>
+  <style>
+    .item-inner-new-fa {
+      text-align: center;
+    }
+    .item-inner-new {
+      width: calc(30% - 10px);
+      display: inline-block;
+      margin: 5px;
+      max-width: 145px;
+    }
+    .item-inner-new a {
+      display: inline-block;
+      width: 100%;
+      height: 100px;
+    }
+    .item-inner-new a img {
+      width: 100%;
+      height: 100%;
+      border-radius: 13px;
+      box-shadow: 2px 3px 5px #222;
+    }
+    #footer_bar-new {            
+      height: 40px;
+      border-radius: 20px;
+      width: 40px;
+      background: #009bdf;
+      text-align: center;
+      vertical-align: middle;
+      font-family: "groboldmedium";
+      position: fixed;
+      display: none;
+      right: 10px;
+      bottom: 100px;
+    }
+    .back_to_top-new {
+      padding-top: 7px;
+    font-size: 22px;
+    }
+    .loadMoreBtn {
+        width: 200px;
+        background: #15cfe5;
+        text-align: center;
+        padding: 10px;
+        margin: 0 auto;
+        box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        border-radius: 5px;
+    }
+  </style>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: adPub['id'][adPubid],
+            enable_page_level_ads: true
+      });
+  </script>
+</head>
+<body>
+<div id="all">
+  <div id="header">
+    <img src="/Public/static/mobile/logo.png">
+  </div>
+  <div id="game-container-new">
+<!--       <p style="text-align: center; margin-top:15px;">Advertisement</p>
+    <div style="text-align: center;">        
+        <script type="text/javascript">
+            google_ad_slot = adConfig['hotGameIndex1'][adChannel];
+            google_ad_width = 300;
+            google_ad_height = 250;
+            try{
+                document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="ca-pub-8739233621395816"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            }catch(e){
+                console.log(e);
+            }
+        </script>
+    </div> -->
+    <ul class="item-inner-new-fa">
+      <if condition="isset($domain) AND $domain == 's2'">
+        <li class="item-inner-new oretycoon" data-qid="">
+          <a href="GameLibs/game/truckvsfire/index.html">
+            <img class="lazy" data-qid="" data-src="/Public/static/mobile/empty.png" src="/Public/static/mobile/empty.png" data-original='/GameLibs/game/truckvsfire/icon_200_200.jpg'>
+          </a>
+        </li>
+      </if>
+      <volist name="gameList" id="vo">
+          <li class="item-inner-new" data-qid="{$vo.game_id}">
+            <a href="/game/info/{$vo.seo_name}.html{$utm_source.param}">
+              <if condition="strstr($vo['img'],'http')">
+                  <img src="/Public/static/mobile/empty.png" data-src="/Public/static/mobile/empty.png" data-original="{$vo.img}" class="lazy" data-qid="{$vo.game_id}">
+              <else />
+                  <img class="lazy" data-qid="{$vo.game_id}" data-src="/Public/static/mobile/empty.png" src="/Public/static/mobile/empty.png" data-original='http://image.gamez6.com/games/{$vo.sort|default="images"}/<eq name="vo.feature" value="1">feature_</eq>{$vo.img|addslashes=###}'>
+              </if>
+            </a>
+          </li>
+        <if condition="isset($domain) AND $domain == 's2'">
+          <eq name='key' value='0'>
+            <li class="item-inner-new oretycoon" data-qid="">
+              <a href="GameLibs/game/tankr/index.html">
+                <img class="lazy" data-qid="" data-src="/Public/static/mobile/empty.png" src="/Public/static/mobile/empty.png" data-original='/GameLibs/game/tankr/icon_200_200.jpg'>
+              </a>
+            </li>
+            <div class="free-ad">
+              <p style="margin:10px 20px 0 20px;background: #abe0f7; text-align: center;color: #0280b3;">Advertisement</p>
+              <div style="text-align: center;margin: 0px 20px 5px 20px;background: rgba(160, 222, 244, 0.76);">
+                <script type="text/javascript">
+                    google_ad_slot = adConfig['hotGameIndex1'][adChannel];
+                    google_ad_width = 300;
+                    google_ad_height = 250;
+                    google_ad_pub = adPub['id'][adPubid];
+                    try{
+                        document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="'+google_ad_pub+'"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }catch(e){
+                        console.log(e);
+                    }
+                </script>
+              </div>
+            </div>
+          </eq>
+          <eq name='key' value='0'>
+            <li class="item-inner-new oretycoon" data-qid="">
+              <a href="GameLibs/game/spiralrush/index.html">
+                <img class="lazy" data-qid="" data-src="/Public/static/mobile/empty.png" src="/Public/static/mobile/empty.png" data-original='/GameLibs/game/spiralrush/icon_200_200.jpg'>
+              </a>
+            </li>
+          </eq>
+          <eq name='key' value='1'>
+            <li class="item-inner-new oretycoon" data-qid="">
+              <a href="GameLibs/game/hexsnake/index.html">
+                <img class="lazy" data-qid="" data-src="/Public/static/mobile/empty.png" src="/Public/static/mobile/empty.png" data-original='/GameLibs/game/hexsnake/icon_200_200.png'>
+              </a>
+            </li>
+          </eq>
+          <eq name="key" value="7">
+            <div class="free-ad">
+              <p style="margin:10px 20px 0 20px;background: #abe0f7; text-align: center;color: #0280b3;">Advertisement</p>
+              <div style="text-align: center; margin: 0px 20px 5px 20px;background: rgba(160, 222, 244, 0.76);">
+                <script type="text/javascript">
+                    google_ad_slot = adConfig['hotGameIndex2'][adChannel];
+                    google_ad_width = 300;
+                    google_ad_height = 280;
+                    google_ad_pub = adPub['id'][adPubid];
+                    try{
+                        document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="'+google_ad_pub+'"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }catch(e){
+                        console.log(e);
+                    }
+                </script>
+              </div>
+            </div>
+          </eq>
+          <else />
+            <eq name='key' value='2'>
+              <div class="free-ad">
+                <p style="margin:10px 20px 0 20px;background: #abe0f7; text-align: center;color: #0280b3;">Advertisement</p>
+                <div style="text-align: center;margin: 0px 20px 5px 20px;background: rgba(160, 222, 244, 0.76);">        
+                    <script type="text/javascript">
+                        google_ad_slot = adConfig['hotGameIndex1'][adChannel];
+                        google_ad_width = 300;
+                        google_ad_height = 250;
+                        google_ad_pub = adPub['id'][adPubid];
+                        try{
+                            document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="'+google_ad_pub+'"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        }catch(e){
+                            console.log(e);
+                        }
+                    </script>
+                </div>
+              </div>
+            </eq>
+            <eq name="key" value="11">
+              <div class="free-ad">
+                <p style="margin:10px 20px 0 20px;background: #abe0f7; text-align: center;color: #0280b3;">Advertisement</p>
+              <div style="text-align: center; margin: 0px 20px 5px 20px;background: rgba(160, 222, 244, 0.76);">                
+                  <script type="text/javascript">
+                    google_ad_slot = adConfig['hotGameIndex2'][adChannel];
+                    google_ad_width = 300;
+                    google_ad_height = 280;
+                    google_ad_pub = adPub['id'][adPubid];
+                    try{
+                        document.write('<ins class="adsbygoogle" style="display:inline-block;width:'+google_ad_width+'px;height:'+google_ad_height+'px" data-ad-client="'+google_ad_pub+'"" data-ad-slot="'+google_ad_slot+'"></ins>');
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }catch(e){
+                        console.log(e);
+                    }
+                </script>
+              </div>
+            </div>
+            </eq>
+        </if>
+      </volist>
+    </ul>
+  </div>
+</div>
+<div class="loadMoreBtn">Load More</div>
+<div class="free-ad">
+<p style="margin:10px 20px 0 20px;background: #abe0f7; text-align: center;color: #0280b3;">Advertisement</p>
+<div style="text-align: center;margin: 0px 20px 5px 20px;background: rgba(160, 222, 244, 0.76);">
+  <!-- gamev6-320x100-index -->
+  <script type="text/javascript">
+    google_ad_slot = adConfig['hotGameIndex3'][adChannel];
+    google_ad_width = 320;
+    google_ad_height = 100;
+    google_ad_pub = adPub['id'][adPubid];
+    try{
+        document.write('<ins class="adsbygoogle" style="display:inline-block;width:320px;height:100px" data-ad-format="fluid" data-ad-client="'+google_ad_pub+'" data-ad-slot="'+google_ad_slot+'"><\/ins>');
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    }catch(e){
+        console.log(e);
+    }
+</script>
+  <!-- <script type="text/javascript">
+    try{
+        document.write('<ins class="adsbygoogle" style="display:inline-block;width:320px;height:100px" data-ad-format="fluid" data-ad-client="ca-pub-8739233621395816" data-ad-slot="'+adConfig['hotGameIndex3'][adChannel]+'"><\/ins>');
+          (adsbygoogle = window.adsbygoogle || []).push({});
+    }catch(e){
+        console.log(e);
+    }
+  </script> -->
+</div>
+</div>
+<p class="botdesc-new" style="text-align: center">
+  Welcome to Gamev6.com! We offer you a varity of most popular mobile games here. You can play all the latest hot games on your mobile,pad and tablet without installation. Choose your favorite mobile games to play now. 
+</p>
+<div id="footer_bar-new" class="footer_tablet">
+  <div class="back_to_top-new"><img src="/Public/static/mobile/btt.png"></div>
+</div>
+</body>
+<script src="/Public/static/mobile/jquery.min.js"></script>
+<script src="/Public/static/mobile/lazyload.js"></script>
+<script src="/Public/static/mobile/masonry.pkgd.min.js"></script>
+<script src="/Public/static/mobile/static.js?t=29"></script>
+<!-- 5 10 -->
+<script src="/Public/static/mobile/common.js?v=2"></script>
+<script type="text/javascript">
+  if(loc.indexOf('free.game')>-1){
+    $('.free-ad').hide();
+  }
+  // $('#game-container').html(tplStr);
+  pageInit();
+  $(window).resize(function() {
+    pageInit();
+    botHeightCheck();
+  });
+  // window scroll event to show back btn
+  $(window).scroll(function () {
+      var srollTop = $(window).scrollTop()
+      if (srollTop > 100) {
+          $('#footer_bar-new').show()
+      } else if (srollTop < 50) {
+          $('#footer_bar-new').hide()
+      }
+  })
+  $('#footer_bar-new').click(function () {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500, function() {
+            $('#footer_bar').hide()
+        });
+    })
+  $("img.lazy").lazyload();
+   /**
+     *  图片懒加载
+     * */
+    获取window的引用:
+    var $window = $(window);
+    // 获取包含data-src属性的img，并以jQuery对象存入数组:
+    var lazyImgs = $('img[data-src]').get().map(function (i) {
+        return $(i);
+    });
+    // 定义事件函数:
+    var onScroll = function () {
+        // 获取页面滚动的高度:
+        var wtop = $window.scrollTop();
+        // 判断是否还有未加载的img:
+        if (lazyImgs.length > 0) {
+            // 获取可视区域高度:
+            var wheight = $window.height();
+            // 存放待删除的索引:
+            var loadedIndex = [];
+            // 循环处理数组的每个img元素:
+            lazyImgs.forEach(function ($i, index) {
+                // 判断是否在可视范围内:
+                if ($i.offset().top - wtop < wheight) {
+                    // 设置src属性:
+                    // $i.attr('src', $i.attr('data-src'));
+                    // 添加到待删除数组:
+                    loadedIndex.unshift(index);
+                    var url = 'https://wangmeng.online/setGameIndexShowAmount'
+                    $.ajax({
+                        url: url,
+                        type: 'GET',
+                        data: {
+                            qid: $i.data('qid'),
+                            lang: 'en',
+                            website: 'gamev6'
+                        },
+                        success: function(data) {
+                            console.log(data)
+                        },
+                        error: function(err) {
+                            console.log(err)
+                        }
+                    })
+                }
+            });
+            // 删除已处理的对象:
+            loadedIndex.forEach(function (index) {
+                lazyImgs.splice(index, 1);
+            });
+        }
+    };
+    // 绑定事件:
+    $window.scroll(onScroll);
+    // 手动触发一次:
+    onScroll();
+    $('.item-inner-new').click(function(){
+      var self = this
+      $.ajax({
+        url: 'https://wangmeng.online/setGameIndexClickAmount',
+        type: 'GET',
+        data: {
+            qid: $(self).data('qid'),
+            lang: 'en',
+            website: 'gamev6'
+        },
+        success: function(data) {
+            console.log(data)
+        },
+        error: function(err) {
+            console.log(err)
+        }
+      })
+    })
+    var loadMorePage = 2    
+    var windowScrollFlag = true
+    $('.loadMoreBtn').click(function(){
+        sentEvent('homepage', 'load_more','')
+        if (!windowScrollFlag) return false
+        windowScrollFlag = false
+        $.ajax({
+            url: '/indexLoad',
+            type: 'GET',
+            dataType: "json",
+            data: ({
+                limit: 30,
+                page: loadMorePage,
+            }),
+            success: function(data) {                
+                loadMorePage = loadMorePage + 1
+                windowScrollFlag = true
+                console.log(data)
+                if (!data || !data.length || data.length == 0) {
+                    scrollFlag = true
+                    return false
+                }
+                data.forEach(function(e, i) {
+                    var feature = ''
+                    if (e.feature == 1) {
+                        feature = 'feature_'
+                    }
+                    var imgUrl = ''
+                    var sortstr = e.sort || 'images'
+                    if (e.img.match('//www') != null) {
+                        imgUrl = e.img
+                    } else {
+                        imgUrl = 'http://image.gamez6.com/games/' + sortstr + '/' + feature + e.img
+                    }
+                    var li = $('<li class="item-inner-new" data-qid="'+ e.game_id +'"><a href="/game/info/'+ e.seo_name +'.html{$utm_source.param}"><img data-src="/Public/static/mobile/empty.png" data-qid="'+ e.game_id +'" src="'+ imgUrl +'"></a></li>')
+                    $('.item-inner-new-fa').append(li)
+                })
+            },
+            error: function(err) {
+                console.log(err)
+            },
+            complete: function() {
+                
+            }
+        })
+    })
+</script>
+</html>

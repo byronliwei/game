@@ -1,0 +1,62 @@
+<include file="./Admin/core/Tpl/Public/header_notop.html" />
+<style type="text/css">
+.pic_list{display:block;padding:1px;text-align:center}
+.pic_list:hover{border:solid 1px #31B9FD;padding:0px}
+.game_pic{max-width:250px!important;}
+input[name="dataId[]"]{width:20px;height:20px;}
+</style>  
+  <!--Body Start-->
+  <div class="span11">
+			
+	<div align="center" class="container" id="content" style="width:100%;">
+		
+		<form id="film_form" name="film_form" class="clearfix" method="post" action="__GROUP__/App/tagEdit">
+		<input type="hidden" name="id" value="{$Think.get.id}">
+		<table id="film-list" class="table table-bordered">
+			<thead>
+				<tr style="background:#f1f1f1">
+					<th colspan="4"><input type="checkbox" class="selectAll" checkname="dataId[]">&nbsp;&nbsp;Tag列表&nbsp;&nbsp;
+					<button  class="btn btn-success" type="button" onclick="if(!$('input[name=\'dataId[]\']:checked').size()){alert('请选择至少一个Tag！');return;}$('#film_form').submit();"><i class=" icon-chevron-right"></i> 保存</button></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+				<volist name="tagList" id="vo" key="k">
+
+				<td style="word-break:break-all;width:25%" dataid="{$vo.id}">
+					<input type="checkbox" value="{$vo.id}" name="dataId[]" value="{$vo.id}" <eq name="vo.active" value="true">checked="checked"</eq>>
+					<font <eq name="vo.active" value="true">style="text-decoration:underline;color:green;font-weight:bold;"</eq> >{$vo.name|default='No name'}({$tagLang[$vo['seo_name']]})</font>
+					
+				</td>
+				<if condition="($k)%4 eq 0">
+				</tr>
+				<tr>
+				</if>
+				</volist>
+				<php>$len=4-(count($diaList)%4);for($i=0;$i<$len;$i++){echo '<td></td>';}</php>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+		<div style="text-align:left;"><button  class="btn btn-success" type="button" onclick="if(!$('input[name=\'dataId[]\']:checked').size()){alert('请选择至少一个Tag！');return;}$('#film_form').submit();"><i class=" icon-chevron-right"></i> 保存</button></div><br><br>
+	</div> 
+
+  </div>
+  <!--Body End-->
+
+<script type="text/javascript">
+	$(function(){
+		$(".selectAll").click(function(){
+				var ck=false;
+				if($(this).is(":checked")){
+					ck=true;
+				}
+				$("input[name='dataId[]']").attr("checked",ck);
+		})
+	
+		$("#sort-change").change(function(){
+			window.location.href="/admin.php/Index/releaseDicAdd/relid/{$Think.get.relid}?type="+$(this).val();
+		})
+	})
+</script>
+<include file="Public:footer" />

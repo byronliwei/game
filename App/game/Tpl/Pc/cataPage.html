@@ -1,0 +1,16 @@
+<?php
+$page=$_GET['page'];
+$lan=$_GET['lang'];
+if(!$lan){
+	$lan=$_SESSION['lang'];
+}
+
+
+$arr=array();
+$arr['html']=$list;
+
+
+header('Content-Type: application/json');
+echo json_encode($arr);
+?>
+

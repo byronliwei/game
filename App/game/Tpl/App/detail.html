@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>{$movieBase.title}</title>
+    <meta name="description" content="">
+    <base target="_self">
+    <link rel="stylesheet" href="{$Think.config.AJAX_URL}__PUBLIC__/app/qzone/resource/reset.css" type="text/css">
+    <link rel="stylesheet" href="{$Think.config.AJAX_URL}__PUBLIC__/app/qzone/resource/all.css"  type="text/css">
+    <script type="text/javascript">
+        var config = {
+            id: "{$Think.get.mid}",
+            dd: false,
+            dp: false,
+            dv: false,
+            dc: false,
+            week: "{$Think.get.rel}",
+            rel: "5",
+            openid: "",
+            openkey: "",
+            pf: "",
+            pfkey: "",
+            uid: "",
+            nickname: "",
+            figureurl: "",
+            share_title: "{$movieBase.share_title}",
+            ajaxurl: "{$Think.config.AJAX_URL}",
+            invite_title: "{$movieBase.invite_title}",
+            share_content: "{$movieBase.share_content}"
+        };
+    </script>
+    <script src="{$Think.config.AJAX_URL}__PUBLIC__/app/qzone/resource/modernizr-2.5.3.min.js"></script>
+    <!--[if gte IE 9]>
+        <style type="text/css">
+            * { filter: none !important; }
+        </style>
+    <![endif]-->
+</head>
+<body>
+    <section id="container" class="noShadow" style="max-height: none;" data-movieid="">
+        <!-- Main Header -->
+        <section id="content">
+            <section id="series">
+                <!-- Slide -->
+                <section id="slider" class="active headerSlider" monkey="top_commend">
+					<div class="backhome"><a href="/index.php/App/qzone">返回首页</a></div>
+                    <ol id="sliderol">
+                    	<volist name="indexPic" id="vo">
+                        <li>
+                            <button formaction="#" data-action="Series:browseHeader" class="browseMedias" data-direction="previous"></button>
+                            <button formaction="#" data-action="Series:browseHeader" class="browseMedias" data-direction="next"></button>
+                            <article class="wrapImage">
+                                <img src="{$vo.pic_url}" alt="">
+                            </article>
+                        </li>
+                        </volist>
+                    </ol>
+                </section>
+                <!-- Main Container -->
+                <section id="global" class="clearfix">
+                    <!-- Main Content -->
+                    <section id="main">
+                        <section id="serieContent" itemscope="" itemtype="#">
+                            <section id="serie">
+                                <section class="header clearfix">
+                                    <h1>
+                                        <span itemscope="" itemtype="#">
+                                            <a href="javascript:;" itemprop="url" title="" data-action="Series:loadSerieContent">
+                                                <span itemprop="title" id="movieTitle">{$movieBase.title}</span>
+                                            </a>
+                                        </span>
+                                    </h1>
+                                    <span formaction="#" data-action="Series:rate" data-method="PUT" class="UI_btnCheck disabled"
+                                    id="UI_btnCheck">
+                                        <i class="icon iconCheck"></i>
+                                        <p class="UI_rating rat-0 check">
+                                            <span class="UI_tooltip"></span>
+                                            <span class="UI_tooltip"></span>
+                                            <span class="UI_tooltip"></span>
+                                            <span class="UI_tooltip"></span>
+                                            <span class="UI_tooltip"></span>
+                                        </p>
+                                        <span class="plusStart">
+                                            +5
+                                        </span>
+                                    </span>
+                                    <a href="javascript:;" title="推荐这部电影" id="shareThisMovie" class="shareSerie" data-action="facebook:share"
+                                    data-msg="推荐此部电影">
+                                        <i class="icon iconShare"></i>推荐这部电影
+                                    </a>
+                                </section>
+                                <section id="serieInfos" class="UI_box">
+                                    <article class="serieMenu clearfix" monkey="nav">
+                                        <a href="javascript:;" title="" class="changeTab noLoad active" data-action="click"
+                                        data-tab="serieDetails" data-datatype="dd" ad-type="detail_buttion">
+                                            <i class="icon iconBook"></i>影片简介
+                                        </a>
+                                        <a href="javascript:;" title="" class="changeTab" data-action="click"
+                                        data-tab="seriePhotos" data-datatype="dp" ad-type="photos_buttion">
+                                            <i class="icon iconPhotos"></i>高清图片
+                                        </a>
+                                        <a href="javascript:;" title="" class="changeTab" data-action="click"
+                                        data-tab="serieVideos" data-datatype="dv" ad-type="videos_buttion">
+                                            <i class="icon iconVideos"></i>视频资源
+                                        </a>
+                                        <a href="javascript:;" title="" class="changeTab" data-action="click"
+                                        data-tab="community" data-datatype="dc" ad-type="comment_buttion">
+                                            <i class="icon iconComment"></i>精彩影评
+                                        </a>
+                                        <a href="__APP__/App/qzone?app={$Think.get.app}&rel={$Think.get.rel}" title="" class="" data-action="click" ad-type="back_buttion"
+                                        id="pftext">
+                                            <i class="icon iconmovie"></i>本周票房
+                                        </a>
+                                    </article>
+                                    <section class="UI_downArrow">
+                                        <i class="icon iconDownClosed after"></i>
+                                        <article class="UI_navSubMenu">
+                                            <ol id="weekPFtext" monkey="piaofang_list">
+                                            	<volist name="base" id="vo">
+                                                <li class="icon_link"><a href="__APP__/App/qzone?app={$Think.get.app}&rel={$Think.get.rel}&mid={$vo.movie_id}" rel="nofollow" title="{$vo.title}">{$vo.title}: <em>{$vo.box_office} W</em></a></li>
+                                                </volist>
+                                            </ol>
+                                        </article>
+                                    </section>
+                                    <section class="serieInfosContent" id="tab-content">
+                                        <!-- 1er 简介 -->
+                                        <article class="serieDetails clearfix active">
+                                            <a href="javascript:;" title="{$movieBase.title}" class="poster UI_playHolder" id="UI-linktovedio" data-action="Cinemur:medias"  data-media="9834" data-position="0">
+                                                <img src="__PUBLIC__/app/qzone/resource/layerSerieCover.png" alt="" class="posterLayer" width="211" height="368">
+                                                <img src="/Uploads/poster/poster_{$movieBase.id_db}_s.jpg" alt="{$movieBase.title}" class="poster movieHB" width="250" height="370">
+                                                <span class="UI_btnPlay superLarge"><i class="icon iconPlay after"></i></span>
+                                            </a>
+                                            <section class="serieDetailsContent clearfix">
+                                                <article class="row">
+                                                    <div class="toppiaofNUm right"> 票房:
+                                                        <span id="moviePF">{$movieBase.box_office} W</span>
+                                                    </div>
+                                                    <p class="detail">
+                                                        <span class="label">导演:</span>
+                                                        <span class="text" id="movieDY">{$movieBase.director}</span>
+                                                    </p>
+                                                    <p class="detail">
+                                                        <span class="label">主演:</span>
+                                                        <span class="text" id="moviesZY">{$movieBase.casts}</span>
+                                                    </p>
+                                                </article>
+                                                <article class="row ratings" itemprop="aggregateRating" itemscope="" itemtype="#">
+                                                    <div>
+                                                        <p class="UI_rating rat_movie n_3" id="J_rating"></p>
+                                                        <span class="ratingCount" id="moviePY">{$movieBase.rating}</span>
+                                                    </div>
+                                                </article>
+                                                <article class="row">
+                                                    <div class="left">
+                                                        <p class="detail">
+                                                            <span class="label"> 类型:</span>
+                                                            <span class="text" id="movieLX">{$movieBase.genres}</span>
+                                                        </p>
+                                                        <p class="detail">
+                                                            <span class="label">上映:</span>
+                                                            <span class="text" id="movieSY">{$movieBase.date_pub}</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="right">
+                                                        <p class="detail">
+                                                            <span class="label">片长:</span>
+                                                            <span class="text" id="movieSJ">{$movieBase.duration}</span>
+                                                        </p>
+                                                    </div>
+                                                </article>
+                                                <hr>
+                                                <ul class="UI_friendsList row clearfix"></ul>
+                                                <p class="followers">86位好友看过此片</p>
+                                                <article id="ifseedMovie" class="row noeefilm" monkey="share_buttion">
+                                                    <img src="__PUBLIC__/app/qzone/resource/50x50_2521.jpg" alt="">
+                                                    <a href="javascript:;" title="我也看过此片" ad-type="looked" class="UI_btnCheck episodePage external_tooltip left">
+                                                        <i class="icon iconCheck"></i><span>我也看过此片</span>
+                                                    </a>
+                                                    <div class="social left">
+                                                        <a href="javascript:;" ad-type="yaoqing" class="shareUser">
+                                                            <i class="icon iconShare"></i>邀请好友来看
+                                                        </a>
+                                                    </div>
+                                                </article>
+                                            </section>
+                                            <hr>
+                                            <article class="synopsis row">
+                                                <p formaction="#" title="" class="short">{$movieBase.summary}</p>
+                                            </article>
+                                        </article>
+                                        <!-- 2e 图片 -->
+                                        <article class="seriePhotos clearfix animated" monkey="photos_list">
+                                            <volist name="hdpic" id="vo">
+                                            <a href="javascript:;" title="{$vo.title}" role="photolist" class="media" data-action="Cinemur:medias" data-object="series" data-media="" data-position="0">
+                                                <img src="" datasrc="{$vo.pic_hdpic_s_url}" alt="">
+                                                <span class="hoverShadow"></span>
+                                            </a>
+                                            </volist>
+                                            <a href="javascript:;" type="loading" rel="nofollow" title="加载更多" class="bigLink">加载更多 </a>
+                                        </article>
+                                        <!-- 3e 视频 -->
+                                        <article class="serieVideos clearfix animated" monkey="video_list">
+                                            <div id="videoListWrap">
+                                                <article class="UI_series_titlebar">
+                                                    <aside class="UI_switch">
+                                                        <button formaction="#" title="" class="UI_btnNav tiny prev active" data-action="Series:toggleMode"
+                                                        data-target="#seasons" data-mode="listMode">
+                                                            <i class="icon iconModeList after"></i>
+                                                        </button>
+                                                        <button formaction="#" title="" class="UI_btnNav tiny next" data-action="Series:toggleMode"
+                                                        data-target="#seasons" data-mode="pictureMode" ad-type="switchplay">
+                                                            <i class="icon iconModePicture after"></i>
+                                                        </button>
+                                                    </aside>
+                                                </article>
+                                                <div id="videolist">
+                                                	<volist name="trailer" id="vo">
+                                                    <article class="UI_series_listVideo UI_playHolder">
+                                                        <a href="javascript:;" data-videosrc="http://movie.douban.com/swf/movie_player_1.4.4.swf?tid={$vo.trailer_id}&has_hd=1&auto=1"
+                                                        title="{$vo.trailer_title}" class="picture" data-action="Cinemur:medias"
+                                                        data-media="9834" data-position="0" data-queue="none">
+                                                            <img src="" datasrc="{$vo.trailer_url}"
+                                                            alt="The Crazy Ones - 2013 Fall Preview">
+                                                            <span class="videoLength">{$vo.duration}</span>
+                                                            <span class="UI_btnPlay">
+                                                                <i class="icon iconPlay after">
+                                                                </i>
+                                                            </span>
+                                                            <aside class="videoInfosPicture">
+                                                                <p class="title">{$vo.trailer_title}</p>
+                                                            </aside>
+                                                        </a>
+                                                    </article>
+                                                    </volist>
+                                                </div>
+                                                <div class="area" id="movie_resource" style="margin-bottom:6px;">
+                                                    <div style="clear:both; margin-top: 10px;">
+                                                        <p id="video_resource" class="x-m-subtitle">影片资源</p>
+                                                        <div class="resource_tab" style="font-size:13px;" widget="thirdResource">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="videoPlayerWrap" style="display: none;">
+                                                <div class="area" id="contentB" monkey="videoplay">
+                                                    <article class="UI_series_titlebar">
+                                                        <aside class="UI_switch">
+                                                            <button formaction="#" title="" class="UI_btnNav tiny prev" data-action="Series:toggleMode"
+                                                            data-target="#seasons" data-mode="listMode" ad-type="switchlist">
+                                                                <i class="icon iconModeList after">
+                                                                </i>
+                                                            </button>
+                                                            <button formaction="#" title="" class="UI_btnNav tiny next active" data-action="Series:toggleMode" data-target="#seasons" data-mode="pictureMode">
+                                                                <i class="icon iconModePicture after"></i>
+                                                            </button>
+                                                            <!-- <a href="javascript:;" title="分享这部片子" id="shareVideo" class="shareSerie"  ad-type="movieshare"><i class="icon iconShare"></i> 分享
+                                                            </a> -->
+                                                            <div style="position: absolute;top: 10px;right: -15px;">
+                                                            <a version="1.0" class="qzOpenerDiv" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_likeurl" target="_blank">赞</a><script  src="http://qzonestyle.gtimg.cn/qzone/app/qzlike/qzopensl.js#jsdate=20110603&style=3&showcount=1&width=130&height=30" charset="utf-8" defer="defer" ad-type="videolike"></script>
+                                                            </div>
+                                                        </aside>
+                                                    </article>
+                                                    <div class="mainBox">
+                                                        <div id="PlayerWrap">
+                                                            <div style="width:800px;height:500px;margin:0 auto; margin-bottom:30px;">
+                                                                <iframe id="player-iframe" class="player-iframe" border="0" frameborder="0"
+                                                                hspace="0" vspace="0" marginheight="0" marginwidth="0" width="100%" height="100%" wmode="transparent"
+                                                                src="" data-src="">
+                                                                </iframe>
+                                                            </div>
+                                                        </div>
+                                                        <div id="videoPlayerTab" class="tab">
+                                                            <div class="roll">
+                                                                <div class="btnL"><a href="javascript:;" ad-type="goplayleft"></a></div>
+                                                                <div class="btnR"><a href="javascript:;" ad-type="goplayright"></a></div>
+                                                                <div class="pp"><div class="thumbcontainer"></div></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="area" id="movie_resource" style="margin-bottom:6px;">
+                                                    <div style="clear:both; margin-top: 10px;">
+                                                        <p id="video_resource" class="x-m-subtitle">影片资源</p>
+                                                        <div class="resource_tab" style="font-size:13px;" widget="thirdResource">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <!-- 4e 影评 -->
+                                        <article class="community clearfix animated">
+                                            <section class="leftcol commentSection" id="serie_comments">
+                                                <section class="commentCounter">共<span id="commentTotallNum">30</span>条评论</section>
+                                                <section class="add_comment clearfix">
+                                                    <span class="UI_profile square large">
+                                                        <img src="" id="userIMG" onerror="this.src='http://192.168.1.100/Public/images/default_pic.jpg'">
+                                                    </span>
+                                                    <div id="comment_form"  class="uiCommentForm">
+                                                        <section class="mainCommentForm">
+                                                            <textarea placeholder="我也来吐吐槽……" class="textareaResize" style="height: 46px;" id="INputText"></textarea>
+                                                            <section class="info_add_reply ">
+                                                              <button type="submit" class="btAddReply" id="SubmitComment"><span class="icon iconCrayon"></span>就这样吧</button>
+                                                              <button formaction="#" class="emptyAnswer" >取消</button>
+                                                            </section>
+                                                             <button formaction="#" class="icon iconCrayon crayon"></button>
+                                                        </section>
+                                                    </div>
+                                                </section>
+                                                <aside class="UI_filters grey clearfix">
+                                                    <a href="javascript:;" data-action="Cinemur:loadMoreComments" data-filter="all"
+                                                    title="" class="active">豆瓣热门影评</a>
+                                                </aside>
+                                                <div class="UI_commentsListBOX">
+                                                    <ol class="UI_commentsList" monkey="comment_box"></ol>
+                                                </div>
+                                            </section>
+                                        </article>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+                <section class="services">
+                    <p> 此应用由夏林威开发，若使用中遇到问题，请联系客服QQ：229147492
+                        <a href="http://user.qzone.qq.com/1828356047/onekeydressup#!app=2&via=QZ.HashRefresh&pos=1383663132" target="_blank">意见反馈</a>
+                        <br>图片和视频内容来源网络，如果侵犯了您的版权，请联系我们，本站将在3个工作日内删除
+                    </p>
+                </section>
+            </section>
+        </section>
+    </section>
+    <!--图片查看器-->
+    <div class="photoview">
+        <div id="showBg"></div>
+        <div class="area" id="contentA" monkey="photoview">
+            <div class="close" title="关闭"></div>
+            <div class="like"><a version="1.0" class="qzOpenerDiv" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_likeurl" target="_blank" ad-type="like">赞</a><script  src="http://qzonestyle.gtimg.cn/qzone/app/qzlike/qzopensl.js#jsdate=20110603&style=3&showcount=1&width=130&height=30" charset="utf-8" defer="defer" ></script></div>
+            <div class="mainFrame">
+                <div class="mainBox">
+                    <div class="showBox adWall" id="showBox">
+                        <div class="btnPrev" style="display: block;">
+                            <a ad-type="btnprev" href="javascript:;"></a>
+                        </div>
+                        <div class="btnNext" style="display: block;">
+                            <a ad-type="btnnext" href="javascript:;"></a>
+                        </div>
+                        <div id="picPlayerWrap" class="pic">
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" charset="utf-8" src="http://fusion.qq.com/fusion_loader?appid=1101080756&platform=qzone"></script>
+    <script type="text/javascript" src="{$Think.config.AJAX_URL}__PUBLIC__/app/qzone/resource/jquery.js"></script>
+    <script type="text/javascript" src="{$Think.config.AJAX_URL}__PUBLIC__/app/qzone/resource/public.js"></script>
+    <script type="text/javascript" src="{$Think.config.AJAX_URL}__PUBLIC__/app/qzone/resource/all.js"></script>
+</body>
+
+</html>

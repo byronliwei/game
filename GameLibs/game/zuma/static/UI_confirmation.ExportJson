@@ -1,0 +1,861 @@
+{
+  "classname": null,
+  "name": null,
+  "animation": {
+    "classname": null,
+    "name": "AnimationManager",
+    "actionlist": [
+      {
+        "classname": null,
+        "name": "init",
+        "actionnodelist": [
+          {
+            "classname": null,
+            "name": "conf_no_button",
+            "ActionTag": 15790242,
+            "actionframelist": [
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 0,
+                "opacity": 0,
+                "positionx": 87,
+                "positiony": -54,
+                "rotation": 0,
+                "scalex": 1,
+                "scaley": 1,
+                "starttime": 0,
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "tweenType": 0,
+                "visible": false
+              }
+            ]
+          },
+          {
+            "classname": null,
+            "name": "conf_yes_button",
+            "ActionTag": 10327597,
+            "actionframelist": [
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 0,
+                "opacity": 0,
+                "positionx": -83,
+                "positiony": -54,
+                "rotation": 0,
+                "scalex": 1,
+                "scaley": 1,
+                "starttime": 0,
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "tweenType": 0,
+                "visible": false
+              }
+            ]
+          },
+          {
+            "classname": null,
+            "name": "conf_bg",
+            "ActionTag": 27900403,
+            "actionframelist": [
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 0,
+                "opacity": 0,
+                "positionx": 320,
+                "positiony": 240,
+                "rotation": 28.86,
+                "scalex": 0.6999999,
+                "scaley": 0.6999999,
+                "starttime": 0,
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "tweenType": 0,
+                "visible": false
+              }
+            ]
+          }
+        ],
+        "loop": false,
+        "unittime": 0.1
+      },
+      {
+        "classname": null,
+        "name": "in",
+        "actionnodelist": [
+          {
+            "classname": null,
+            "name": "conf_yes_button",
+            "ActionTag": 10327597,
+            "actionframelist": [
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 0,
+                "opacity": 0,
+                "positionx": -83,
+                "positiony": -54,
+                "rotation": 0,
+                "scalex": 1,
+                "scaley": 1,
+                "starttime": 0,
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "tweenType": 0,
+                "visible": false
+              },
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 3,
+                "opacity": 255,
+                "positionx": -83,
+                "positiony": -54,
+                "rotation": 0,
+                "scalex": 1,
+                "scaley": 1,
+                "starttime": 0,
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "tweenType": 0,
+                "visible": false
+              }
+            ]
+          },
+          {
+            "classname": null,
+            "name": "conf_no_button",
+            "ActionTag": 15790242,
+            "actionframelist": [
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 0,
+                "opacity": 0,
+                "positionx": 87,
+                "positiony": -54,
+                "rotation": 0,
+                "scalex": 1,
+                "scaley": 1,
+                "starttime": 0,
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "tweenType": 0,
+                "visible": false
+              },
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 3,
+                "opacity": 255,
+                "positionx": 87,
+                "positiony": -54,
+                "rotation": 0,
+                "scalex": 1,
+                "scaley": 1,
+                "starttime": 0,
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "tweenType": 0,
+                "visible": false
+              }
+            ]
+          },
+          {
+            "classname": null,
+            "name": "conf_bg",
+            "ActionTag": 27900403,
+            "actionframelist": [
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 0,
+                "opacity": 0,
+                "positionx": 320,
+                "positiony": 240,
+                "rotation": 28.85554,
+                "scalex": 0.6999999,
+                "scaley": 0.6999999,
+                "starttime": 0,
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "tweenType": 0,
+                "visible": false
+              },
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 3,
+                "opacity": 255,
+                "positionx": 320,
+                "positiony": 240,
+                "rotation": 0,
+                "scalex": 1,
+                "scaley": 1,
+                "starttime": 0,
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "tweenType": 0,
+                "visible": false
+              }
+            ]
+          }
+        ],
+        "loop": false,
+        "unittime": 0.1
+      },
+      {
+        "classname": null,
+        "name": "out",
+        "actionnodelist": [
+          {
+            "classname": null,
+            "name": "conf_yes_button",
+            "ActionTag": 10327597,
+            "actionframelist": [
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 0,
+                "opacity": 255,
+                "positionx": -83,
+                "positiony": -54,
+                "rotation": 0,
+                "scalex": 1,
+                "scaley": 1,
+                "starttime": 0,
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "tweenType": 0,
+                "visible": false
+              },
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 3,
+                "opacity": 0,
+                "positionx": -83,
+                "positiony": -54,
+                "rotation": 0,
+                "scalex": 1,
+                "scaley": 1,
+                "starttime": 0,
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "tweenType": 0,
+                "visible": false
+              }
+            ]
+          },
+          {
+            "classname": null,
+            "name": "conf_no_button",
+            "ActionTag": 15790242,
+            "actionframelist": [
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 0,
+                "opacity": 255,
+                "positionx": 87,
+                "positiony": -54,
+                "rotation": 0,
+                "scalex": 1,
+                "scaley": 1,
+                "starttime": 0,
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "tweenType": 0,
+                "visible": false
+              },
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 3,
+                "opacity": 0,
+                "positionx": 87,
+                "positiony": -54,
+                "rotation": 0,
+                "scalex": 1,
+                "scaley": 1,
+                "starttime": 0,
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "tweenType": 0,
+                "visible": false
+              }
+            ]
+          },
+          {
+            "classname": null,
+            "name": "conf_bg",
+            "ActionTag": 27900403,
+            "actionframelist": [
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 0,
+                "opacity": 255,
+                "positionx": 320,
+                "positiony": 240,
+                "rotation": 0,
+                "scalex": 1,
+                "scaley": 1,
+                "starttime": 0,
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "tweenType": 0,
+                "visible": false
+              },
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 3,
+                "opacity": 0,
+                "positionx": 320,
+                "positiony": 240,
+                "rotation": 9.707847,
+                "scalex": 1.2,
+                "scaley": 1.2,
+                "starttime": 0,
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "tweenType": 0,
+                "visible": false
+              }
+            ]
+          }
+        ],
+        "loop": false,
+        "unittime": 0.1
+      }
+    ]
+  },
+  "dataScale": 1,
+  "designHeight": 480,
+  "designWidth": 640,
+  "textures": [
+    "UI_confirmation0.plist"
+  ],
+  "texturesPng": [
+    "UI_confirmation0.png"
+  ],
+  "version": "1.6.0.0",
+  "widgetTree": {
+    "classname": "Panel",
+    "name": null,
+    "children": [
+      {
+        "classname": "ImageView",
+        "name": null,
+        "children": [
+          {
+            "classname": "LabelBMFont",
+            "name": null,
+            "children": [],
+            "options": {
+              "__type": "LabelBMFontSurrogate:#EditorCommon.JsonModel.Component.GUI",
+              "classname": "LabelBMFont",
+              "name": "conf_description_bmp",
+              "ZOrder": 0,
+              "actiontag": 24786005,
+              "anchorPointX": 0.5,
+              "anchorPointY": 0.5,
+              "classType": "CocoStudio.EngineAdapterWrap.CSLabelBMFont",
+              "colorB": 255,
+              "colorG": 255,
+              "colorR": 255,
+              "customProperty": "",
+              "flipX": false,
+              "flipY": false,
+              "height": 36,
+              "ignoreSize": true,
+              "layoutParameter": null,
+              "opacity": 255,
+              "positionPercentX": 0,
+              "positionPercentY": 0.107142858,
+              "positionType": 0,
+              "rotation": 0,
+              "scaleX": 0.6999999,
+              "scaleY": 0.6999999,
+              "sizePercentX": 0.8603604,
+              "sizePercentY": 0.160714284,
+              "sizeType": 0,
+              "tag": 8748,
+              "touchAble": false,
+              "useMergedTexture": true,
+              "visible": true,
+              "width": 382,
+              "x": 0,
+              "y": 24,
+              "fileNameData": {
+                "path": "description.fnt",
+                "plistFile": "",
+                "resourceType": 0
+              },
+              "text": "Are you sure you want to quit?"
+            }
+          },
+          {
+            "classname": "Button",
+            "name": null,
+            "children": [
+              {
+                "classname": "LabelBMFont",
+                "name": null,
+                "children": [],
+                "options": {
+                  "__type": "LabelBMFontSurrogate:#EditorCommon.JsonModel.Component.GUI",
+                  "classname": "LabelBMFont",
+                  "name": "conf_yes_bmp",
+                  "ZOrder": 0,
+                  "actiontag": 24272369,
+                  "anchorPointX": 0.5,
+                  "anchorPointY": 0.5,
+                  "classType": "CocoStudio.EngineAdapterWrap.CSLabelBMFont",
+                  "colorB": 255,
+                  "colorG": 255,
+                  "colorR": 255,
+                  "customProperty": "",
+                  "flipX": false,
+                  "flipY": false,
+                  "height": 30,
+                  "ignoreSize": true,
+                  "layoutParameter": null,
+                  "opacity": 255,
+                  "positionPercentX": 0,
+                  "positionPercentY": 0.05882353,
+                  "positionType": 0,
+                  "rotation": 0,
+                  "scaleX": 0.6999999,
+                  "scaleY": 0.6999999,
+                  "sizePercentX": 0.222222224,
+                  "sizePercentY": 0.5882353,
+                  "sizeType": 0,
+                  "tag": 8751,
+                  "touchAble": false,
+                  "useMergedTexture": true,
+                  "visible": true,
+                  "width": 34,
+                  "x": 0,
+                  "y": 3,
+                  "fileNameData": {
+                    "path": "buttons.fnt",
+                    "plistFile": "",
+                    "resourceType": 0
+                  },
+                  "text": "Yes"
+                }
+              }
+            ],
+            "options": {
+              "__type": "ButtonSurrogate:#EditorCommon.JsonModel.Component.GUI",
+              "classname": "Button",
+              "name": "conf_yes_button",
+              "ZOrder": 0,
+              "actiontag": 10327597,
+              "anchorPointX": 0.5,
+              "anchorPointY": 0.5,
+              "classType": "CocoStudio.EngineAdapterWrap.CSButton",
+              "colorB": 255,
+              "colorG": 255,
+              "colorR": 255,
+              "customProperty": "",
+              "flipX": false,
+              "flipY": false,
+              "height": 51,
+              "ignoreSize": true,
+              "layoutParameter": null,
+              "opacity": 255,
+              "positionPercentX": -0.18693693,
+              "positionPercentY": -0.241071433,
+              "positionType": 0,
+              "rotation": 0,
+              "scaleX": 1,
+              "scaleY": 1,
+              "sizePercentX": 0.3445946,
+              "sizePercentY": 0.227678567,
+              "sizeType": 0,
+              "tag": 8749,
+              "touchAble": true,
+              "useMergedTexture": true,
+              "visible": true,
+              "width": 153,
+              "x": -83,
+              "y": -54,
+              "capInsetsHeight": 1,
+              "capInsetsWidth": 1,
+              "capInsetsX": 0,
+              "capInsetsY": 0,
+              "disabled": null,
+              "disabledData": {
+                "path": "button-medium-idle_press.png",
+                "plistFile": "",
+                "resourceType": 1
+              },
+              "fontName": "微软雅黑",
+              "fontSize": 14,
+              "fontType": 0,
+              "normal": null,
+              "normalData": {
+                "path": "button-medium-idle.png",
+                "plistFile": "",
+                "resourceType": 1
+              },
+              "pressed": null,
+              "pressedData": {
+                "path": "button-medium-idle_press.png",
+                "plistFile": "",
+                "resourceType": 1
+              },
+              "scale9Enable": false,
+              "scale9Height": 51,
+              "scale9Width": 153,
+              "text": "",
+              "textColorB": 255,
+              "textColorG": 255,
+              "textColorR": 255
+            }
+          },
+          {
+            "classname": "Button",
+            "name": null,
+            "children": [
+              {
+                "classname": "LabelBMFont",
+                "name": null,
+                "children": [],
+                "options": {
+                  "__type": "LabelBMFontSurrogate:#EditorCommon.JsonModel.Component.GUI",
+                  "classname": "LabelBMFont",
+                  "name": "conf_no_bmp",
+                  "ZOrder": 0,
+                  "actiontag": 3621890,
+                  "anchorPointX": 0.5,
+                  "anchorPointY": 0.5,
+                  "classType": "CocoStudio.EngineAdapterWrap.CSLabelBMFont",
+                  "colorB": 255,
+                  "colorG": 255,
+                  "colorR": 255,
+                  "customProperty": "",
+                  "flipX": false,
+                  "flipY": false,
+                  "height": 30,
+                  "ignoreSize": true,
+                  "layoutParameter": null,
+                  "opacity": 255,
+                  "positionPercentX": 0,
+                  "positionPercentY": 0.05882353,
+                  "positionType": 0,
+                  "rotation": 0,
+                  "scaleX": 0.6999999,
+                  "scaleY": 0.6999999,
+                  "sizePercentX": 0.18300654,
+                  "sizePercentY": 0.5882353,
+                  "sizeType": 0,
+                  "tag": 8752,
+                  "touchAble": false,
+                  "useMergedTexture": true,
+                  "visible": true,
+                  "width": 28,
+                  "x": 0,
+                  "y": 3,
+                  "fileNameData": {
+                    "path": "buttons.fnt",
+                    "plistFile": "",
+                    "resourceType": 0
+                  },
+                  "text": "No"
+                }
+              }
+            ],
+            "options": {
+              "__type": "ButtonSurrogate:#EditorCommon.JsonModel.Component.GUI",
+              "classname": "Button",
+              "name": "conf_no_button",
+              "ZOrder": 0,
+              "actiontag": 15790242,
+              "anchorPointX": 0.5,
+              "anchorPointY": 0.5,
+              "classType": "CocoStudio.EngineAdapterWrap.CSButton",
+              "colorB": 255,
+              "colorG": 255,
+              "colorR": 255,
+              "customProperty": "",
+              "flipX": false,
+              "flipY": false,
+              "height": 51,
+              "ignoreSize": true,
+              "layoutParameter": null,
+              "opacity": 255,
+              "positionPercentX": 0.195945948,
+              "positionPercentY": -0.241071433,
+              "positionType": 0,
+              "rotation": 0,
+              "scaleX": 1,
+              "scaleY": 1,
+              "sizePercentX": 0.3445946,
+              "sizePercentY": 0.227678567,
+              "sizeType": 0,
+              "tag": 8750,
+              "touchAble": true,
+              "useMergedTexture": true,
+              "visible": true,
+              "width": 153,
+              "x": 87,
+              "y": -54,
+              "capInsetsHeight": 1,
+              "capInsetsWidth": 1,
+              "capInsetsX": 0,
+              "capInsetsY": 0,
+              "disabled": null,
+              "disabledData": {
+                "path": "button-medium-idle_press.png",
+                "plistFile": "",
+                "resourceType": 1
+              },
+              "fontName": "微软雅黑",
+              "fontSize": 14,
+              "fontType": 0,
+              "normal": null,
+              "normalData": {
+                "path": "button-medium-idle.png",
+                "plistFile": "",
+                "resourceType": 1
+              },
+              "pressed": null,
+              "pressedData": {
+                "path": "button-medium-idle_press.png",
+                "plistFile": "",
+                "resourceType": 1
+              },
+              "scale9Enable": false,
+              "scale9Height": 51,
+              "scale9Width": 153,
+              "text": "",
+              "textColorB": 255,
+              "textColorG": 255,
+              "textColorR": 255
+            }
+          }
+        ],
+        "options": {
+          "__type": "ImageViewSurrogate:#EditorCommon.JsonModel.Component.GUI",
+          "classname": "ImageView",
+          "name": "conf_bg",
+          "ZOrder": 0,
+          "actiontag": 27900403,
+          "anchorPointX": 0.5,
+          "anchorPointY": 0.5,
+          "classType": "CocoStudio.EngineAdapterWrap.CSImageView",
+          "colorB": 255,
+          "colorG": 255,
+          "colorR": 255,
+          "customProperty": "",
+          "flipX": false,
+          "flipY": false,
+          "height": 224,
+          "ignoreSize": true,
+          "layoutParameter": null,
+          "opacity": 255,
+          "positionPercentX": 0.5,
+          "positionPercentY": 0.5,
+          "positionType": 0,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "sizePercentX": 0.69375,
+          "sizePercentY": 0.466666669,
+          "sizeType": 0,
+          "tag": 8747,
+          "touchAble": false,
+          "useMergedTexture": true,
+          "visible": true,
+          "width": 444,
+          "x": 320,
+          "y": 240,
+          "capInsetsHeight": 1,
+          "capInsetsWidth": 1,
+          "capInsetsX": 0,
+          "capInsetsY": 0,
+          "fileName": null,
+          "fileNameData": {
+            "path": "panelconf_bg.png",
+            "plistFile": "",
+            "resourceType": 1
+          },
+          "scale9Enable": false,
+          "scale9Height": 224,
+          "scale9Width": 444
+        }
+      }
+    ],
+    "options": {
+      "__type": "PanelSurrogate:#EditorCommon.JsonModel.Component.GUI",
+      "classname": "Panel",
+      "name": "confirmation",
+      "ZOrder": 0,
+      "actiontag": -1,
+      "anchorPointX": 0,
+      "anchorPointY": 0,
+      "classType": "CocoStudio.EngineAdapterWrap.CSPanel",
+      "colorB": 255,
+      "colorG": 255,
+      "colorR": 255,
+      "customProperty": "",
+      "flipX": false,
+      "flipY": false,
+      "height": 480,
+      "ignoreSize": false,
+      "layoutParameter": null,
+      "opacity": 255,
+      "positionPercentX": 0,
+      "positionPercentY": 0,
+      "positionType": 0,
+      "rotation": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "sizePercentX": 1,
+      "sizePercentY": 1,
+      "sizeType": 0,
+      "tag": 8746,
+      "touchAble": true,
+      "useMergedTexture": true,
+      "visible": true,
+      "width": 640,
+      "x": 0,
+      "y": 0,
+      "adaptScreen": false,
+      "backGroundImage": null,
+      "backGroundImageData": null,
+      "backGroundScale9Enable": false,
+      "bgColorB": 255,
+      "bgColorG": 200,
+      "bgColorOpacity": 0,
+      "bgColorR": 150,
+      "bgEndColorB": 255,
+      "bgEndColorG": 200,
+      "bgEndColorR": 150,
+      "bgStartColorB": 255,
+      "bgStartColorG": 255,
+      "bgStartColorR": 255,
+      "capInsetsHeight": 1,
+      "capInsetsWidth": 1,
+      "capInsetsX": 0,
+      "capInsetsY": 0,
+      "clipAble": false,
+      "colorType": 1,
+      "layoutType": 0,
+      "vectorX": 0,
+      "vectorY": -0.5
+    }
+  }
+}

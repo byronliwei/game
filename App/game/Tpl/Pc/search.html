@@ -1,0 +1,29 @@
+<include file="Pc:header" />
+    <div class="search-result">
+        <div class="search-result-wrap">
+            <h1>Serach Your Games</h1>
+            <div class="search-input">
+                <form action="/game/search.html" method="get">
+                    <input name='k' type="text" placeholder="search games">
+                    <button type="submit">
+                        <img src="/Public/static/images/search.png" alt="">
+                    </button>
+                </form>  
+            </div>
+        </div>
+        <div class="search-result-wrap-list">
+            <volist name="result" id="vo">
+                <a href="<neq name="lang" value="">/{$lang}</neq>/game/play/{$vo.seo_name}.html" class="games_list-item" target="_blank">
+                    <if condition="strstr($vo['img'],'//www')">
+                            <img src="/Public/static/images/gamev6_bg.png" data-src="{$vo.img}">
+                        <else />
+                            <img src="/Public/static/images/gamev6_bg.png" data-src='http://image<?php echo rand(1,4);?>.thehotgames.com/games/{$vo.sort|default="images"}/<eq name="vo.feature" value="1">feature_</eq>{$vo.img|addslashes=###}'
+                            alt="">
+                        </if>
+                    <div class="game_name">{$vo.name}</div>
+                </a>
+            </volist>
+            
+        </div>
+    </div>
+    <include file="Pc:footer" />

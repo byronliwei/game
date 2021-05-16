@@ -1,0 +1,17 @@
+{
+"example_1":
+{
+"name": "single_achievement_1", "desc": "This is just an example", "type": "single", "completed": false, "objectives":
+[
+{"id": 0, "desc": "Replace these achievements with the game achievements", "signal": "signals must be unique", "number": 1, "completed": false}
+]
+},
+
+"example_2":
+{
+"name": "multi_achievement_1", "desc": "Type can be single-session or multi-session","type": "multi", "completed": false, "objectives":
+[
+{"id": 0, "desc": "completed must always be set to false by default", "signal": "another unique signal", "number": 3, "completed": false}
+]
+}
+}

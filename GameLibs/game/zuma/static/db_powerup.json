@@ -1,0 +1,52 @@
+{"frames": [
+
+{
+	"filename": "Images/back.png",
+	"frame": {"x":104,"y":46,"w":21,"h":22},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":1,"w":21,"h":22},
+	"sourceSize": {"w":25,"h":25}
+},
+{
+	"filename": "Images/bg.png",
+	"frame": {"x":79,"y":2,"w":44,"h":42},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":44,"h":42},
+	"sourceSize": {"w":44,"h":44}
+},
+{
+	"filename": "Images/fire.png",
+	"frame": {"x":79,"y":46,"w":23,"h":24},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":23,"h":24},
+	"sourceSize": {"w":25,"h":25}
+},
+{
+	"filename": "Images/shine.png",
+	"frame": {"x":2,"y":2,"w":75,"h":75},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":75},
+	"sourceSize": {"w":75,"h":75}
+},
+{
+	"filename": "Images/slow.png",
+	"frame": {"x":104,"y":70,"w":21,"h":14},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":5,"w":21,"h":14},
+	"sourceSize": {"w":25,"h":25}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "db_powerup.png",
+	"format": "RGBA8888",
+	"size": {"w":127,"h":86},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:ec2278d41df676f698f4bff891fac309:8ca47e1591b5a6a75a7b905b369f7842:013e9a149f3660953b397d08fc7bde90$"
+}
+}
